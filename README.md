@@ -38,7 +38,7 @@ Add the pod `KinegramEmrtdConnector` to your Podfile.
 
 ```
 target 'MyApp' do
-  pod 'KinegramEmrtdConnector', '~> 0.0.10'
+  pod 'KinegramEmrtdConnector', '~> 1.0.0'
 end
 ```
 
