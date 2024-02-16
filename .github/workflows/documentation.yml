@@ -1,0 +1,72 @@
+name: Documentation
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  build:
+    runs-on: macos-13
+    env:
+      project: Sources/ExampleApp.xcodeproj
+      build_scheme: KinegramEmrtdConnector
+    steps:
+      - name: Check-out repo
+        uses: actions/checkout@v4	  
+      - name: Select Xcode 15.2
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app/Contents/Developer
+      - name: Build DocC archive
+        run: >
+          xcodebuild docbuild -project $project -sdk iphoneos -scmProvider xcode -configuration Release 
+          -scheme $build_scheme -derivedDataPath $RUNNER_TEMP DOCC_HOSTING_BASE_PATH=${{ github.event.repository.name  }}
+      - name: Copy DocC documentation to directory "_site"
+        run: mkdir _site && cp -r $RUNNER_TEMP/Build/Products/Release-iphoneos/*.doccarchive/* _site/.
+      - name: Render Markdown files to directory "_site"
+        run: |
+          for file in *.md; do
+            title=$(head -n 1 "$file" | sed 's/^# //')
+            rendered_html=$(curl -s -X POST "https://api.github.com/markdown/raw" -H "Content-Type: text/plain" --data-binary @"$file")
+            cat <<EOF >"_site/$(basename "$file" .md).html"
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <title>$title</title>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+            <style>
+            .markdown-body { min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+            @media (max-width: 767px) { .markdown-body { padding: 15px; } }
+            </style>
+          </head>
+          <body class="markdown-body">
+          $(echo "$rendered_html" | sed -e 's/\.md"/\"/g' -e 's/\.md#/#/g' -e 's/id="user-content-/id="/g')
+          </body>
+          </html>
+          EOF
+          done
+      - name: Convert favicon.svg to favicon.ico
+        run: |
+          brew install imagemagick
+          convert -background transparent -define 'icon:auto-resize=16,24,32,64,128' favicon.svg favicon.ico
+      - name: Copy favicon to directory "_site"
+        run: cp favicon.* _site/
+      - name: Rename README.html to index.html
+        run: mv _site/README.html _site/index.html
+      - name: Upload artifact for Github pages
+        uses: actions/upload-pages-artifact@v3
+  deploy:
+    if: false
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

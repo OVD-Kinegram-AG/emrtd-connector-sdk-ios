@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2D8DD517-5C79-42C7-8DC4-BC21AE78FC96"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3C1620B-2474-488D-B179-C894A18C1669"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kinegram_emrtd_connector/EmrtdConnector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "init?(clientId:webSocketUrl:delegate:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B3C1620B-2474-488D-B179-C894A18C1669 - d1a8762f350036fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExampleApp.EmrtdConnector.init(clientId: Swift.String, webSocketUrl: Swift.String, delegate: ExampleApp.EmrtdConnectorDelegate) -&gt; Swift.Optional&lt;ExampleApp.EmrtdConnector&gt;"
+                  moduleName = "ExampleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/timvogel/Projects/kinegram-emrtd-connector-sdk-ios/kinegram_emrtd_connector/EmrtdConnector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  uuid = "B3C1620B-2474-488D-B179-C894A18C1669 - 94499098fd805ac0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KinegramEmrtdConnector.EmrtdConnector.init(clientId: Swift.String, webSocketUrl: Swift.String, delegate: KinegramEmrtdConnector.EmrtdConnectorDelegate) -&gt; Swift.Optional&lt;KinegramEmrtdConnector.EmrtdConnector&gt;"
+                  moduleName = "KinegramEmrtdConnector"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/timvogel/Projects/kinegram-emrtd-connector-sdk-ios/kinegram_emrtd_connector/EmrtdConnector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "564">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A81D7BE2-E2FC-4E1E-8713-4FDA50021D9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExampleApp/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "emrtdConnector(_:didReceiveEmrtdPassport:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3035BD20-E988-47EB-9B70-E2D17B31F4E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExampleApp/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "emrtdConnector(_:didReceiveEmrtdPassport:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFBFF705-5599-47BF-9111-35FAD72B6038"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExampleApp/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "emrtdConnector(_:didCloseWithCloseCode:reason:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
