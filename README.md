@@ -1,7 +1,7 @@
 # Kinegram eMRTD Connector SDK iOS
 
-Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD through a
-WebSocket connection.
+Enable the [Document Validation Server][docval] to read and verify an eMRTD (electronic Machine
+Readable Travel Document) through a WebSocket connection.
 
 ## Example App
 
@@ -52,6 +52,7 @@ Run `$ pod install` in your project directory.
 
 [Changelog](CHANGELOG.md)
 
+[docval]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/
 [add-packages]: https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app
 [using-cocoapods]: https://guides.cocoapods.org/using/using-cocoapods.html
 [documentation]: https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios/documentation/kinegramemrtdconnector
