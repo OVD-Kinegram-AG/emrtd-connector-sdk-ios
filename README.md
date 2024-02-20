@@ -1,7 +1,35 @@
 # Kinegram eMRTD Connector SDK iOS
 
-Enable the [Document Validation Server][docval] to read and verify an eMRTD (electronic Machine
-Readable Travel Document) through a WebSocket connection.
+The Kinegram eMRTD Connector enables your iOS app to read and verify electronic passports / id cards ([eMRTDs][emrtd]).
+
+```
+    ┌───────────────┐     Results     ┌─────────────────┐
+    │ DocVal Server │────────────────▶│   Your Server   │
+    └───────────────┘                 └─────────────────┘
+            ▲
+            │ WebSocket
+            ▼
+┏━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                        ┃
+┃    eMRTD Connector     ┃
+┃                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━┛
+            ▲
+            │ NFC
+            ▼
+    ┌──────────────┐
+    │              │
+    │   PASSPORT   │
+    │              │
+    │   ID CARD    │
+    │              │
+    │              │
+    │   (eMRTD)    │
+    │              │
+    └──────────────┘
+```
+
+The *Kinegram eMRTD Connector* enables the [Document Validation Server (DocVal)][docval] to communicate with the eMRTD through a secure WebSocket connection.
 
 ## Example App
 
@@ -52,6 +80,7 @@ Run `$ pod install` in your project directory.
 
 [Changelog](CHANGELOG.md)
 
+[emrtd]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/Security%20Mechanisms
 [docval]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/
 [add-packages]: https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app
 [using-cocoapods]: https://guides.cocoapods.org/using/using-cocoapods.html
