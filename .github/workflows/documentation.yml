@@ -52,8 +52,8 @@ jobs:
         run: |
           brew install imagemagick
           convert -background transparent -define 'icon:auto-resize=16,24,32,64,128' favicon.svg favicon.ico
-      - name: Copy favicon to directory "_site"
-        run: cp favicon.* _site/
+      - name: Copy favicons and pdfs to directory "_site"
+        run: cp favicon.* *.pdf _site/
       - name: Rename README.html to index.html
         run: mv _site/README.html _site/index.html
       - name: Upload artifact for Github pages
