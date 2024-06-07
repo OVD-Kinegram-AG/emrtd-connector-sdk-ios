@@ -12,6 +12,7 @@ jobs:
     env:
       project: Sources/ExampleApp.xcodeproj
       build_scheme: KinegramEmrtdConnector
+      GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
     steps:
       - name: Check-out repo
         uses: actions/checkout@v4
@@ -27,7 +28,16 @@ jobs:
         run: |
           for file in *.md; do
             title=$(head -n 1 "$file" | sed 's/^# //')
-            rendered_html=$(curl -s -X POST "https://api.github.com/markdown/raw" -H "Content-Type: text/plain" --data-binary @"$file")
+            response=$(curl -s -o response.html -w "%{http_code}" -X POST "https://api.github.com/markdown/raw" \
+              -H "Content-Type: text/plain" --data-binary @"$file" \
+              -H "Authorization: Bearer $GH_API_TOKEN")
+          
+            if [[ "$response" -lt 200 || "$response" -ge 300 ]]; then
+              echo "Error: Received HTTP status code $response for file $file"
+              exit 1
+            fi
+            rendered_html=$(<response.html)
+            
             cat <<EOF >"_site/$(basename "$file" .md).html"
           <!DOCTYPE html>
           <html lang="en">
