@@ -82,10 +82,11 @@ Run `$ pod install` in your project directory.
 
 ## Privacy Notice
 
-ℹ️ [Privacy Notice](eMRTD%20Connector%20App%20DocVal%20Server_Privacy%20Notice.pdf)
+ℹ️ [Privacy Notice][privacy-notice]
 
 [emrtd]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/Security%20Mechanisms
 [docval]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/
 [add-packages]: https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app
 [using-cocoapods]: https://guides.cocoapods.org/using/using-cocoapods.html
 [documentation]: https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios/documentation/kinegramemrtdconnector
+[privacy-notice]: https://kinegram.digital/privacy-notice/
