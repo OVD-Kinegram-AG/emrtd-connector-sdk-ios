@@ -5,7 +5,6 @@
 //  Created by Tim Vogel on 04.01.22.
 //
 
-@available(iOS 13.0, *)
 extension EmrtdConnector {
     ///
     /// Status cases that identify the current Step in a ``EmrtdConnector`` session.

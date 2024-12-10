@@ -22,7 +22,6 @@ enum CloseReasonRaw {
     static let communicationFailed = "COMMUNICATION_FAILED"
 }
 
-@available(iOS 13.0, *)
 extension EmrtdConnector {
 
     ///

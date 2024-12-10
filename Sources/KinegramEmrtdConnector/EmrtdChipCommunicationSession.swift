@@ -7,7 +7,6 @@
 
 import CoreNFC
 
-@available(iOS 13.0, *)
 extension NFCISO7816APDU {
     fileprivate convenience init(insCls: UInt8, insCode: UInt8, p1: UInt8, p2: UInt8, data: Data = Data(), el: Int = -1) {
         self.init(instructionClass: insCls, instructionCode: insCode, p1Parameter: p1, p2Parameter: p2,
@@ -19,7 +18,6 @@ extension NFCISO7816APDU {
     }
 }
 
-@available(iOS 13.0, *)
 enum EmrtdChipCommunicationError: Error {
     case apduResponseError(sw1: UInt8, sw2: UInt8)
     case nfcReaderError(NFCReaderError)
@@ -27,11 +25,9 @@ enum EmrtdChipCommunicationError: Error {
     case readBinaryOffsetTooLarge(totalFileSize: Int)
 }
 
-@available(iOS 13.0, *)
 // swiftlint:disable:next large_tuple
 typealias ResponseAPDU = (data: [UInt8], sw1: UInt8, sw2: UInt8)
 
-@available(iOS 13.0, *)
 class EmrtdChipCommunicationSession {
     typealias EmrtdResponseCallback = (ResponseAPDU?, EmrtdChipCommunicationError?) -> Void
 

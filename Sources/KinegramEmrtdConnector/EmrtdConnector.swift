@@ -13,7 +13,6 @@ import CoreNFC
 /// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag).
 /// WIll connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask).
 ///
-@available(iOS 13.0, *)
 public class EmrtdConnector {
     private static let retQuery = "return_result=true"
     private let clientId: String

@@ -12,8 +12,8 @@ Pod::Spec.new do |spec|
     DESC
   spec.homepage      = "https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
-  spec.author        = { "Tim Vogel" => "tim.vogel@kurzdigital.com" }
-  spec.platform      = :ios, "11.0"
+  spec.author        = { "Alexander Manzer" => "alexander.manzer@kurzdigital.com" }
+  spec.platform      = :ios, "13.0"
   spec.source        = { :git => "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios.git", :tag => "#{spec.version}" }
   spec.swift_version = "5.1"
   spec.source_files  = "Sources/KinegramEmrtdConnector/**/*"

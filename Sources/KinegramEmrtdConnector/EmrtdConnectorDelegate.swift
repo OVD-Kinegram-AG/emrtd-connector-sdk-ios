@@ -6,7 +6,6 @@
 //
 
 /// The delegate of the ``EmrtdConnector``.
-@available(iOS 13.0, *)
 public protocol EmrtdConnectorDelegate: AnyObject {
 
     ///
@@ -49,7 +48,6 @@ public protocol EmrtdConnectorDelegate: AnyObject {
     func emrtdConnector(_ emrtdConnector: EmrtdConnector, didCloseWithCloseCode closeCode: Int, reason: EmrtdConnector.CloseReason?)
 }
 
-@available(iOS 13.0, *)
 extension EmrtdConnectorDelegate {
     func emrtdConnector(_: EmrtdConnector, didUpdateStatus _: EmrtdConnector.Status) {}
     func emrtdConnector(_: EmrtdConnector, didReceiveEmrtdPassport _: EmrtdPassport?) {}
