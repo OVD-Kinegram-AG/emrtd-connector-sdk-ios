@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.1.0
+
+* Add a simplified and ObjdectiveC compatible version, build as static framework. See folder `ObjCFramework` for more info.
+
 ## 1.0.0
 
 * Improve documentation
