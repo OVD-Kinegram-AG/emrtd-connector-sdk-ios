@@ -72,6 +72,10 @@ end
 
 Run `$ pod install` in your project directory.
 
+### ObjC compatible version of *KinegramEmrtdConnector*
+
+There is an Objective-C compatible version of this connector in the `ObjCFramework` folder, which was built as a static framework. This `KinegramEmrtdConnectorObjC.xcframework` can be used by ObjC-only projects and also by common cross-platform projects (.net MAUI, Flutter, ReactNative) that cannot yet handle the Swift interface. More info in [ObjCFramework/README.md](ObjCFramework/README.md)
+
 ## Usage and API description
 
 [DocC documentation][documentation]
