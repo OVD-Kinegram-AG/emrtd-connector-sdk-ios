@@ -1,0 +1,6 @@
+framework module Pods_KinegramEmrtdConnectorObjC {
+  umbrella header "Pods-KinegramEmrtdConnectorObjC-umbrella.h"
+
+  export *
+  module * { export * }
+}

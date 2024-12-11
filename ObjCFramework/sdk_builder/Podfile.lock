@@ -1,0 +1,16 @@
+PODS:
+  - KinegramEmrtdConnector (1.1.0)
+
+DEPENDENCIES:
+  - KinegramEmrtdConnector (from `../../`)
+
+EXTERNAL SOURCES:
+  KinegramEmrtdConnector:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  KinegramEmrtdConnector: 702d44de795a90244581eaa6e98cd24f23315613
+
+PODFILE CHECKSUM: 73de0e8e2e1db484aa885a93bfcbf8076922ee29
+
+COCOAPODS: 1.16.2
