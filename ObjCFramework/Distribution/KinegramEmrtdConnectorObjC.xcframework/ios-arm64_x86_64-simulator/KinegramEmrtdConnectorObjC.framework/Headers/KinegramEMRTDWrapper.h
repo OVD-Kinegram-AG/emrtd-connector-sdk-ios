@@ -19,9 +19,11 @@ typedef void(^KinegramEMRTDCompletionBlock)(NSString * _Nullable passportJson, N
 - (void)readPassportWithDocumentNumber:(NSString *)documentNumber
                            dateOfBirth:(NSString *)dateOfBirth
                           dateOfExpiry:(NSString *)dateOfExpiry
+                          validationId:(NSString *)validationId
                             completion:(KinegramEMRTDCompletionBlock)completion;
 
 - (void)readPassportWithCan:(NSString *)can
+               validationId:(NSString *)validationId 
                  completion:(KinegramEMRTDCompletionBlock)completion;
 
 @end

@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.1.1
+
+* Added also validationID to ObjC interface
+
 ## 1.1.0
 
 * Add a simplified and ObjectiveC compatible version, build as static framework. See folder `ObjCFramework` for more info.
