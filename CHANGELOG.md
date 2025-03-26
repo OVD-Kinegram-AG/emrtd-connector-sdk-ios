@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.1.3
+
+* Seperate github build jobs (no functional change to framework)
+
 ## 1.1.2
 
 * Optimized github build action (no functional change)
