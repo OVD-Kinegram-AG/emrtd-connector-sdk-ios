@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.1.2
+
+* Optimized github build action (no functional change)
+
 ## 1.1.1
 
 * Added also validationID to ObjC interface

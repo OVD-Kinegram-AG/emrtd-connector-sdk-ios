@@ -13,5 +13,7 @@ jobs:
     steps:
       - name: Check-out repo
         uses: actions/checkout@v4
-      - name: Push to Cocoapods
-        run: pod spec lint KinegramEmrtdConnector.podspec && pod spec lint KinegramEmrtdConnectorObjC.podspec && pod trunk push KinegramEmrtdConnector.podspec && pod trunk push KinegramEmrtdConnectorObjC.podspec
+      - name: Push KinegramEmrtdConnector to Cocoapods
+        run: pod spec lint KinegramEmrtdConnector.podspec && pod trunk push KinegramEmrtdConnector.podspec
+      - name: Push KinegramEmrtdConnectorObjC to Cocoapods
+        run: pod spec lint KinegramEmrtdConnectorObjC.podspec && pod trunk push KinegramEmrtdConnectorObjC.podspec
