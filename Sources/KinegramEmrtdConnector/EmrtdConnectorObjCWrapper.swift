@@ -8,6 +8,10 @@
 import Foundation
 import CoreNFC
 
+/// ObjC wrapper for connecting an eMRTD NFC Chip with the Document Validation Server.
+///
+/// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag) .
+/// Will connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask) .
 @objc public class EmrtdConnectorObjCWrapper: NSObject {
     private var connector: EmrtdConnector?
     private var session: NFCTagReaderSession?
@@ -16,9 +20,16 @@ import CoreNFC
     private var dateOfBirth: String?
     private var dateOfExpiry: String?
     private var can: String?
+    private var validationId: String?
 
     private let errorDomain = "io.kinegram.emrtd"
 
+    /// Initialize a new EmrtdConnectorObjCWrapper.
+    ///
+    /// - Parameters:
+    ///     - clientId: Client Id for authentication
+    ///     - webSocketUrl: URL of the WebSocket endpoint
+    /// - Returns: A newly initialized EmrtdConnectorObjCWrapper; otherwise, nil if initialization fails.
     @objc public init?(clientId: String, webSocketUrl: String) {
         super.init()
         connector = EmrtdConnector(clientId: clientId, webSocketUrl: webSocketUrl, delegate: self)
@@ -27,9 +38,21 @@ import CoreNFC
         }
     }
 
+    /// Starts the passport reading session using MRZ data.
+    ///
+    /// The document number, date of birth, and date of expiry function as the Access Key,
+    /// required to access the chip.
+    ///
+    /// - Parameters:
+    ///   - documentNumber: Document Number from the MRZ
+    ///   - dateOfBirth: Date of Birth from the MRZ (Format: yyMMdd)
+    ///   - dateOfExpiry: Date of Expiry from the MRZ (Format: yyMMdd)
+    ///   - validationId: Unique identifier for this validation session
+    ///   - completion: Completion handler called with optional error
     @objc public func readPassport(documentNumber: String,
                                    dateOfBirth: String,
                                    dateOfExpiry: String,
+                                   validationId: String,
                                    completion: @escaping (String?, Error?) -> Void) {
 
         guard handleNFCAvailability(completion: completion) else {
@@ -39,13 +62,23 @@ import CoreNFC
         self.documentNumber = documentNumber
         self.dateOfBirth = dateOfBirth
         self.dateOfExpiry = dateOfExpiry
+        self.validationId = validationId
         self.can = nil
         self.completionCallback = completion
 
         startNFCSession()
     }
 
+    /// Starts the passport reading session using CAN.
+    ///
+    /// The CAN functions as the Access Key and is required to access the chip.
+    ///
+    /// - Parameters:
+    ///   - can: CAN, a 6 digit number, printed on the front of the document
+    ///   - validationId: Unique identifier for this validation session
+    ///   - completion: Completion handler called with optional error
     @objc public func readPassport(can: String,
+                                   validationId: String,
                                    completion: @escaping (String?, Error?) -> Void) {
 
         guard handleNFCAvailability(completion: completion) else {
@@ -53,6 +86,7 @@ import CoreNFC
         }
 
         self.can = can
+        self.validationId = validationId
         self.documentNumber = nil
         self.dateOfBirth = nil
         self.dateOfExpiry = nil
@@ -92,15 +126,20 @@ extension EmrtdConnectorObjCWrapper: NFCTagReaderSessionDelegate {
             return
         }
 
+        guard let validationId = validationId else {
+            session.invalidate(errorMessage: "Missing validationId")
+            return
+        }
+
         if let can = can {
             connector?.connect(to: iso7816Tag,
-                               vId: UUID().uuidString,
+                               vId: validationId,
                                can: can)
         } else if let documentNumber = documentNumber,
                   let dateOfBirth = dateOfBirth,
                   let dateOfExpiry = dateOfExpiry {
             connector?.connect(to: iso7816Tag,
-                               vId: UUID().uuidString,
+                               vId: validationId,
                                documentNumber: documentNumber,
                                dateOfBirth: dateOfBirth,
                                dateOfExpiry: dateOfExpiry)
@@ -177,5 +216,6 @@ extension EmrtdConnectorObjCWrapper: EmrtdConnectorDelegate {
         dateOfBirth = nil
         dateOfExpiry = nil
         can = nil
+        validationId = nil
     }
 }

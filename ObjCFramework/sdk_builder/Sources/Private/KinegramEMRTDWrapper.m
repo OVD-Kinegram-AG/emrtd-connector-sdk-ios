@@ -29,15 +29,21 @@
 - (void)readPassportWithDocumentNumber:(NSString *)documentNumber
                            dateOfBirth:(NSString *)dateOfBirth
                           dateOfExpiry:(NSString *)dateOfExpiry
+                          validationId:(NSString *)validationId
                             completion:(KinegramEMRTDCompletionBlock)completion {
     [self.wrapper readPassportWithDocumentNumber:documentNumber
                                      dateOfBirth:dateOfBirth
                                     dateOfExpiry:dateOfExpiry
+                                    validationId:validationId
                                       completion:completion];
 }
 
-- (void)readPassportWithCan:(NSString *)can completion:(KinegramEMRTDCompletionBlock)completion {
-    [self.wrapper readPassportWithCan:can completion:completion];
+- (void)readPassportWithCan:(NSString *)can
+               validationId:(NSString *)validationId
+                 completion:(KinegramEMRTDCompletionBlock)completion {
+    [self.wrapper readPassportWithCan:can
+                         validationId:validationId
+                           completion:completion];
 }
 
 @end

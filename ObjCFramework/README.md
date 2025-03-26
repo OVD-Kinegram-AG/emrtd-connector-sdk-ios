@@ -62,18 +62,20 @@ The KinegramEMRTDWrapper class provides a simplified interface for interacting w
 - (void)readPassportWithDocumentNumber:(NSString *)documentNumber
                            dateOfBirth:(NSString *)dateOfBirth
                           dateOfExpiry:(NSString *)dateOfExpiry
+                         validationId:(NSString *)validationId
                             completion:(KinegramEMRTDCompletionBlock)completion;
 ```
 
-Reads the passport using MRZ (Machine Readable Zone) information: documentNumber, dateOfBirth, and dateOfExpiry. The result is returned via the completion block as a JSON string or an error.
+Reads the passport using MRZ (Machine Readable Zone) information: documentNumber, dateOfBirth, dateOfExpiry, and validationId. The result is returned via the completion block as a JSON string or an error.
 
 * Read Passport with CAN
 ```objc
 - (void)readPassportWithCan:(NSString *)can
+               validationId:(NSString *)validationId
                  completion:(KinegramEMRTDCompletionBlock)completion;
 ```
 
-Reads the passport using the CAN (Card Access Number). The result is returned via the completion block as a JSON string or an error.
+Reads the passport using the CAN (Card Access Number) and validationId. The result is returned via the completion block as a JSON string or an error.
 
 ### Completion Block
 
@@ -83,7 +85,7 @@ The KinegramEMRTDCompletionBlock is a typedef for a block used in the readPasspo
 typedef void(^KinegramEMRTDCompletionBlock)(NSString * _Nullable passportJson, NSError * _Nullable error);
 ```
 
-* passportJson: A JSON string representing the passport’s data, or nil if an error occurred.
+* passportJson: A JSON string representing the passport's data, or nil if an error occurred.
 * error: An NSError object describing the issue, or nil if the operation was successful.
 
 ### Example
@@ -105,7 +107,9 @@ Below is a simple example of using the connector in Objective-C:
                                          webSocketUrl:@"wss://kinegramdocval.lkis.de/ws1/validate"
     ];
 
-    [_wrapper readPassportWithCan:@"123465" completion:^(NSString * _Nullable passportJson, NSError * _Nullable error) {
+    [_wrapper readPassportWithCan:@"123465" 
+                    validationId:@"unique_session_id" 
+                     completion:^(NSString * _Nullable passportJson, NSError * _Nullable error) {
         NSLog(@"passportJson: %@", passportJson);
         NSLog(@"error: %@", error);
     }];
