@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.2.0
+
+* Add support for setting custom HTTP headers for the WebSocket connection. See `connect` method in `EmrtdConnector` class.
+
 ## 1.1.3
 
 * Seperate github build jobs (no functional change to framework)

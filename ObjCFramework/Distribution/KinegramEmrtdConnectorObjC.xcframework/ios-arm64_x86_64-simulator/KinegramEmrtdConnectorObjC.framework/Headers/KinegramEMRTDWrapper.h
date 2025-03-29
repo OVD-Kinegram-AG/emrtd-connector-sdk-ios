@@ -22,8 +22,20 @@ typedef void(^KinegramEMRTDCompletionBlock)(NSString * _Nullable passportJson, N
                           validationId:(NSString *)validationId
                             completion:(KinegramEMRTDCompletionBlock)completion;
 
+- (void)readPassportWithDocumentNumber:(NSString *)documentNumber
+                           dateOfBirth:(NSString *)dateOfBirth
+                          dateOfExpiry:(NSString *)dateOfExpiry
+                          validationId:(NSString *)validationId
+                           httpHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)httpHeaders
+                            completion:(KinegramEMRTDCompletionBlock)completion;
+
 - (void)readPassportWithCan:(NSString *)can
-               validationId:(NSString *)validationId 
+               validationId:(NSString *)validationId
+                 completion:(KinegramEMRTDCompletionBlock)completion;
+
+- (void)readPassportWithCan:(NSString *)can
+               validationId:(NSString *)validationId
+                httpHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)httpHeaders
                  completion:(KinegramEMRTDCompletionBlock)completion;
 
 @end
