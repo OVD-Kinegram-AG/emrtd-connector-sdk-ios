@@ -51,9 +51,28 @@ class MainViewController: UIViewController {
         // Unique transaction ID, usually from your Server
         let validationId = UUID().uuidString
 
+        // Optional: Custom HTTP headers for the WebSocket connection
+        let headers = [
+                "Authorization": "Bearer your-token"
+        ]
+
         // Access Key values from the MRZ; Date format: yyMMDD
-        emrtdConnector.connect(to: emrtdTag, vId: validationId, documentNumber:  "123465789",
-                               dateOfBirth: "970101", dateOfExpiry: "251008")
+        emrtdConnector.connect(
+            to: emrtdTag,
+            vId: validationId,
+            documentNumber: "123465789",
+            dateOfBirth: "970101",
+            dateOfExpiry: "251008",
+            httpHeaders: headers // Optional parameter
+        )
+        
+        // Or using CAN
+        emrtdConnector.connect(
+            to: emrtdTag,
+            vId: validationId,
+            can: "123465",
+            httpHeaders: headers // Optional parameter
+        )
     }
 }
 
@@ -94,22 +113,6 @@ Read more about the possible Close Reason values in the ``EmrtdConnector/CloseRe
 
 Read more about the possible Status values in the ``EmrtdConnector/Status`` documentation.
 
-## Module was renamed to KinegramEmrtdConnector
-
-⚠ The module **KTAKinegramEmrtdConnector** was renamed to **KinegramEmrtdConnector**. 
-Adjust your existing code accordingly as you upgrade to the new **KinegramEmrtdConnector.xcframework**.
-
-Version 0.0.9 and before:
-
-```swift
-import KTAKinegramEmrtdConnector
-```
-
-Now:
-
-```swift
-import KinegramEmrtdConnector
-```
 
 ## Limitations
 

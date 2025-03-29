@@ -63,19 +63,21 @@ The KinegramEMRTDWrapper class provides a simplified interface for interacting w
                            dateOfBirth:(NSString *)dateOfBirth
                           dateOfExpiry:(NSString *)dateOfExpiry
                          validationId:(NSString *)validationId
+                         httpHeaders:(NSDictionary<NSString *, NSString *> *)httpHeaders
                             completion:(KinegramEMRTDCompletionBlock)completion;
 ```
 
-Reads the passport using MRZ (Machine Readable Zone) information: documentNumber, dateOfBirth, dateOfExpiry, and validationId. The result is returned via the completion block as a JSON string or an error.
+Reads the passport using MRZ (Machine Readable Zone) information and optional HTTP headers for the WebSocket connection. The result is returned via the completion block as a JSON string or an error.
 
 * Read Passport with CAN
 ```objc
 - (void)readPassportWithCan:(NSString *)can
                validationId:(NSString *)validationId
+               httpHeaders:(NSDictionary<NSString *, NSString *> *)httpHeaders
                  completion:(KinegramEMRTDCompletionBlock)completion;
 ```
 
-Reads the passport using the CAN (Card Access Number) and validationId. The result is returned via the completion block as a JSON string or an error.
+Reads the passport using the CAN (Card Access Number), validationId, and optional HTTP headers. The result is returned via the completion block as a JSON string or an error.
 
 ### Completion Block
 
@@ -90,8 +92,6 @@ typedef void(^KinegramEMRTDCompletionBlock)(NSString * _Nullable passportJson, N
 
 ### Example
 
-Below is a simple example of using the connector in Objective-C:
-
 ```objc
 #import "KinegramEmrtdConnectorObjC/KinegramEMRTDWrapper.h"
 
@@ -102,13 +102,20 @@ Below is a simple example of using the connector in Objective-C:
 
 @implementation ViewController
 - (IBAction)buttonTouched:(id)sender {
-    _wrapper = [
-        [KinegramEMRTDWrapper alloc] initWithClientId:@"example_client"
-                                         webSocketUrl:@"wss://kinegramdocval.lkis.de/ws1/validate"
+    _wrapper = [[KinegramEMRTDWrapper alloc] 
+        initWithClientId:@"example_client"
+        webSocketUrl:@"wss://kinegramdocval.lkis.de/ws1/validate"
     ];
 
+    // Example with custom headers
+    NSDictionary *headers = @{
+        @"Authorization": @"Bearer token123",
+        @"Custom-Header": @"Value"
+    };
+
     [_wrapper readPassportWithCan:@"123465" 
-                    validationId:@"unique_session_id" 
+                    validationId:@"unique_session_id"
+                    httpHeaders:headers
                      completion:^(NSString * _Nullable passportJson, NSError * _Nullable error) {
         NSLog(@"passportJson: %@", passportJson);
         NSLog(@"error: %@", error);

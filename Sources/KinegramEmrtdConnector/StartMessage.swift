@@ -8,7 +8,8 @@
 import Foundation
 
 struct StartMessage: Encodable {
-    let clientId, validationId: String
+    let clientId: String
+    let validationId: String
     let accessKey: [String: String]
     let nfcAdapterSupportsExtendedLength: Bool = true
     var maxCommandBytes: Int?

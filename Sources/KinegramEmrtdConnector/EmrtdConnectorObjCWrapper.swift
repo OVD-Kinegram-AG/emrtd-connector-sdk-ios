@@ -21,6 +21,7 @@ import CoreNFC
     private var dateOfExpiry: String?
     private var can: String?
     private var validationId: String?
+    private var httpHeaders: [String: String]?
 
     private let errorDomain = "io.kinegram.emrtd"
 
@@ -48,13 +49,14 @@ import CoreNFC
     ///   - dateOfBirth: Date of Birth from the MRZ (Format: yyMMdd)
     ///   - dateOfExpiry: Date of Expiry from the MRZ (Format: yyMMdd)
     ///   - validationId: Unique identifier for this validation session
+    ///   - httpHeaders: Optional HTTP headers for the WebSocket connection
     ///   - completion: Completion handler called with optional error
     @objc public func readPassport(documentNumber: String,
                                    dateOfBirth: String,
                                    dateOfExpiry: String,
                                    validationId: String,
+                                   httpHeaders: [String: String]? = nil,
                                    completion: @escaping (String?, Error?) -> Void) {
-
         guard handleNFCAvailability(completion: completion) else {
             return
         }
@@ -63,6 +65,7 @@ import CoreNFC
         self.dateOfBirth = dateOfBirth
         self.dateOfExpiry = dateOfExpiry
         self.validationId = validationId
+        self.httpHeaders = httpHeaders
         self.can = nil
         self.completionCallback = completion
 
@@ -76,17 +79,19 @@ import CoreNFC
     /// - Parameters:
     ///   - can: CAN, a 6 digit number, printed on the front of the document
     ///   - validationId: Unique identifier for this validation session
+    ///   - httpHeaders: Optional HTTP headers for the WebSocket connection
     ///   - completion: Completion handler called with optional error
     @objc public func readPassport(can: String,
                                    validationId: String,
+                                   httpHeaders: [String: String]? = nil,
                                    completion: @escaping (String?, Error?) -> Void) {
-
         guard handleNFCAvailability(completion: completion) else {
             return
         }
 
         self.can = can
         self.validationId = validationId
+        self.httpHeaders = httpHeaders
         self.documentNumber = nil
         self.dateOfBirth = nil
         self.dateOfExpiry = nil
@@ -134,7 +139,8 @@ extension EmrtdConnectorObjCWrapper: NFCTagReaderSessionDelegate {
         if let can = can {
             connector?.connect(to: iso7816Tag,
                                vId: validationId,
-                               can: can)
+                               can: can,
+                               httpHeaders: httpHeaders)
         } else if let documentNumber = documentNumber,
                   let dateOfBirth = dateOfBirth,
                   let dateOfExpiry = dateOfExpiry {
@@ -142,7 +148,8 @@ extension EmrtdConnectorObjCWrapper: NFCTagReaderSessionDelegate {
                                vId: validationId,
                                documentNumber: documentNumber,
                                dateOfBirth: dateOfBirth,
-                               dateOfExpiry: dateOfExpiry)
+                               dateOfExpiry: dateOfExpiry,
+                               httpHeaders: httpHeaders)
         } else {
             session.invalidate(errorMessage: "Missing credentials")
         }
@@ -217,5 +224,6 @@ extension EmrtdConnectorObjCWrapper: EmrtdConnectorDelegate {
         dateOfExpiry = nil
         can = nil
         validationId = nil
+        httpHeaders = nil
     }
 }

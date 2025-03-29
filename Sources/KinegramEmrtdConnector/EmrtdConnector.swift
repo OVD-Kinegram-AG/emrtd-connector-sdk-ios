@@ -10,8 +10,8 @@ import CoreNFC
 ///
 /// Connect an eMRTD NFC Chip with the Document Validation Server.
 ///
-/// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag).
-/// WIll connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask).
+/// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag) .
+/// WIll connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask) .
 ///
 public class EmrtdConnector {
     private static let retQuery = "return_result=true"
@@ -50,7 +50,7 @@ public class EmrtdConnector {
     ///
     /// Starts the Session.
     ///
-    /// The `documentNumber`, `dateOfBirth`, `dateOfExpiry` function as the Access Key, 
+    /// The `documentNumber`, `dateOfBirth`, `dateOfExpiry` function as the Access Key,
     /// required to access the chip.
     ///
     /// - Parameters:
@@ -59,18 +59,22 @@ public class EmrtdConnector {
     ///   - documentNumber: Document Number from the MRZ.
     ///   - dateOfBirth: Date of Birth from the MRZ (Format: yyMMdd)
     ///   - dateOfExpiry: Date of Expiry from the MRZ (Format: yyMMdd)
+    ///   - httpHeaders: Optional HTTP headers to include in the WebSocket request
     public func connect(to passportTag: NFCISO7816Tag,
                         vId: String,
                         documentNumber: String,
                         dateOfBirth: String,
-                        dateOfExpiry: String) {
-        let key = [
+                        dateOfExpiry: String,
+                        httpHeaders: [String: String]? = nil) {
+        let accessKey = [
             "document_number": documentNumber,
             "date_of_birth": dateOfBirth,
             "date_of_expiry": dateOfExpiry
         ]
-        let startMsg = StartMessage(clientId: clientId, validationId: vId, accessKey: key)
-        connect(passportTag: passportTag, startMessage: startMsg)
+        let startMessage = StartMessage(clientId: clientId,
+                                        validationId: vId,
+                                        accessKey: accessKey)
+        connect(passportTag: passportTag, startMessage: startMessage, httpHeaders: httpHeaders)
     }
 
     ///
@@ -82,10 +86,16 @@ public class EmrtdConnector {
     ///   - passportTag: NFCISO7816Tag acquired from iOS
     ///   - vId: Unique String to identify this session.
     ///   - can: CAN, a 6 digit number, printed on the front of the document.
-    public func connect(to passportTag: NFCISO7816Tag, vId: String, can: String) {
-        let key = ["can": can]
-        let startMsg = StartMessage(clientId: clientId, validationId: vId, accessKey: key)
-        connect(passportTag: passportTag, startMessage: startMsg)
+    ///   - httpHeaders: Optional HTTP headers to include in the WebSocket request
+    public func connect(to passportTag: NFCISO7816Tag,
+                        vId: String,
+                        can: String,
+                        httpHeaders: [String: String]? = nil) {
+        let accessKey = ["can": can]
+        let startMessage = StartMessage(clientId: clientId,
+                                        validationId: vId,
+                                        accessKey: accessKey)
+        connect(passportTag: passportTag, startMessage: startMessage, httpHeaders: httpHeaders)
     }
 
     ///
@@ -96,7 +106,7 @@ public class EmrtdConnector {
         webSocketSessionDelegate != nil && webSocketTask?.state == .running
     }
 
-    private func connect(passportTag: NFCISO7816Tag, startMessage: StartMessage) {
+    private func connect(passportTag: NFCISO7816Tag, startMessage: StartMessage, httpHeaders: [String: String]? = nil) {
         websocketError = nil
         nfcError = nil
 
@@ -123,6 +133,12 @@ public class EmrtdConnector {
         config.timeoutIntervalForResource = 120
         var request = URLRequest(url: url)
         request.networkServiceType = .responsiveData
+
+        // Set additional HTTP headers if provided
+        httpHeaders?.forEach { key, value in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
+
         let webSocketTask = URLSession(configuration: config, delegate: webSocketSessionDelegate, delegateQueue: .main)
             .webSocketTask(with: request)
         self.webSocketTask = webSocketTask
