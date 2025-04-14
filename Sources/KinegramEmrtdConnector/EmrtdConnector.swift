@@ -10,8 +10,8 @@ import CoreNFC
 ///
 /// Connect an eMRTD NFC Chip with the Document Validation Server.
 ///
-/// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag) .
-/// WIll connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask) .
+/// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag)  .
+/// WIll connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask)  .
 ///
 public class EmrtdConnector {
     private static let retQuery = "return_result=true"
@@ -60,12 +60,14 @@ public class EmrtdConnector {
     ///   - dateOfBirth: Date of Birth from the MRZ (Format: yyMMdd)
     ///   - dateOfExpiry: Date of Expiry from the MRZ (Format: yyMMdd)
     ///   - httpHeaders: Optional HTTP headers to include in the WebSocket request
+    ///   - enableDiagnostics: Optional flag for enabling sending diagnostics data (used for debugging puposes)
     public func connect(to passportTag: NFCISO7816Tag,
                         vId: String,
                         documentNumber: String,
                         dateOfBirth: String,
                         dateOfExpiry: String,
-                        httpHeaders: [String: String]? = nil) {
+                        httpHeaders: [String: String]? = nil,
+                        enableDiagnostics: Bool? = nil) {
         let accessKey = [
             "document_number": documentNumber,
             "date_of_birth": dateOfBirth,
@@ -73,7 +75,10 @@ public class EmrtdConnector {
         ]
         let startMessage = StartMessage(clientId: clientId,
                                         validationId: vId,
-                                        accessKey: accessKey)
+                                        accessKey: accessKey,
+                                        enableDiagnostics: enableDiagnostics)
+
+        debugPrint(startMessage)
         connect(passportTag: passportTag, startMessage: startMessage, httpHeaders: httpHeaders)
     }
 
@@ -87,14 +92,19 @@ public class EmrtdConnector {
     ///   - vId: Unique String to identify this session.
     ///   - can: CAN, a 6 digit number, printed on the front of the document.
     ///   - httpHeaders: Optional HTTP headers to include in the WebSocket request
+    ///   - enableDiagnostics: Optional flag for enabling sending diagnostics data (used for debugging puposes)
     public func connect(to passportTag: NFCISO7816Tag,
                         vId: String,
                         can: String,
-                        httpHeaders: [String: String]? = nil) {
+                        httpHeaders: [String: String]? = nil,
+                        enableDiagnostics: Bool? = nil) {
         let accessKey = ["can": can]
         let startMessage = StartMessage(clientId: clientId,
                                         validationId: vId,
-                                        accessKey: accessKey)
+                                        accessKey: accessKey,
+                                        enableDiagnostics: enableDiagnostics)
+
+        debugPrint(startMessage)
         connect(passportTag: passportTag, startMessage: startMessage, httpHeaders: httpHeaders)
     }
 

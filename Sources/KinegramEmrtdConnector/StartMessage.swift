@@ -7,6 +7,10 @@
 
 import Foundation
 
+/// A structure representing a start message used for initializing a connection.
+///
+/// The `StartMessage` struct is responsible for encoding the necessary data
+/// to initiate a connection.
 struct StartMessage: Encodable {
     let clientId: String
     let validationId: String
@@ -15,6 +19,7 @@ struct StartMessage: Encodable {
     var maxCommandBytes: Int?
     var maxResponseBytes: Int?
     let platform = "ios"
+    var enableDiagnostics: Bool? = nil
 
     func asJsonString() -> String {
         let data = (try? JSONEncoder().encode(self)) ?? Data()
@@ -29,5 +34,6 @@ struct StartMessage: Encodable {
         case maxCommandBytes = "max_command_bytes"
         case maxResponseBytes = "max_response_bytes"
         case platform
+        case enableDiagnostics = "enable_diagnostics"
     }
 }
