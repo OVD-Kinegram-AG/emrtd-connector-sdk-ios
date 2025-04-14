@@ -22,6 +22,7 @@ import CoreNFC
     private var can: String?
     private var validationId: String?
     private var httpHeaders: [String: String]?
+    private var enableDiagnostics: Bool? = nil
 
     private let errorDomain = "io.kinegram.emrtd"
 
@@ -50,12 +51,14 @@ import CoreNFC
     ///   - dateOfExpiry: Date of Expiry from the MRZ (Format: yyMMdd)
     ///   - validationId: Unique identifier for this validation session
     ///   - httpHeaders: Optional HTTP headers for the WebSocket connection
+    ///   - enableDiagnostics: Flag to enable diagnostics (used for debugging puposes)
     ///   - completion: Completion handler called with optional error
     @objc public func readPassport(documentNumber: String,
                                    dateOfBirth: String,
                                    dateOfExpiry: String,
                                    validationId: String,
                                    httpHeaders: [String: String]? = nil,
+                                   enableDiagnostics: NSNumber? = nil,
                                    completion: @escaping (String?, Error?) -> Void) {
         guard handleNFCAvailability(completion: completion) else {
             return
@@ -66,6 +69,10 @@ import CoreNFC
         self.dateOfExpiry = dateOfExpiry
         self.validationId = validationId
         self.httpHeaders = httpHeaders
+
+        // NSNumber? to Bool? because ObjC does not support Swift's optional Bool
+        self.enableDiagnostics = enableDiagnostics?.boolValue
+
         self.can = nil
         self.completionCallback = completion
 
@@ -80,10 +87,12 @@ import CoreNFC
     ///   - can: CAN, a 6 digit number, printed on the front of the document
     ///   - validationId: Unique identifier for this validation session
     ///   - httpHeaders: Optional HTTP headers for the WebSocket connection
+    ///   - enableDiagnostics: Flag to enable diagnostics (used for debugging puposes)
     ///   - completion: Completion handler called with optional error
     @objc public func readPassport(can: String,
                                    validationId: String,
                                    httpHeaders: [String: String]? = nil,
+                                   enableDiagnostics: NSNumber? = nil,
                                    completion: @escaping (String?, Error?) -> Void) {
         guard handleNFCAvailability(completion: completion) else {
             return
@@ -92,6 +101,10 @@ import CoreNFC
         self.can = can
         self.validationId = validationId
         self.httpHeaders = httpHeaders
+
+        // NSNumber? to Bool? because ObjC does not support Swift's optional Bool
+        self.enableDiagnostics = enableDiagnostics?.boolValue
+
         self.documentNumber = nil
         self.dateOfBirth = nil
         self.dateOfExpiry = nil
@@ -140,7 +153,8 @@ extension EmrtdConnectorObjCWrapper: NFCTagReaderSessionDelegate {
             connector?.connect(to: iso7816Tag,
                                vId: validationId,
                                can: can,
-                               httpHeaders: httpHeaders)
+                               httpHeaders: httpHeaders,
+                               enableDiagnostics: enableDiagnostics)
         } else if let documentNumber = documentNumber,
                   let dateOfBirth = dateOfBirth,
                   let dateOfExpiry = dateOfExpiry {
@@ -149,7 +163,8 @@ extension EmrtdConnectorObjCWrapper: NFCTagReaderSessionDelegate {
                                documentNumber: documentNumber,
                                dateOfBirth: dateOfBirth,
                                dateOfExpiry: dateOfExpiry,
-                               httpHeaders: httpHeaders)
+                               httpHeaders: httpHeaders,
+                               enableDiagnostics: enableDiagnostics)
         } else {
             session.invalidate(errorMessage: "Missing credentials")
         }
@@ -225,5 +240,6 @@ extension EmrtdConnectorObjCWrapper: EmrtdConnectorDelegate {
         can = nil
         validationId = nil
         httpHeaders = nil
+        enableDiagnostics = nil
     }
 }

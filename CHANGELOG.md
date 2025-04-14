@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.2.1
+
+* Add a flag `enableDiagnostics` to interface functions for enabling diagnostics in the DocVal server.
+
 ## 1.2.0
 
 * Add support for setting custom HTTP headers for the WebSocket connection. See `connect` method in `EmrtdConnector` class.

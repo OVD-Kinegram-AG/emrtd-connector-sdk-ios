@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEMRTDWrapper.h</key>
 		<data>
-		sZ8XBi0zgD9v7kgd9t+3rZvVi+w=
+		ZY7DBOqtTw1b2lgUK5sUr1fRKPA=
 		</data>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEmrtdConnectorObjC.h</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/Info.plist</key>
 		<data>
-		2860qWtm0PSyIQNGNZ8CwbnJuJk=
+		7xXUpRqSIUFETffR5pOTObessUc=
 		</data>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/KinegramEmrtdConnectorObjC</key>
 		<data>
-		qAt+5dT2INJcVDcBt9jqzZVaopU=
+		bU1Zndkt98dL4Kl0pIN1a4DhLUI=
 		</data>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/Modules/module.modulemap</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/_CodeSignature/CodeResources</key>
 		<data>
-		pS9G3gn/VVlWLDeJ/uWIw8llS6I=
+		E1VsuDdRxiVeETN2MXa+h+BvBzg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEMRTDWrapper.h</key>
 		<data>
-		sZ8XBi0zgD9v7kgd9t+3rZvVi+w=
+		ZY7DBOqtTw1b2lgUK5sUr1fRKPA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEmrtdConnectorObjC.h</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Info.plist</key>
 		<data>
-		yWlo7H2vOnFCitbS4oPkszqW0yM=
+		YXP7tEbMKQFmB6hG3YZBE3tM/EU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/KinegramEmrtdConnectorObjC</key>
 		<data>
-		YvHyvCpfLzY8jM5urNTvBWY5uKw=
+		Hym3EQVwhfikPOQTTCCakeu+zsU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Modules/module.modulemap</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/_CodeSignature/CodeResources</key>
 		<data>
-		DQBNE+I41C8jML3mUIom4H1AxBk=
+		KKf6sGiPsrfqu5TX2C8CY5HC6bU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -59,11 +59,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sZ8XBi0zgD9v7kgd9t+3rZvVi+w=
+			ZY7DBOqtTw1b2lgUK5sUr1fRKPA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rj9fc5wfW41JKWF21hxYu0yD9TuYSTH6HxANbrlfSDo=
+			f33tx2LGMyDF48fa7cXWbnuBTDjZruwmU1nD7Ow+QV0=
 			</data>
 		</dict>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEmrtdConnectorObjC.h</key>
@@ -81,22 +81,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2860qWtm0PSyIQNGNZ8CwbnJuJk=
+			7xXUpRqSIUFETffR5pOTObessUc=
 			</data>
 			<key>hash2</key>
 			<data>
-			uYh0Eq0HrbvH85fN52VyooTBcm759Vn7JFMgNk+jwH4=
+			hi+skpgeQEkzOJGOkW58RiGRy8AM7WiWKS97oRMMJK4=
 			</data>
 		</dict>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/KinegramEmrtdConnectorObjC</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qAt+5dT2INJcVDcBt9jqzZVaopU=
+			bU1Zndkt98dL4Kl0pIN1a4DhLUI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/LmTDuF0idFEAVmhOTtSmZr265RrWcyaetGrKzlA5fg=
+			O9HAHS75l4ieAgMUUXlDGe825oj+fQNb/tZAJ50PoVw=
 			</data>
 		</dict>
 		<key>ios-arm64/KinegramEmrtdConnectorObjC.framework/Modules/module.modulemap</key>
@@ -114,22 +114,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pS9G3gn/VVlWLDeJ/uWIw8llS6I=
+			E1VsuDdRxiVeETN2MXa+h+BvBzg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Xn3lVUpkpNdpSrFz4McuuQIbU55a757DxQQ3vwO0IEA=
+			woY/nMcKoh1DT+YRoFDANfAEpqdIlb6DK54WwlIq9u8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEMRTDWrapper.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sZ8XBi0zgD9v7kgd9t+3rZvVi+w=
+			ZY7DBOqtTw1b2lgUK5sUr1fRKPA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rj9fc5wfW41JKWF21hxYu0yD9TuYSTH6HxANbrlfSDo=
+			f33tx2LGMyDF48fa7cXWbnuBTDjZruwmU1nD7Ow+QV0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Headers/KinegramEmrtdConnectorObjC.h</key>
@@ -147,22 +147,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yWlo7H2vOnFCitbS4oPkszqW0yM=
+			YXP7tEbMKQFmB6hG3YZBE3tM/EU=
 			</data>
 			<key>hash2</key>
 			<data>
-			OW1x0LRFXmPG1mODv3LcMsRu70W7SKtNSRuCO0S9VME=
+			ui5w6MvMiY9/whvw7BfHzVFsjOuJRL/OeBp+WDw208k=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/KinegramEmrtdConnectorObjC</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YvHyvCpfLzY8jM5urNTvBWY5uKw=
+			Hym3EQVwhfikPOQTTCCakeu+zsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			x7rzpWYFqa5l20ZOAvFFUjPxAKy87pnJmz/HtAmQpnA=
+			pSyvHNQx3HXqJkvZT1Ynpkg6L7n2MolnDImagn6OsEs=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KinegramEmrtdConnectorObjC.framework/Modules/module.modulemap</key>
@@ -180,11 +180,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DQBNE+I41C8jML3mUIom4H1AxBk=
+			KKf6sGiPsrfqu5TX2C8CY5HC6bU=
 			</data>
 			<key>hash2</key>
 			<data>
-			F8DkMXw4pjF4CYMHIWDQZjbZTwpo0NgAQ58hBPzkzuE=
+			+bbKIDj0gzH1wWXaW/kaA8fCmKjW8bhxjE78x3A0h/0=
 			</data>
 		</dict>
 	</dict>
