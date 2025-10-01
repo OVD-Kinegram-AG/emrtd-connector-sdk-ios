@@ -1,17 +1,17 @@
-# Kinegram eMRTD Connector SDK iOS
+# KINEGRAM eMRTD Connector iOS SDK
 
-The Kinegram eMRTD Connector enables your iOS app to read and verify electronic passports / id cards ([eMRTDs][emrtd]).
+iOS SDK for KINEGRAM eMRTD verification using the v2 WebSocket protocol.
 
 ```
     ┌───────────────┐     Results     ┌─────────────────┐
     │ DocVal Server │────────────────▶│   Your Server   │
     └───────────────┘                 └─────────────────┘
             ▲
-            │ WebSocket
+            │ WebSocket v2
             ▼
 ┏━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃                        ┃
-┃    eMRTD Connector     ┃
+┃  eMRTD Connector       ┃
 ┃                        ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━┛
             ▲
@@ -29,68 +29,237 @@ The Kinegram eMRTD Connector enables your iOS app to read and verify electronic 
     └──────────────┘
 ```
 
-The *Kinegram eMRTD Connector* enables the [Document Validation Server (DocVal)][docval] to communicate with the eMRTD through a secure WebSocket connection.
+The *eMRTD Connector* enables the [Document Validation Server (DocVal)][docval] to read and verify eMRTD documents through a secure WebSocket connection.
 
-## Example App
+## Why V2?
 
-The Xcode Project `Sources/ExampleApp.xcodeproj` contains an Example App to demonstrate usage and functionality.
+V2 solves the iOS 20-second NFC timeout issue by moving most APDU exchanges to the device. Instead of relaying every APDU through the server (causing latency to accumulate), V2 performs bulk reading locally and uses the server only for security-critical operations.
 
-### Requirements
+**Upgrading from V1?** See the [Migration Guide](MIGRATION_V1_TO_V2.md) for detailed instructions.
 
-* **Xcode 15** or later
-* Device Running iOS 13.0 or later (because of the iOS NFC APIs)
+## Features
 
-### Runnning
+- ✅ **Simple one-call validation API** - just `validate(with:)`
+- ✅ **iOS 15+ with async/await** - modern Swift concurrency
+- ✅ **APDU relay for Chip Authentication** - secure server-side verification
 
-Set your Team in the `Signing & Capabilities` settings for all Targets in this project.
+## Requirements
 
-Select the scheme `ExampleApp` and click **Run**.
+- iOS 15.0+
+- Swift 5.5+
+- Physical device with NFC capability
+- KinegramEmrtd.xcframework (included)
 
-## Include the Kinegram eMRTD Connector in your app
 
-The Swift Package can be included in apps with Deployment Target 11.0 or later.
+## Installation
 
 ### Swift Package Manager
 
-[Adding package dependencies to your app][add-packages]
+Add the following to your `Package.swift`:
 
-1. Select _File_ -> _Add Package Dependencies..._ and paste this repository's URL `https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios.git` into the search field.
-2. Select **your Project** and click `Add Package`.
-3. Add **your App's Target** for the product `KinegramEmrtdConnector` and click `Add Package`.
-
-### CocoaPods
-
-[Using CocoaPods][using-cocoapods]
-
-Add the pod `KinegramEmrtdConnector` to your Podfile.
-
-```
-target 'MyApp' do
-  pod 'KinegramEmrtdConnector', '~> 1.0.0'
-end
+```swift
+dependencies: [
+    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.0.0")
+]
 ```
 
-Run `$ pod install` in your project directory.
+The package includes the KinegramEmrtd.xcframework binary dependency automatically.
 
-### ObjC compatible version of *KinegramEmrtdConnector*
+## Quick Start
 
-There is an Objective-C compatible version of this connector in the `ObjCFramework` folder, which was built as a static framework. This `KinegramEmrtdConnectorObjC.xcframework` can be used by ObjC-only projects and also by common cross-platform projects (.net MAUI, Flutter, ReactNative) that cannot yet handle the Swift interface. More info in [ObjCFramework/README.md](ObjCFramework/README.md)
+```swift
+import KinegramEmrtdConnector
 
-## Usage and API description
+// Initialize connector
+let connector = EmrtdConnector(
+    serverURL: URL(string: "wss://server.example.com/ws2/validate")!,
+    validationId: UUID().uuidString,
+    clientId: "YOUR-CLIENT-ID"
+)
 
-[DocC documentation][documentation]
+// Validate with MRZ
+let mrzKey = MRZKey(
+    documentNumber: "P1234567",
+    birthDateyyMMdd: "900101", 
+    expiryDateyyMMdd: "250101"
+)
 
-## Changelog
+let result = try await connector.validate(with: mrzKey)
 
-[Changelog](CHANGELOG.md)
+if result.isValid {
+    print("Document holder: \(result.mrzInfo?.primaryIdentifier ?? "")")
+}
+```
 
-## Privacy Notice
+That's it! The SDK handles connection, validation, and disconnection automatically.
 
-ℹ️ [Privacy Notice][privacy-notice]
+### Advanced Usage (Manual Connection)
 
-[emrtd]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/Security%20Mechanisms
+If you need more control, you can still use the explicit connection approach:
+
+```swift
+// Connect first
+try await connector.connect()
+
+// Then validate
+let result = try await connector.startValidation(accessKey: mrzKey)
+
+// Disconnect when done
+await connector.disconnect()
+```
+
+### Using with CAN
+
+For passports that require CAN (Card Access Number):
+
+```swift
+let canKey = CANKey(can: "123456") // 6-digit CAN
+let result = try await connector.validate(with: canKey)
+```
+
+### Custom HTTP Headers (Optional)
+
+If your server requires custom headers (e.g., for authentication), you can optionally provide them. These headers will be forwarded by DocVal to your result server:
+
+```swift
+let headers = [
+    "Authorization": "Bearer your-token",
+    "X-Custom-Header": "value"
+]
+
+let connector = EmrtdConnector(
+    serverURL: URL(string: "wss://server.example.com/ws2/validate")!,
+    validationId: UUID().uuidString,
+    clientId: "YOUR-CLIENT-ID",
+    httpHeaders: headers  // Optional parameter
+)
+```
+
+Note: This is only for specific use cases where your result server requires additional authentication or metadata.
+
+### Fire-and-Forget Mode (Optional)
+
+If you don't need to receive the validation result back from the server, you can use the `receiveResult` parameter:
+
+```swift
+let connector = EmrtdConnector(
+    serverURL: URL(string: "wss://server.example.com/ws2/validate")!,
+    validationId: UUID().uuidString,
+    clientId: "YOUR-CLIENT-ID",
+    receiveResult: false
+)
+
+// The validate call will complete after sending data to server
+try await connector.validate(with: mrzKey)
+```
+
+When `receiveResult` is false, the server won't send back the validation result, reducing latency and bandwidth usage.
+
+
+## Documentation
+
+Full API documentation is available at: [https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios/documentation/kinegramemrtdconnector](https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios/documentation/kinegramemrtdconnector)
+
+## Example App
+
+Check out the [Example](https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios/tree/main/Example) directory for a complete SwiftUI app demonstrating:
+- MRZ and CAN validation
+- Progress updates
+- Error handling
+
+## Error Handling
+
+```swift
+do {
+    let result = try await connector.validate(with: mrzKey)
+} catch EmrtdConnectorError.nfcNotAvailable(let reason) {
+    print("NFC not available: \(reason)")
+} catch EmrtdConnectorError.connectionTimeout {
+    print("Timeout - hold passport steady")
+} catch EmrtdConnectorError.incompleteRead(let missingFiles, let reason) {
+    print("Missing files: \(missingFiles.joined(separator: ", "))")
+    print("Reason: \(reason)")
+} catch EmrtdReaderError.accessControlFailed {
+    print("Wrong MRZ/CAN")
+} catch {
+    print("Error: \(error)")
+}
+```
+
+## Progress Updates
+
+```swift
+// Set delegate for progress updates
+connector.delegate = self
+
+// Implement delegate method
+func connector(_ connector: EmrtdConnector, didUpdateNFCStatus status: NFCProgressStatus) async {
+    print(status.alertMessage)
+    // Shows: "Reading Document Data\n▮▮▮▮▯▯▯"
+}
+```
+
+## Server Post Confirmation
+
+The SDK provides a delegate callback to confirm when the server has successfully posted results (Close Code 1000):
+
+```swift
+// This is called when server successfully posts to result server
+func connectorDidSuccessfullyPostToServer(_ connector: EmrtdConnector) async {
+    print("Server successfully posted results")
+    // You can now proceed knowing the server processed the data
+}
+```
+
+## Localization
+
+The SDK provides English status messages by default. To localize the NFC dialog messages for your users:
+
+```swift
+// Configure localization before validation
+connector.nfcStatusLocalization = { status in
+    // Return your localized message based on the status
+    switch status.step {
+    case .waitingForPassport:
+        return NSLocalizedString("nfc.waitingForPassport", comment: "")
+    case .readingDG1:
+        return NSLocalizedString("nfc.readingDocumentData", comment: "")
+    // ... handle other cases
+    default:
+        return status.alertMessage // Fall back to English
+    }
+}
+
+// The NFC dialog will now show your localized messages
+let result = try await connector.validate(with: accessKey)
+```
+
+## Requirements Setup
+
+### 1. Enable NFC Capability
+In Xcode, enable "Near Field Communication Tag Reading" capability.
+
+### 2. Info.plist
+```xml
+<key>NFCReaderUsageDescription</key>
+<string>This app uses NFC to read eMRTD documents</string>
+```
+
+### 3. Entitlements
+```xml
+<key>com.apple.developer.nfc.readersession.formats</key>
+<array>
+    <string>NDEF</string>
+    <string>TAG</string>
+</array>
+```
+
+## Debug Logging
+
+Debug logging is automatically enabled in DEBUG builds. Log messages will appear in the console during development.
+
+## License
+
+Proprietary - KINEGRAM AG
+
 [docval]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/
-[add-packages]: https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app
-[using-cocoapods]: https://guides.cocoapods.org/using/using-cocoapods.html
-[documentation]: https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios/documentation/kinegramemrtdconnector
-[privacy-notice]: https://kinegram.digital/privacy-notice/

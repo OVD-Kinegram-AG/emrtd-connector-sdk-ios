@@ -1,6 +1,0 @@
-framework module KinegramEmrtdConnector {
-  umbrella header "KinegramEmrtdConnector-umbrella.h"
-
-  export *
-  module * { export * }
-}

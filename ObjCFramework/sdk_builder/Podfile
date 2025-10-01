@@ -1,6 +1,0 @@
-platform :ios, '15.0'
-use_frameworks! :linkage => :static
-
-target 'KinegramEmrtdConnectorObjC' do
-  pod 'KinegramEmrtdConnector', :path => '../../'
-end

@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D215CCC12D6766DA003139DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D215CCB92D6766DA003139DA /* ContentView.swift */; };
+		D215CCC22D6766DA003139DA /* ConnectorExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D215CCBC2D6766DA003139DA /* ConnectorExampleApp.swift */; };
+		D215CCC32D6766DA003139DA /* ConnectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D215CCBA2D6766DA003139DA /* ConnectorViewModel.swift */; };
+		D215CCC42D6766DA003139DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D215CCB72D6766DA003139DA /* Assets.xcassets */; };
+		D23C65D12E3C0F980054E573 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C65D02E3C0F980054E573 /* HelperViews.swift */; };
+		D2BD4DC22D6776F800B42E8C /* CryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BD4DC12D6776F800B42E8C /* CryptoKit.framework */; };
+		D2BD4DC42D67770000B42E8C /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BD4DC32D67770000B42E8C /* CoreNFC.framework */; };
+		D2C92D7E2E463C450005AE5D /* KinegramEmrtdConnector in Frameworks */ = {isa = PBXBuildFile; productRef = D2C92D7D2E463C450005AE5D /* KinegramEmrtdConnector */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D215CCB72D6766DA003139DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D215CCB92D6766DA003139DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D215CCBA2D6766DA003139DA /* ConnectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorViewModel.swift; sourceTree = "<group>"; };
+		D215CCBB2D6766DA003139DA /* KinegramEmrtdExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinegramEmrtdExample.entitlements; sourceTree = "<group>"; };
+		D215CCBC2D6766DA003139DA /* ConnectorExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorExampleApp.swift; sourceTree = "<group>"; };
+		D22877B02D67700D0013D620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D23C65D02E3C0F980054E573 /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
+		D27001222E38A34E00BBA259 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D2AEADAC2D67643D004C668D /* ConnectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BD4DC12D6776F800B42E8C /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CryptoKit.framework; sourceTree = DEVELOPER_DIR; };
+		D2BD4DC32D67770000B42E8C /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/CoreNFC.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AEADA92D67643D004C668D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2BD4DC22D6776F800B42E8C /* CryptoKit.framework in Frameworks */,
+				D2BD4DC42D67770000B42E8C /* CoreNFC.framework in Frameworks */,
+				D2C92D7E2E463C450005AE5D /* KinegramEmrtdConnector in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D215CCBE2D6766DA003139DA /* ConnectorExample */ = {
+			isa = PBXGroup;
+			children = (
+				D215CCBC2D6766DA003139DA /* ConnectorExampleApp.swift */,
+				D215CCB92D6766DA003139DA /* ContentView.swift */,
+				D215CCBA2D6766DA003139DA /* ConnectorViewModel.swift */,
+				D23C65D02E3C0F980054E573 /* HelperViews.swift */,
+				D215CCB72D6766DA003139DA /* Assets.xcassets */,
+				D22877B02D67700D0013D620 /* Info.plist */,
+				D215CCBB2D6766DA003139DA /* KinegramEmrtdExample.entitlements */,
+			);
+			path = ConnectorExample;
+			sourceTree = "<group>";
+		};
+		D2AEADA32D67643D004C668D = {
+			isa = PBXGroup;
+			children = (
+				D27001222E38A34E00BBA259 /* README.md */,
+				D215CCBE2D6766DA003139DA /* ConnectorExample */,
+				D2BD4DC02D6776F700B42E8C /* Frameworks */,
+				D2AEADAD2D67643D004C668D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2AEADAD2D67643D004C668D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AEADAC2D67643D004C668D /* ConnectorExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2BD4DC02D6776F700B42E8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2BD4DC32D67770000B42E8C /* CoreNFC.framework */,
+				D2BD4DC12D6776F800B42E8C /* CryptoKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2AEADAB2D67643D004C668D /* ConnectorExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2AEADBB2D67643E004C668D /* Build configuration list for PBXNativeTarget "ConnectorExample" */;
+			buildPhases = (
+				D2AEADA82D67643D004C668D /* Sources */,
+				D2AEADA92D67643D004C668D /* Frameworks */,
+				D2AEADAA2D67643D004C668D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConnectorExample;
+			packageProductDependencies = (
+				D2C92D7D2E463C450005AE5D /* KinegramEmrtdConnector */,
+			);
+			productName = KinegramEmrtdExample;
+			productReference = D2AEADAC2D67643D004C668D /* ConnectorExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2AEADA42D67643D004C668D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					D2AEADAB2D67643D004C668D = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = D2AEADA72D67643D004C668D /* Build configuration list for PBXProject "ConnectorExample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2AEADA32D67643D004C668D;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D2C92D7C2E463C450005AE5D /* XCLocalSwiftPackageReference "../../kinegram-emrtd-connector-sdk-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D2AEADAD2D67643D004C668D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AEADAB2D67643D004C668D /* ConnectorExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2AEADAA2D67643D004C668D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D215CCC42D6766DA003139DA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AEADA82D67643D004C668D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D215CCC12D6766DA003139DA /* ContentView.swift in Sources */,
+				D23C65D12E3C0F980054E573 /* HelperViews.swift in Sources */,
+				D215CCC32D6766DA003139DA /* ConnectorViewModel.swift in Sources */,
+				D215CCC22D6766DA003139DA /* ConnectorExampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D2AEADB92D67643E004C668D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D2AEADBA2D67643E004C668D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D2AEADBC2D67643E004C668D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConnectorExample/KinegramEmrtdExample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = EFFLVPGMFM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ConnectorExample/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinegram.ios.KinegramEmrtdExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "KinegramEmrtdExample DEV";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D2AEADBD2D67643E004C668D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConnectorExample/KinegramEmrtdExample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = EFFLVPGMFM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ConnectorExample/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinegram.ios.KinegramEmrtdExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "KinegramEmrtdExample DEV";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2AEADA72D67643D004C668D /* Build configuration list for PBXProject "ConnectorExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2AEADB92D67643E004C668D /* Debug */,
+				D2AEADBA2D67643E004C668D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2AEADBB2D67643E004C668D /* Build configuration list for PBXNativeTarget "ConnectorExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2AEADBC2D67643E004C668D /* Debug */,
+				D2AEADBD2D67643E004C668D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D2C92D7C2E463C450005AE5D /* XCLocalSwiftPackageReference "../../kinegram-emrtd-connector-sdk-ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../kinegram-emrtd-connector-sdk-ios";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2C92D7D2E463C450005AE5D /* KinegramEmrtdConnector */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KinegramEmrtdConnector;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D2AEADA42D67643D004C668D /* Project object */;
+}

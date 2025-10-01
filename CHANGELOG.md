@@ -1,5 +1,27 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.0.13
+
+### Major Version Release - V2
+
+This is a **major rewrite** of the eMRTD Connector SDK with significant architectural changes and breaking changes from V1.
+
+**✨ Key Improvements:**
+- Solves the iOS 20-second NFC timeout issue by moving APDU exchanges to the device
+- Simple one-call validation API with `validate(with:)`
+- Modern Swift concurrency with async/await
+- Improved error handling and progress reporting
+
+**⚠️ Breaking Changes:**
+- **New WebSocket protocol** - Uses v2 protocol
+- **Complete API redesign** - Async/await based, simplified interface
+- **Minimum iOS version increased** from iOS 13.0 to iOS 15.0
+- **Swift Package Manager only** - CocoaPods support removed
+- **Binary dependency required** - Now includes `KinegramEmrtd.xcframework`
+
+**📚 Migration:**
+See [MIGRATION_V1_TO_V2.md](MIGRATION_V1_TO_V2.md) for detailed migration instructions from V1.
+
 ## 1.2.1
 
 * Add a flag `enableDiagnostics` to interface functions for enabling diagnostics in the DocVal server.

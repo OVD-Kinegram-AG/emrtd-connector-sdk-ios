@@ -8,22 +8,24 @@ on:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-15
     env:
-      project: Sources/ExampleApp.xcodeproj
-      build_scheme: KinegramEmrtdConnector
-      GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+      GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check-out repo
         uses: actions/checkout@v4
-      - name: Select Xcode 15.2
-        run: sudo xcode-select -s /Applications/Xcode_15.2.app/Contents/Developer
+      - name: Select Xcode 16.4
+        run: sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
       - name: Build DocC archive
         run: >
-          xcodebuild docbuild -project $project -sdk iphoneos -scmProvider xcode -configuration Release 
-          -scheme $build_scheme -derivedDataPath $RUNNER_TEMP DOCC_HOSTING_BASE_PATH=${{ github.event.repository.name  }}
+          xcodebuild docbuild
+          -scheme "Kinegram eMRTD Connector"
+          -destination 'generic/platform=iOS'
+          -configuration Release
+          -derivedDataPath $RUNNER_TEMP
+          DOCC_HOSTING_BASE_PATH=${{ github.event.repository.name }}
       - name: Copy DocC documentation to directory "_site"
-        run: mkdir _site && cp -r $RUNNER_TEMP/Build/Products/Release-iphoneos/*.doccarchive/* _site/.
+        run: mkdir _site && find $RUNNER_TEMP -name '*.doccarchive' -exec cp -R {}/. _site/ \;
       - name: Render Markdown files to directory "_site"
         run: |
           for file in *.md; do

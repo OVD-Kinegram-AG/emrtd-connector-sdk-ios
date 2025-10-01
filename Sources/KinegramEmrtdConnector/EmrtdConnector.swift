@@ -1,292 +1,443 @@
-//
-//  EmrtdConnector.swift
-//  kinegram_emrtd_connector
-//
-//  Created by Tim Vogel on 04.01.22.
-//
+import Foundation
+import KinegramEmrtd
 
-import CoreNFC
-
-///
-/// Connect an eMRTD NFC Chip with the Document Validation Server.
-///
-/// Will connect to the NFC Chip using an [NFCISO7816Tag](https://developer.apple.com/documentation/corenfc/nfciso7816tag)  .
-/// WIll connect to the Document Validation Server using an [URLSessionWebSocketTask](https://developer.apple.com/documentation/foundation/urlsessionwebsockettask)  .
-///
+/// Main entry point for the eMRTD Connector v2 SDK
 public class EmrtdConnector {
-    private static let retQuery = "return_result=true"
+    private let serverURL: URL
+    private let validationId: String
     private let clientId: String
-    private let url: URL
-    private weak var delegate: EmrtdConnectorDelegate?
-    private weak var webSocketSessionDelegate: WebSocketSessionDelegate?
-    private var webSocketTask: URLSessionWebSocketTask?
-    private var nfcError: Error?
-    private var websocketError: Error?
+    private let httpHeaders: [String: String]
+    private let enableDiagnostics: Bool
+    private let receiveResult: Bool
 
-    ///
+    private var connection: WebSocketConnection?
+    private var sessionCoordinator: WebSocketSessionCoordinator?
+    private let retryHandler = RetryHandler()
+
+    /// Delegate for validation events
+    public weak var delegate: EmrtdConnectorDelegate?
+
+    /// Delegate for monitoring events from the eMRTD SDK
+    public weak var monitoringDelegate: EmrtdConnectorMonitoringDelegate?
+
+    /// Optional custom localization for NFC status messages
+    /// If not provided, English default messages will be used
+    public var nfcStatusLocalization: ((NFCProgressStatus) -> String)?
+
+    /// Current connection state
+    public private(set) var isConnected = false
+
+    /// Initialize the connector
     /// - Parameters:
-    ///     - clientId: Client Id
-    ///     - webSocketUrl: Url of the WebSocket endpoint
-    ///     - delegate: EmrtdConnectorDelegate
-    ///
-    /// - Returns: A newly initialized EmrtdConnector; otherwise, nil if the webSocketUrl is an invalid string.
-    public init?(clientId: String,
-                 webSocketUrl url: String,
-                 delegate: EmrtdConnectorDelegate) {
-        let shouldRequestEmrtdPassport = delegate.shouldRequestEmrtdPassport()
-
-        var query = ""
-        if shouldRequestEmrtdPassport && !url.contains(EmrtdConnector.retQuery) {
-            query = url.contains("?") ? "&" : "?" + EmrtdConnector.retQuery
-        }
-        guard let u = URL(string: url + query) else {
-            return nil
-        }
-        self.url = u
+    ///   - serverURL: WebSocket server URL (wss://...)
+    ///   - validationId: Unique validation identifier
+    ///   - clientId: Client identifier
+    ///   - httpHeaders: Optional custom HTTP headers for the WebSocket connection
+    ///   - enableDiagnostics: Optional flag for enabling sending diagnostics data (used for debugging purposes)
+    ///   - receiveResult: Whether to receive the validation result from the server (default: true)
+    public init(serverURL: URL, validationId: String, clientId: String, httpHeaders: [String: String] = [:], enableDiagnostics: Bool = false, receiveResult: Bool = true) {
+        self.serverURL = serverURL
+        self.validationId = validationId
         self.clientId = clientId
-        self.delegate = delegate
+        self.httpHeaders = httpHeaders
+        self.enableDiagnostics = enableDiagnostics
+        self.receiveResult = receiveResult
     }
 
+    // MARK: - Public Methods
+
+    /// Validates a document in one simple call
+    /// 
+    /// This method handles the entire validation flow:
+    /// 1. Connects to the server
+    /// 2. Performs the validation
+    /// 3. Disconnects from the server
+    /// 4. Returns the result
     ///
-    /// Starts the Session.
-    ///
-    /// The `documentNumber`, `dateOfBirth`, `dateOfExpiry` function as the Access Key,
-    /// required to access the chip.
-    ///
+    /// - Parameter accessKey: MRZ or CAN key for chip access
+    /// - Returns: Validation result
+    /// - Throws: Various errors if validation fails
+    public func validate(with accessKey: AccessKey) async throws -> ValidationResult {
+        // Connect if needed
+        if !isConnected {
+            try await connect()
+        }
+
+        do {
+            // Perform validation
+            let result = try await startValidation(accessKey: accessKey)
+
+            // Always disconnect after validation
+            await disconnect()
+
+            return result
+        } catch {
+            // Ensure disconnection on error
+            await disconnect()
+            throw error
+        }
+    }
+
+    /// Connect to the WebSocket server
+    /// 
+    /// Note: You don't need to call this directly if using the `validate` methods.
+    /// This is exposed for advanced use cases where you want to pre-connect.
+    public func connect() async throws {
+        guard !isConnected else { return }
+
+        let urlSession = URLSession.webSocketSession()
+        connection = WebSocketConnection(url: serverURL, urlSession: urlSession, httpHeaders: httpHeaders)
+
+        try await connection?.connect()
+        isConnected = true
+
+        sessionCoordinator = WebSocketSessionCoordinator(
+            connection: connection!,
+            validationId: validationId,
+            clientId: clientId,
+            enableDiagnostics: enableDiagnostics,
+            receiveResult: receiveResult,
+            nfcStatusCallback: { [weak self] status in
+                guard let self = self else { return }
+                Task {
+                    await self.delegate?.connector(self, didUpdateNFCStatus: status)
+                }
+            },
+            nfcStatusLocalization: nfcStatusLocalization,
+            errorCallback: { [weak self] error in
+                guard let self = self else { return }
+                Task {
+                    // Only disconnect if we're still connected
+                    if self.isConnected {
+                        await self.disconnect()
+                    }
+                    await self.delegate?.connector(self, didFailWithError: error)
+                }
+            },
+            successfulPostCallback: { [weak self] in
+                guard let self = self else { return }
+                Task {
+                    await self.delegate?.connectorDidSuccessfullyPostToServer(self)
+                }
+            },
+            monitoringDelegate: self
+        )
+
+        await delegate?.connectorDidConnect(self)
+    }
+
+    /// Connect to the WebSocket server with automatic retry
+    public func connectWithRetry() async throws {
+        guard !isConnected else { return }
+
+        try await retryHandler.execute(
+            operation: { [weak self] in
+                guard let self = self else { throw EmrtdConnectorError.sessionExpired }
+                try await self.connect()
+            },
+            isRetryable: { error in
+                return error.isRetryable
+            },
+            onRetry: { [weak self] _, _ in
+                guard let self = self else { return }
+                // Connection retry is handled internally
+            }
+        )
+    }
+
+    /// Disconnect from the WebSocket server
+    public func disconnect() async {
+        guard isConnected else { return }
+
+        // Mark as disconnected immediately to prevent double disconnection
+        isConnected = false
+
+        // First close the session (sends CLOSE message if needed)
+        await sessionCoordinator?.closeSession()
+
+        // Wait a bit to ensure any pending messages are processed
+        // This addresses iOS WebSocket close handling issues
+        try? await Task.sleep(nanoseconds: 200_000_000) // 200ms
+
+        // Then disconnect the WebSocket
+        await connection?.disconnect()
+
+        // Close any active NFC session and clear reader reference
+        await sessionCoordinator?.closeNFCSession()
+
+        connection = nil
+        sessionCoordinator = nil
+
+        await delegate?.connectorDidDisconnect(self)
+    }
+
+    /// Start validation with an access key
+    /// - Parameter accessKey: MRZ or CAN key for chip access
+    /// - Returns: Validation result
+    @discardableResult
+    public func startValidation(accessKey: AccessKey) async throws -> ValidationResult {
+        return try await startValidation(accessKey: accessKey, filesToRead: .standard)
+    }
+
+    /// Start validation with custom file selection
     /// - Parameters:
-    ///   - passportTag: NFCISO7816Tag acquired from iOS
-    ///   - vId: Unique String to identify this session
-    ///   - documentNumber: Document Number from the MRZ.
-    ///   - dateOfBirth: Date of Birth from the MRZ (Format: yyMMdd)
-    ///   - dateOfExpiry: Date of Expiry from the MRZ (Format: yyMMdd)
-    ///   - httpHeaders: Optional HTTP headers to include in the WebSocket request
-    ///   - enableDiagnostics: Optional flag for enabling sending diagnostics data (used for debugging puposes)
-    public func connect(to passportTag: NFCISO7816Tag,
-                        vId: String,
-                        documentNumber: String,
-                        dateOfBirth: String,
-                        dateOfExpiry: String,
-                        httpHeaders: [String: String]? = nil,
-                        enableDiagnostics: Bool? = nil) {
-        let accessKey = [
-            "document_number": documentNumber,
-            "date_of_birth": dateOfBirth,
-            "date_of_expiry": dateOfExpiry
-        ]
-        let startMessage = StartMessage(clientId: clientId,
-                                        validationId: vId,
-                                        accessKey: accessKey,
-                                        enableDiagnostics: enableDiagnostics)
+    ///   - accessKey: MRZ or CAN key for chip access
+    ///   - filesToRead: Set of data groups to read
+    /// - Returns: Validation result
+    public func startValidation(
+        accessKey: AccessKey,
+        filesToRead: DataGroupSet
+    ) async throws -> ValidationResult {
+        // Check NFC availability first
+        guard NFCCapabilityChecker.isAvailable else {
+            let reason = NFCCapabilityChecker.unavailabilityReason ?? "NFC not available"
+            throw EmrtdConnectorError.nfcNotAvailable(reason: reason)
+        }
 
-        debugPrint(startMessage)
-        connect(passportTag: passportTag, startMessage: startMessage, httpHeaders: httpHeaders)
-    }
+        guard isConnected else {
+            throw EmrtdConnectorError.notConnected
+        }
 
-    ///
-    /// Starts the Session.
-    ///
-    /// The `can` functions as the Access Key and is required to access the chip.
-    ///
-    /// - Parameters:
-    ///   - passportTag: NFCISO7816Tag acquired from iOS
-    ///   - vId: Unique String to identify this session.
-    ///   - can: CAN, a 6 digit number, printed on the front of the document.
-    ///   - httpHeaders: Optional HTTP headers to include in the WebSocket request
-    ///   - enableDiagnostics: Optional flag for enabling sending diagnostics data (used for debugging puposes)
-    public func connect(to passportTag: NFCISO7816Tag,
-                        vId: String,
-                        can: String,
-                        httpHeaders: [String: String]? = nil,
-                        enableDiagnostics: Bool? = nil) {
-        let accessKey = ["can": can]
-        let startMessage = StartMessage(clientId: clientId,
-                                        validationId: vId,
-                                        accessKey: accessKey,
-                                        enableDiagnostics: enableDiagnostics)
+        guard let coordinator = sessionCoordinator else {
+            throw EmrtdConnectorError.invalidState(
+                current: "not initialized",
+                expected: "initialized"
+            )
+        }
 
-        debugPrint(startMessage)
-        connect(passportTag: passportTag, startMessage: startMessage, httpHeaders: httpHeaders)
-    }
+        await delegate?.connectorDidStartValidation(self)
+        // Progress is reported via NFC status updates
 
-    ///
-    /// Check if a session is currently open
-    ///
-    /// - Returns: true if the session is open
-    public func isOpen() -> Bool {
-        webSocketSessionDelegate != nil && webSocketTask?.state == .running
-    }
+        do {
+            // Send START and wait for ACCEPT
+            let acceptMessage = try await coordinator.sendStartAndWaitForAccept()
+            // Progress is reported via NFC status updates in WebSocketSessionCoordinator
 
-    private func connect(passportTag: NFCISO7816Tag, startMessage: StartMessage, httpHeaders: [String: String]? = nil) {
-        websocketError = nil
-        nfcError = nil
+            // Convert base64 challenge to Data
+            let activeAuthChallenge = Data(base64Encoded: acceptMessage.activeAuthenticationChallenge)
 
-        let webSocketSessionDelegate = WebSocketSessionDelegate { closeCode, reasonPhrase, websocketError in
-            guard self.webSocketSessionDelegate != nil, self.webSocketTask != nil else {
-                return
-            }
-            self.webSocketSessionDelegate = nil
-            self.webSocketTask = nil
-            let closeReason = CloseReason.get(reasonPhrase: reasonPhrase,
-                                              nfcError: self.nfcError,
-                                              websocketError: websocketError ?? self.websocketError)
-            self.delegate?.emrtdConnector(self, didCloseWithCloseCode: closeCode, reason: closeReason)
-            if closeCode != 1_000 {
-                passportTag.session?.invalidate(errorMessage: "")
+            // Perform chip reading with handover
+            await delegate?.connectorWillReadChip(self)
+            await delegate?.connector(self, didUpdateNFCStatus: .connecting)
+
+            let chipResult = try await coordinator.performChipReading(
+                accessKey: accessKey,
+                activeAuthChallenge: activeAuthChallenge
+            )
+
+            // Check if we have DG14 for Chip Authentication
+            let pendingFiles = await coordinator.getPendingBinaryFiles()
+            let hasDG14 = pendingFiles.keys.contains("dg14")
+            Logger.debug("Got \(pendingFiles.count) pending files to send before CA_HANDOVER. Has DG14: \(hasDG14)")
+
+            let completeResult: CompleteReadingResult
+
+            if hasDG14 {
+                // CA flow: Send DG14, perform handover/handback
+                //
+                // ## What is Chip Authentication (CA)?
+                //
+                // CA verifies that the passport chip is genuine and not cloned.
+                // It works by:
+                // 1. Reading the chip's public key from DG14
+                // 2. Server challenges the chip to prove it has the private key
+                // 3. Establishes new, stronger encryption keys for secure messaging
+                //
+                // DG14 must be sent BEFORE CA_HANDOVER because the server needs
+                // the public key to perform the authentication protocol.
+                Logger.debug("DG14 present - performing Chip Authentication flow")
+
+                // Send binary files BEFORE handover (especially DG14!)
+                for (fileId, fileData) in pendingFiles {
+                    Logger.debug("Sending binary file \(fileId): \(fileData.count) bytes")
+                    try await coordinator.sendBinaryFile(fileId: fileId, data: fileData)
+                    Logger.debug("Successfully sent binary file \(fileId) before CA_HANDOVER")
+                }
+
+                // Now send handover to server with HandoverState
+                await delegate?.connectorDidPerformHandover(self)
+                // Progress is reported via NFC status updates
+
+                try await coordinator.sendHandover(chipResult.handoverData, handoverState: chipResult.handoverState)
+
+                // Wait for handback message
+                // Progress is reported via NFC status updates
+                let handbackMessage = try await coordinator.waitForHandback()
+
+                // Convert handback message to handback info
+                let handbackInfo = KinegramEmrtd.CAHandbackInfo(from: handbackMessage)
+
+                // DO NOT close the NFC session here - it must remain open for continueAfterHandback!
+                // The session will be closed after all reading is complete
+
+                // Complete chip reading with custom file selection
+                await delegate?.connectorWillCompleteReading(self)
+
+                completeResult = try await coordinator.completeChipReading(
+                    handoverState: chipResult.handoverState,
+                    handbackInfo: handbackInfo,
+                    filesToRead: filesToRead
+                )
             } else {
-                passportTag.session?.invalidate()
+                // No CA flow: Skip handover/handback, continue reading directly
+                Logger.debug("No DG14 present - skipping Chip Authentication flow")
+
+                await delegate?.connectorWillCompleteReading(self)
+
+                // Complete reading without CA
+                completeResult = try await coordinator.completeChipReadingWithoutCA(
+                    handoverState: chipResult.handoverState,
+                    filesToRead: filesToRead
+                )
             }
-        }
-        self.webSocketSessionDelegate = webSocketSessionDelegate
 
-        let config: URLSessionConfiguration = .ephemeral
-        config.timeoutIntervalForRequest = 4
-        config.timeoutIntervalForResource = 120
-        var request = URLRequest(url: url)
-        request.networkServiceType = .responsiveData
+            // Send finish data
+            // Progress is reported via NFC status updates
+            try await coordinator.sendFinish(completeResult.finishData)
 
-        // Set additional HTTP headers if provided
-        httpHeaders?.forEach { key, value in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
+            // Wait for RESULT message from server (if receiveResult=true, server will send it)
+            await delegate?.connector(self, didUpdateNFCStatus: .validatingWithServer)
+            let validationResult = try await coordinator.waitForResult()
 
-        let webSocketTask = URLSession(configuration: config, delegate: webSocketSessionDelegate, delegateQueue: .main)
-            .webSocketTask(with: request)
-        self.webSocketTask = webSocketTask
-        webSocketTask.resume()
+            // Done status is already sent by coordinator after file validation
+            await delegate?.connectorDidCompleteValidation(self, result: validationResult)
 
-        delegate?.emrtdConnector(self, didUpdateStatus: .readAtrInfo)
+            // Wait for server to send CLOSE message before cleaning up
+            // This addresses iOS WebSocket issue where close messages can be missed
+            await coordinator.waitForClose(timeout: 2.0)
 
-        EmrtdChipCommunicationSession(nfcTag: passportTag).readAtrInfo { atrInfoFile in
-            self.delegate?.emrtdConnector(self, didUpdateStatus: .connectingToServer)
+            // Session is already closed by coordinator after showing Done status
 
-            var startMessage = startMessage
-            startMessage.maxCommandBytes = atrInfoFile?.maxCommandBytes
-            startMessage.maxResponseBytes = atrInfoFile?.maxResponseBytes
+            return validationResult
 
-            webSocketTask.send(.string(startMessage.asJsonString())) { error in
-                guard error == nil else {
-                    self.websocketError = error
-                    self.closeWebSocket(reason: CloseReasonRaw.communicationFailed)
-                    return
-                }
-                self.readMessage(passportTag: passportTag)
+        } catch {
+            // Close NFC session and clear reader reference on error
+            await coordinator.closeNFCSession()
+
+            // Don't report cancellation errors to delegate
+            if !(error is CancellationError) {
+                await delegate?.connector(self, didFailWithError: error)
             }
-        }
-    }
-
-    private func readMessage(passportTag: NFCISO7816Tag) {
-        webSocketTask?.receive { result in
-            switch result {
-            case .failure(let error):
-                self.websocketError = error
-                self.closeWebSocket(reason: CloseReasonRaw.communicationFailed)
-
-            case .success(let message):
-                switch message {
-                case .string(let text):
-                    self.handleTextMessage(passportTag: passportTag, text: text)
-                case .data(let data):
-                    self.handleBinaryMessage(passportTag: passportTag, data: data)
-                @unknown default:
-                    print("Unexpected Message type")
-                }
-                self.readMessage(passportTag: passportTag)
-            }
+            throw error
         }
     }
+}
 
-    private func handleTextMessage(passportTag: NFCISO7816Tag, text: String) {
-        if let data = text.data(using: .utf8),
-           let json = try? JSONSerialization.jsonObject(with: data, options: []),
-           let dictionary = json as? [String: Any] {
+// MARK: - MonitoringDelegate Implementation
 
-            let status = Status.get(status: dictionary["status"] as? String)
-            if let status = status {
-                self.delegate?.emrtdConnector(self, didUpdateStatus: status)
-                // NFC Session is done
-                if case .done = status {
-                    passportTag.session?.invalidate()
-                }
-            }
+extension EmrtdConnector: MonitoringDelegate {
+    public func onNewMonitoringEvent(message: String) {
+        // Forward to our monitoring delegate
+        Task { [weak self] in
+            guard let self = self else { return }
+            await self.monitoringDelegate?.connector(self, didReceiveMonitoringMessage: message)
 
-            let emrtdPassportDict = dictionary["emrtd_passport"] as? [String: Any]
-            if emrtdPassportDict != nil, let data = text.data(using: .utf8) {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let type = TextMessageFromServer.self
-                if let emrtdPassport = try? decoder.decode(type, from: data).emrtdPassport {
-                    self.delegate?.emrtdConnector(self, didReceiveEmrtdPassport: emrtdPassport)
-                } else {
-                    print("Failed to decode EmrtdPassport")
-                    self.delegate?.emrtdConnector(self, didReceiveEmrtdPassport: nil)
-                }
-            }
-
-            let closeCode = dictionary["close_code"] as? Int
-            if let closeCode = closeCode {
-                let closeReason = dictionary["close_reason"] as? String
-                self.webSocketSessionDelegate?.closedListener(closeCode, closeReason, nil)
-            }
-
-            if status == nil && emrtdPassportDict == nil && closeCode == nil {
-                print("Received Unexpected text message: \(text)")
-            }
-        } else {
-            print("Failed to parse Text Message")
-        }
-    }
-
-    private func handleBinaryMessage(passportTag: NFCISO7816Tag, data: Data) {
-        guard let commandApdu = NFCISO7816APDU(data: data) else {
-            closeWebSocket(reason: CloseReasonRaw.nfcChipCommunicationFailed)
-            return
-        }
-
-        passportTag.sendCommand(apdu: commandApdu) { data, sw1, sw2, error in
-            guard let webSocketTask = self.webSocketTask else {
-                return
-            }
-            guard error == nil else {
-                self.nfcError = error
-                self.closeWebSocket(reason: CloseReasonRaw.nfcChipCommunicationFailed)
-                return
-            }
-            webSocketTask.send(.data(data + [sw1, sw2])) { error in
-                guard error == nil else {
-                    self.websocketError = error
-                    self.closeWebSocket(reason: CloseReasonRaw.communicationFailed)
-                    return
-                }
-            }
-        }
-    }
-
-    private func closeWebSocket(reason reasonPhrase: String) {
-        let closeCode = URLSessionWebSocketTask.CloseCode.goingAway
-        webSocketTask?.cancel(with: closeCode, reason: reasonPhrase.data(using: .utf8))
-    }
-
-    private class WebSocketSessionDelegate: NSObject, URLSessionWebSocketDelegate {
-        let closedListener: ((Int, String?, Error?) -> Void)
-
-        init(closedListener: @escaping (Int, String?, Error?) -> Void) {
-            self.closedListener = closedListener
-        }
-
-        func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-            let closeCode = URLSessionWebSocketTask.CloseCode.abnormalClosure
-            closedListener(closeCode.rawValue, CloseReasonRaw.communicationFailed, error)
-        }
-
-        func urlSession(_ session: URLSession,
-                        webSocketTask: URLSessionWebSocketTask,
-                        didCloseWith closeCode: URLSessionWebSocketTask.CloseCode,
-                        reason: Data?) {
-            if let reason = reason {
-                closedListener(closeCode.rawValue, String(data: reason, encoding: .utf8), nil)
-            } else {
-                closedListener(closeCode.rawValue, nil, nil)
+            // Also send to server if connected and diagnostics enabled
+            if self.isConnected, self.enableDiagnostics {
+                await self.sessionCoordinator?.sendMonitoringMessage(message)
             }
         }
     }
 }
+
+// MARK: - Delegate Protocols
+
+/// Delegate protocol for validation events
+public protocol EmrtdConnectorDelegate: AnyObject {
+    /// Called when the connector successfully connects to the server
+    func connectorDidConnect(_ connector: EmrtdConnector) async
+
+    /// Called when the connector disconnects from the server
+    func connectorDidDisconnect(_ connector: EmrtdConnector) async
+
+    /// Called when validation starts
+    func connectorDidStartValidation(_ connector: EmrtdConnector) async
+
+    /// Called before reading the chip
+    func connectorWillReadChip(_ connector: EmrtdConnector) async
+
+    /// Called after performing CA handover
+    func connectorDidPerformHandover(_ connector: EmrtdConnector) async
+
+    /// Called before completing the reading process
+    func connectorWillCompleteReading(_ connector: EmrtdConnector) async
+
+    /// Called when validation completes successfully
+    func connectorDidCompleteValidation(_ connector: EmrtdConnector, result: ValidationResult) async
+
+    /// Called when the server successfully posts results to the result server (Close Code 1000)
+    /// This is especially relevant when receiveResult is false
+    func connectorDidSuccessfullyPostToServer(_ connector: EmrtdConnector) async
+
+    /// Called when an error occurs
+    func connector(_ connector: EmrtdConnector, didFailWithError error: Error) async
+
+    /// Called when NFC reading status is updated (for updating NFCReaderSession alertMessage)
+    func connector(_ connector: EmrtdConnector, didUpdateNFCStatus status: NFCProgressStatus) async
+}
+
+/// Delegate protocol for monitoring events
+public protocol EmrtdConnectorMonitoringDelegate: AnyObject {
+    /// Called when a monitoring event occurs from the eMRTD SDK
+    /// - Parameters:
+    ///   - connector: The connector instance
+    ///   - message: The monitoring message from the SDK
+    func connector(_ connector: EmrtdConnector, didReceiveMonitoringMessage message: String) async
+}
+
+// MARK: - Default Delegate Implementation
+
+public extension EmrtdConnectorDelegate {
+    func connectorDidConnect(_ connector: EmrtdConnector) async {}
+    func connectorDidDisconnect(_ connector: EmrtdConnector) async {}
+    func connectorDidStartValidation(_ connector: EmrtdConnector) async {}
+    func connectorWillReadChip(_ connector: EmrtdConnector) async {}
+    func connectorDidPerformHandover(_ connector: EmrtdConnector) async {}
+    func connectorWillCompleteReading(_ connector: EmrtdConnector) async {}
+    func connectorDidCompleteValidation(_ connector: EmrtdConnector, result: ValidationResult) async {}
+    func connectorDidSuccessfullyPostToServer(_ connector: EmrtdConnector) async {}
+    func connector(_ connector: EmrtdConnector, didFailWithError error: Error) async {}
+    func connector(_ connector: EmrtdConnector, didUpdateNFCStatus status: NFCProgressStatus) async {}
+}
+
+// MARK: - Convenience Result Extension
+
+public extension ValidationResult {
+    /// Check if validation was successful
+    var isValid: Bool {
+        return status == "VALID"
+    }
+
+    /// Get a human-readable summary
+    var summary: String {
+        var parts: [String] = ["Status: \(status)"]
+
+        if let ca = chipAuthResult {
+            parts.append("CA: \(ca)")
+        }
+        if let pa = passiveAuthResult {
+            parts.append("PA: \(pa)")
+        }
+        if let aa = activeAuthResult {
+            parts.append("AA: \(aa)")
+        }
+
+        return parts.joined(separator: ", ")
+    }
+}
+
+// MARK: - Re-export KinegramEmrtd types
+
+// Re-export all the types that users need from KinegramEmrtd
+// This allows users to only import EmrtdConnector
+
+// Access Keys
+public typealias AccessKey = KinegramEmrtd.AccessKey
+public typealias MRZKey = KinegramEmrtd.MRZKey
+public typealias CANKey = KinegramEmrtd.CANKey
+
+// Errors
+public typealias EmrtdReaderError = KinegramEmrtd.EmrtdReaderError
+
+// Results (if needed by users)
+public typealias EmrtdResult = KinegramEmrtd.EmrtdResult
