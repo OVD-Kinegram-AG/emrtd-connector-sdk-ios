@@ -1,5 +1,11 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.0.14
+
+* Added support for CocoaPods again (in addition to SPM)
+
+_Notice: The recommended way is to integrate the SDK via SPM, as cocoapods is only in maintenance mode since 2024-09 (see [official announcement](https://blog.cocoapods.org/CocoaPods-Support-Plans/))_
+
 ## 2.0.13
 
 ### Major Version Release - V2

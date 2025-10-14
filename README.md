@@ -53,7 +53,7 @@ V2 solves the iOS 20-second NFC timeout issue by moving most APDU exchanges to t
 
 ## Installation
 
-### Swift Package Manager
+### Swift Package Manager (Recommended)
 
 Add the following to your `Package.swift`:
 
@@ -64,6 +64,18 @@ dependencies: [
 ```
 
 The package includes the KinegramEmrtd.xcframework binary dependency automatically.
+
+### CocoaPods
+
+Add the following to your `Podfile`:
+
+```ruby
+pod 'KinegramEmrtdConnector', '~> 2.0.14'
+```
+
+Then run `pod install`.
+
+> **Note:** CocoaPods support is provided for compatibility with existing projects. However, we recommend using Swift Package Manager as CocoaPods is only in maintenance mode since September 2024 ([official announcement](https://blog.cocoapods.org/CocoaPods-Support-Plans/)).
 
 ## Quick Start
 
