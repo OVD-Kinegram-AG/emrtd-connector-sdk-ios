@@ -14245,7 +14245,7 @@
           {
             "kind": "Function",
             "name": "read",
-            "printedName": "read(accessKey:)",
+            "printedName": "read(accessKey:usePACEPolling:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14258,11 +14258,18 @@
                 "name": "AccessKey",
                 "printedName": "any KinegramEmrtd.AccessKey",
                 "usr": "s:13KinegramEmrtd9AccessKeyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13KinegramEmrtd0B6ReaderC4read9accessKeyAA0B6ResultCAA06AccessF0_p_tYaKF",
-            "mangledName": "$s13KinegramEmrtd0B6ReaderC4read9accessKeyAA0B6ResultCAA06AccessF0_p_tYaKF",
+            "usr": "s:13KinegramEmrtd0B6ReaderC4read9accessKey14usePACEPollingAA0B6ResultCAA06AccessF0_p_SbtYaKF",
+            "mangledName": "$s13KinegramEmrtd0B6ReaderC4read9accessKey14usePACEPollingAA0B6ResultCAA06AccessF0_p_SbtYaKF",
             "moduleName": "KinegramEmrtd",
             "isOpen": true,
             "declAttributes": [
@@ -14275,7 +14282,7 @@
           {
             "kind": "Function",
             "name": "readAndVerify",
-            "printedName": "readAndVerify(accessKey:)",
+            "printedName": "readAndVerify(accessKey:usePACEPolling:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14288,11 +14295,18 @@
                 "name": "AccessKey",
                 "printedName": "any KinegramEmrtd.AccessKey",
                 "usr": "s:13KinegramEmrtd9AccessKeyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13KinegramEmrtd0B6ReaderC13readAndVerify9accessKeyAA0B6ResultCAA06AccessH0_p_tYaKF",
-            "mangledName": "$s13KinegramEmrtd0B6ReaderC13readAndVerify9accessKeyAA0B6ResultCAA06AccessH0_p_tYaKF",
+            "usr": "s:13KinegramEmrtd0B6ReaderC13readAndVerify9accessKey14usePACEPollingAA0B6ResultCAA06AccessH0_p_SbtYaKF",
+            "mangledName": "$s13KinegramEmrtd0B6ReaderC13readAndVerify9accessKey14usePACEPollingAA0B6ResultCAA06AccessH0_p_SbtYaKF",
             "moduleName": "KinegramEmrtd",
             "isOpen": true,
             "declAttributes": [
@@ -14305,7 +14319,7 @@
           {
             "kind": "Function",
             "name": "startWithHandover",
-            "printedName": "startWithHandover(accessKey:activeAuthChallenge:apduRelayHandler:)",
+            "printedName": "startWithHandover(accessKey:activeAuthChallenge:apduRelayHandler:usePACEPolling:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14348,11 +14362,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13KinegramEmrtd0B6ReaderC17startWithHandover9accessKey19activeAuthChallenge16apduRelayHandlerAA0F5StateVAA06AccessH0_p_10Foundation4DataVSgAA09APDURelayN0_pSgtYaKF",
-            "mangledName": "$s13KinegramEmrtd0B6ReaderC17startWithHandover9accessKey19activeAuthChallenge16apduRelayHandlerAA0F5StateVAA06AccessH0_p_10Foundation4DataVSgAA09APDURelayN0_pSgtYaKF",
+            "usr": "s:13KinegramEmrtd0B6ReaderC17startWithHandover9accessKey19activeAuthChallenge16apduRelayHandler14usePACEPollingAA0F5StateVAA06AccessH0_p_10Foundation4DataVSgAA09APDURelayN0_pSgSbtYaKF",
+            "mangledName": "$s13KinegramEmrtd0B6ReaderC17startWithHandover9accessKey19activeAuthChallenge16apduRelayHandler14usePACEPollingAA0F5StateVAA06AccessH0_p_10Foundation4DataVSgAA09APDURelayN0_pSgSbtYaKF",
             "moduleName": "KinegramEmrtd",
             "isOpen": true,
             "declAttributes": [
@@ -14458,7 +14479,7 @@
           {
             "kind": "Function",
             "name": "continueAfterHandback",
-            "printedName": "continueAfterHandback(from:handbackInfo:filesToRead:shouldAutoInvalidateSession:)",
+            "printedName": "continueAfterHandback(from:handbackInfo:filesToRead:shouldAutoInvalidateSession:usePACEPolling:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14491,11 +14512,18 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13KinegramEmrtd0B6ReaderC21continueAfterHandback4from12handbackInfo11filesToRead27shouldAutoInvalidateSessionAA0B6ResultCAA13HandoverStateV_AA010CAHandbackI0VAA12DataGroupSetVSbtYaKF",
-            "mangledName": "$s13KinegramEmrtd0B6ReaderC21continueAfterHandback4from12handbackInfo11filesToRead27shouldAutoInvalidateSessionAA0B6ResultCAA13HandoverStateV_AA010CAHandbackI0VAA12DataGroupSetVSbtYaKF",
+            "usr": "s:13KinegramEmrtd0B6ReaderC21continueAfterHandback4from12handbackInfo11filesToRead27shouldAutoInvalidateSession14usePACEPollingAA0B6ResultCAA13HandoverStateV_AA010CAHandbackI0VAA12DataGroupSetVS2btYaKF",
+            "mangledName": "$s13KinegramEmrtd0B6ReaderC21continueAfterHandback4from12handbackInfo11filesToRead27shouldAutoInvalidateSession14usePACEPollingAA0B6ResultCAA13HandoverStateV_AA010CAHandbackI0VAA12DataGroupSetVS2btYaKF",
             "moduleName": "KinegramEmrtd",
             "isOpen": true,
             "declAttributes": [
@@ -15953,6 +15981,46 @@
             "declKind": "EnumElement",
             "usr": "s:13KinegramEmrtd0B11ReaderErrorO24ChipAuthenticationFailedyA2CmF",
             "mangledName": "$s13KinegramEmrtd0B11ReaderErrorO24ChipAuthenticationFailedyA2CmF",
+            "moduleName": "KinegramEmrtd",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "PACEPollingNotAvailable",
+            "printedName": "PACEPollingNotAvailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KinegramEmrtd.EmrtdReaderError.Type) -> KinegramEmrtd.EmrtdReaderError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EmrtdReaderError",
+                    "printedName": "KinegramEmrtd.EmrtdReaderError",
+                    "usr": "s:13KinegramEmrtd0B11ReaderErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "KinegramEmrtd.EmrtdReaderError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EmrtdReaderError",
+                        "printedName": "KinegramEmrtd.EmrtdReaderError",
+                        "usr": "s:13KinegramEmrtd0B11ReaderErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13KinegramEmrtd0B11ReaderErrorO23PACEPollingNotAvailableyA2CmF",
+            "mangledName": "$s13KinegramEmrtd0B11ReaderErrorO23PACEPollingNotAvailableyA2CmF",
             "moduleName": "KinegramEmrtd",
             "declAttributes": [
               "RawDocComment"
@@ -49202,44 +49270,15 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Tuple",
-                "printedName": "(data: [Swift.UInt8], sw1: Swift.UInt8, sw2: Swift.UInt8)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.UInt8]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UInt8",
-                        "printedName": "Swift.UInt8",
-                        "usr": "s:s5UInt8V"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UInt8",
-                    "printedName": "Swift.UInt8",
-                    "usr": "s:s5UInt8V"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UInt8",
-                    "printedName": "Swift.UInt8",
-                    "usr": "s:s5UInt8V"
-                  }
-                ]
+                "name": "Void",
+                "printedName": "()"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13KinegramEmrtd0B24ChipCommunicationSessionC16selectMasterFileSays5UInt8VG4data_AF3sw1AF3sw2tyYaKF",
-            "mangledName": "$s13KinegramEmrtd0B24ChipCommunicationSessionC16selectMasterFileSays5UInt8VG4data_AF3sw1AF3sw2tyYaKF",
+            "usr": "s:13KinegramEmrtd0B24ChipCommunicationSessionC16selectMasterFileyyYaF",
+            "mangledName": "$s13KinegramEmrtd0B24ChipCommunicationSessionC16selectMasterFileyyYaF",
             "moduleName": "KinegramEmrtd",
             "isOpen": true,
-            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -60886,1698 +60925,1726 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "IntegerLiteral",
       "offset": 1850,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "IntegerLiteral",
       "offset": 1878,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "IntegerLiteral",
       "offset": 1910,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "IntegerLiteral",
       "offset": 1934,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "IntegerLiteral",
       "offset": 1958,
       "length": 4,
       "value": "0xFF"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "Array",
       "offset": 2103,
       "length": 6,
       "value": "[0x02]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "Array",
       "offset": 2148,
       "length": 6,
       "value": "[0x04]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "Array",
       "offset": 2198,
       "length": 6,
       "value": "[0x06]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "Array",
       "offset": 2240,
       "length": 6,
       "value": "[0x30]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/ASN1.swift",
       "kind": "Array",
       "offset": 2277,
       "length": 6,
       "value": "[0x31]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/Bignum.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/Bignum.swift",
       "kind": "IntegerLiteral",
       "offset": 1115,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/Cryptography.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/Cryptography.swift",
       "kind": "IntegerLiteral",
       "offset": 2519,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/KeyDerivation.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/KeyDerivation.swift",
       "kind": "IntegerLiteral",
       "offset": 540,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/KeyDerivation.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/KeyDerivation.swift",
       "kind": "IntegerLiteral",
       "offset": 582,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/KeyDerivation.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/KeyDerivation.swift",
       "kind": "IntegerLiteral",
       "offset": 607,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/OpenSSL+Certificates.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/OpenSSL+Certificates.swift",
       "kind": "BooleanLiteral",
       "offset": 1019,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 305,
       "length": 25,
       "value": "\"Certificate fingerprint\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 368,
       "length": 8,
       "value": "\"Issuer\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 416,
       "length": 9,
       "value": "\"Subject\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 472,
       "length": 15,
       "value": "\"Serial number\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 546,
       "length": 21,
       "value": "\"Signature algorithm\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 621,
       "length": 19,
       "value": "\"Public key params\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 681,
       "length": 12,
       "value": "\"Valid from\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Cryptography\/X509Wrapper.swift",
       "kind": "StringLiteral",
       "offset": 731,
       "length": 10,
       "value": "\"Valid to\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
       "offset": 638,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
       "offset": 890,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "Array",
-      "offset": 19994,
+      "offset": 19842,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "IntegerLiteral",
-      "offset": 21918,
+      "offset": 21766,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
-      "offset": 31059,
+      "offset": 30948,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
       "kind": "StringLiteral",
       "offset": 650,
       "length": 24,
       "value": "\"com.kinegram.emrtd.nfc\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
       "kind": "BooleanLiteral",
-      "offset": 21916,
+      "offset": 4824,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5650,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12341,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
+      "kind": "BooleanLiteral",
+      "offset": 23281,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdResult.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdReader.swift",
+      "kind": "BooleanLiteral",
+      "offset": 23318,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdResult.swift",
       "kind": "Array",
       "offset": 3457,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdResult.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdResult.swift",
       "kind": "Array",
       "offset": 4072,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 1508,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 1563,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 1620,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 1702,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 1996,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2052,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2107,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2163,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2218,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2274,
       "length": 4,
       "value": "0x05"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2337,
       "length": 4,
       "value": "0x06"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2392,
       "length": 4,
       "value": "0x07"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2474,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2774,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2829,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2885,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2942,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 2998,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3053,
       "length": 4,
       "value": "0x05"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3109,
       "length": 4,
       "value": "0x06"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3163,
       "length": 4,
       "value": "0x07"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3219,
       "length": 4,
       "value": "0x08"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3274,
       "length": 4,
       "value": "0x09"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3356,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3809,
       "length": 8,
       "value": "0x000002"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3885,
       "length": 8,
       "value": "0x000004"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 3957,
       "length": 8,
       "value": "0x000008"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4036,
       "length": 8,
       "value": "0x000010"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4108,
       "length": 8,
       "value": "0x000020"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4184,
       "length": 8,
       "value": "0x000040"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4263,
       "length": 8,
       "value": "0x000080"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4343,
       "length": 8,
       "value": "0x000100"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4421,
       "length": 8,
       "value": "0x000200"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 4514,
       "length": 8,
       "value": "0x000400"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5072,
       "length": 6,
       "value": "0x0000"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5134,
       "length": 6,
       "value": "0x0001"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5200,
       "length": 6,
       "value": "0x0002"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5264,
       "length": 6,
       "value": "0x0003"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5333,
       "length": 6,
       "value": "0x0004"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5403,
       "length": 6,
       "value": "0x0005"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5467,
       "length": 6,
       "value": "0x0006"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5530,
       "length": 6,
       "value": "0x0007"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5614,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5921,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 5983,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6046,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6128,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6439,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6498,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6580,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6892,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 6948,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7005,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7061,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7117,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7199,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7505,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7580,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7652,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7721,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7795,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7865,
       "length": 4,
       "value": "0x05"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 7936,
       "length": 4,
       "value": "0x06"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
       "kind": "IntegerLiteral",
       "offset": 8017,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
       "kind": "IntegerLiteral",
       "offset": 543,
       "length": 2,
       "value": "90"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
       "kind": "IntegerLiteral",
       "offset": 614,
       "length": 2,
       "value": "72"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
       "kind": "IntegerLiteral",
       "offset": 685,
       "length": 2,
       "value": "88"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/DataGroup1File.swift",
       "kind": "Array",
       "offset": 3082,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
       "kind": "StringLiteral",
       "offset": 1211,
       "length": 20,
       "value": "\"1.2.840.113549.2.2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
       "kind": "StringLiteral",
       "offset": 1247,
       "length": 20,
       "value": "\"1.2.840.113549.2.5\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
       "kind": "StringLiteral",
       "offset": 1284,
       "length": 15,
       "value": "\"1.3.14.3.2.26\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
       "kind": "StringLiteral",
       "offset": 1318,
       "length": 24,
       "value": "\"2.16.840.1.101.3.4.2.1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
       "kind": "StringLiteral",
       "offset": 1361,
       "length": 24,
       "value": "\"2.16.840.1.101.3.4.2.2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Files\/SODFile.swift",
       "kind": "StringLiteral",
       "offset": 1404,
       "length": 24,
       "value": "\"2.16.840.1.101.3.4.2.3\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 302,
       "length": 21,
       "value": "\"0.4.0.127.0.7.2.2.3\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 350,
       "length": 21,
       "value": "\"0.4.0.127.0.7.2.2.1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 392,
       "length": 21,
       "value": "\"0.4.0.127.0.7.2.2.4\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 433,
       "length": 16,
       "value": "\"2.23.136.1.1.5\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 468,
       "length": 21,
       "value": "\"0.4.0.127.0.7.2.2.2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 528,
       "length": 23,
       "value": "\"0.4.0.127.0.7.1.1.4.1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 1562,
       "length": 3,
       "value": "\"1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 1711,
       "length": 3,
       "value": "\"2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 1860,
       "length": 3,
       "value": "\"3\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 2009,
       "length": 3,
       "value": "\"4\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2552,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2606,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2669,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2750,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2817,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2874,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "Array",
       "offset": 2924,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 3146,
       "length": 53,
       "value": "\"Expected SET Tag, but found \""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 3198,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 3601,
       "length": 112,
       "value": "\"SecurityInfosParser: Unexpected Tag found instead of Sequence Tag -> Skip \""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 3712,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "IntegerLiteral",
       "offset": 4087,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 5373,
       "length": 85,
       "value": "\"SecurityInfosParser: Unknown Security Info Protocol \""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 5457,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 5532,
       "length": 95,
       "value": "\"Exception while parsing SecurityInfo element. This SecurityInfo element will be skipped. \""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 5626,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfos.swift",
       "kind": "StringLiteral",
       "offset": 6358,
       "length": 32,
       "value": "\"Expected SecurityInfo SEQUENCE\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 285,
       "length": 3,
       "value": "\"1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 307,
       "length": 3,
       "value": "\"2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 3,
       "value": "\"3\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 351,
       "length": 3,
       "value": "\"4\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 373,
       "length": 3,
       "value": "\"5\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 398,
       "length": 3,
       "value": "\"6\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 422,
       "length": 3,
       "value": "\"8\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 446,
       "length": 3,
       "value": "\"9\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 470,
       "length": 4,
       "value": "\"10\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForAA.swift",
       "kind": "StringLiteral",
       "offset": 495,
       "length": 4,
       "value": "\"11\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForCA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForCA.swift",
       "kind": "StringLiteral",
       "offset": 255,
       "length": 3,
       "value": "\"1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForCA.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForCA.swift",
       "kind": "StringLiteral",
       "offset": 351,
       "length": 3,
       "value": "\"2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 273,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 299,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 325,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 355,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 390,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 420,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 498,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 529,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 565,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 601,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 632,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 668,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 704,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "IntegerLiteral",
       "offset": 735,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "StringLiteral",
       "offset": 1148,
       "length": 3,
       "value": "\"1\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "StringLiteral",
       "offset": 1276,
       "length": 3,
       "value": "\"2\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "StringLiteral",
       "offset": 1389,
       "length": 3,
       "value": "\"3\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "StringLiteral",
       "offset": 1520,
       "length": 3,
       "value": "\"4\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/SecurityInfos\/SecurityInfosForPace.swift",
       "kind": "StringLiteral",
       "offset": 1661,
       "length": 3,
       "value": "\"6\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "StringLiteral",
       "offset": 247,
       "length": 5,
       "value": "\"MRZ\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "StringLiteral",
       "offset": 272,
       "length": 5,
       "value": "\"CAN\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "StringLiteral",
       "offset": 301,
       "length": 9,
       "value": "\"UNKNOWN\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "StringLiteral",
       "offset": 7942,
       "length": 9,
       "value": "\"SUCCESS\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "StringLiteral",
       "offset": 7970,
       "length": 8,
       "value": "\"FAILED\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "StringLiteral",
       "offset": 8002,
       "length": 13,
       "value": "\"UNAVAILABLE\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10748,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10753,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10807,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10812,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10866,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10871,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10925,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10930,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10984,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 10989,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11043,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11048,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11102,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11107,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11161,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11166,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11220,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11225,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11280,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11285,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11340,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11345,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11401,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11406,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11462,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11467,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11523,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11528,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11584,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11589,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11645,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/HandoverHandback.swift",
       "kind": "IntegerLiteral",
       "offset": 11650,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 199,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 358,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 410,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 472,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 539,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 621,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 678,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 739,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 803,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 884,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 966,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1031,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1101,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1190,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1256,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1323,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1391,
       "length": 2,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/ElementaryFileName.swift",
       "kind": "IntegerLiteral",
       "offset": 1475,
       "length": 2,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
       "offset": 178,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
       "offset": 464,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
       "offset": 681,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
       "offset": 918,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 9585,
+      "offset": 10387,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 14985,
+      "offset": 15787,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 18022,
+      "offset": 22377,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 125,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 144,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 162,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 183,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Logging.swift",
       "kind": "IntegerLiteral",
       "offset": 202,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/ChipAccessProtocol.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/ChipAccessProtocol.swift",
       "kind": "StringLiteral",
       "offset": 626,
       "length": 5,
       "value": "\"BAC\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/ChipAccessProtocol.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/ChipAccessProtocol.swift",
       "kind": "StringLiteral",
       "offset": 758,
       "length": 6,
       "value": "\"PACE\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/SecureMessaging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/SecureMessaging.swift",
       "kind": "IntegerLiteral",
       "offset": 591,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/SecureMessaging.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/Protocols\/SecureMessaging.swift",
       "kind": "IntegerLiteral",
       "offset": 601,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/SessionManager.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/SessionManager.swift",
       "kind": "Dictionary",
       "offset": 366,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 227,
-      "length": 8,
-      "value": "\"2.7.12\""
+      "length": 7,
+      "value": "\"2.8.0\""
     },
     {
-      "filePath": "\/Users\/axm\/Developing\/KINEGRAM\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
-      "offset": 339,
+      "offset": 338,
       "length": 16,
-      "value": "\"20250903221614\""
+      "value": "\"20251024142020\""
     }
   ]
 }

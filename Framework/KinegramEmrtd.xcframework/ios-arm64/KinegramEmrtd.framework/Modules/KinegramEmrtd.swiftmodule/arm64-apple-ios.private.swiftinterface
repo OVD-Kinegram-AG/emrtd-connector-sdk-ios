@@ -207,13 +207,13 @@ public typealias EmrtdPassportReaderError = KinegramEmrtd.EmrtdReaderError
   public var fileReadProgressLocalization: (_ currentFile: KinegramEmrtd.ElementaryFileName, _ readBytes: Swift.Int, _ totalBytes: Swift.Int) -> Swift.String
   public init(errorLocalization: ((KinegramEmrtd.EmrtdReaderError) -> Swift.String)? = nil, stepLocalization: ((KinegramEmrtd.ReadAndVerifyStep) -> Swift.String)? = nil, fileReadProgressLocalization: ((_ currentFile: KinegramEmrtd.ElementaryFileName, _ readBytes: Swift.Int, _ totalBytes: Swift.Int) -> Swift.String)? = nil)
   public func readMasterlist(from masterListUrl: Foundation.URL, masterlistIssuerCertificateUrl: Foundation.URL? = nil) throws
-  public func read(accessKey: any KinegramEmrtd.AccessKey) async throws -> KinegramEmrtd.EmrtdResult
-  public func readAndVerify(accessKey: any KinegramEmrtd.AccessKey) async throws -> KinegramEmrtd.EmrtdResult
-  @_documentation(visibility: internal) public func startWithHandover(accessKey: any KinegramEmrtd.AccessKey, activeAuthChallenge: Foundation.Data? = nil, apduRelayHandler: (any KinegramEmrtd.APDURelayHandler)? = nil) async throws -> KinegramEmrtd.HandoverState
+  public func read(accessKey: any KinegramEmrtd.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtd.EmrtdResult
+  public func readAndVerify(accessKey: any KinegramEmrtd.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtd.EmrtdResult
+  @_documentation(visibility: internal) public func startWithHandover(accessKey: any KinegramEmrtd.AccessKey, activeAuthChallenge: Foundation.Data? = nil, apduRelayHandler: (any KinegramEmrtd.APDURelayHandler)? = nil, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtd.HandoverState
   @_documentation(visibility: internal) public func sendExternalAPDU(_ commandData: Foundation.Data) async throws -> Foundation.Data
   @_documentation(visibility: internal) public func closeSession()
   @_documentation(visibility: internal) public func invalidateSession(errorMessage: Swift.String? = nil)
-  @_documentation(visibility: internal) public func continueAfterHandback(from state: KinegramEmrtd.HandoverState, handbackInfo: KinegramEmrtd.CAHandbackInfo, filesToRead: KinegramEmrtd.DataGroupSet = .standard, shouldAutoInvalidateSession: Swift.Bool = true) async throws -> KinegramEmrtd.EmrtdResult
+  @_documentation(visibility: internal) public func continueAfterHandback(from state: KinegramEmrtd.HandoverState, handbackInfo: KinegramEmrtd.CAHandbackInfo, filesToRead: KinegramEmrtd.DataGroupSet = .standard, shouldAutoInvalidateSession: Swift.Bool = true, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtd.EmrtdResult
   @objc deinit
 }
 indirect public enum ReadAndVerifyStep {
@@ -248,6 +248,7 @@ public enum EmrtdReaderError : KinegramEmrtd.ErrorWithMonitoringInfo {
   case IncorrectAccessKey(Swift.UInt8)
   case InvalidHandoverData
   case ChipAuthenticationFailed
+  case PACEPollingNotAvailable
   public var errorDescription: Swift.String {
     get
   }
