@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "KinegramEmrtdConnector"
-  spec.version       = "2.0.14"
+  spec.version       = "2.0.15"
   spec.summary       = "Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection."
   spec.description   = <<-DESC
     Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection.

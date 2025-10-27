@@ -323,7 +323,8 @@ actor WebSocketSessionCoordinator {
     /// Performs chip reading with handover support
     func performChipReading(
         accessKey: AccessKey,
-        activeAuthChallenge: Data?
+        activeAuthChallenge: Data?,
+        usePACEPolling: Bool = false
     ) async throws -> ChipReadingResult {
 
         // Cancel any existing NFC reading task
@@ -345,7 +346,8 @@ actor WebSocketSessionCoordinator {
                 let handoverState = try await reader.startWithHandover(
                     accessKey: accessKey,
                     activeAuthChallenge: activeAuthChallenge,
-                    apduRelayHandler: nil
+                    apduRelayHandler: nil,
+                    usePACEPolling: usePACEPolling
                 )
 
                 // Check for cancellation after NFC operation
@@ -385,7 +387,8 @@ actor WebSocketSessionCoordinator {
     func completeChipReading(
         handoverState: HandoverState,
         handbackInfo: CAHandbackInfo,
-        filesToRead: DataGroupSet
+        filesToRead: DataGroupSet,
+        usePACEPolling: Bool = false
     ) async throws -> CompleteReadingResult {
 
         // Ensure reader is available
@@ -403,7 +406,8 @@ actor WebSocketSessionCoordinator {
             from: handoverState,
             handbackInfo: handbackInfo,
             filesToRead: filesToRead,
-            shouldAutoInvalidateSession: false  // We'll control the session ending
+            shouldAutoInvalidateSession: false,  // We'll control the session ending
+            usePACEPolling: usePACEPolling
         )
 
         // Validate that all required files were read
@@ -449,7 +453,8 @@ actor WebSocketSessionCoordinator {
     /// Complete chip reading without CA (when no DG14 is present)
     func completeChipReadingWithoutCA(
         handoverState: HandoverState,
-        filesToRead: DataGroupSet
+        filesToRead: DataGroupSet,
+        usePACEPolling: Bool = false
     ) async throws -> CompleteReadingResult {
 
         // Ensure reader is available
@@ -483,7 +488,8 @@ actor WebSocketSessionCoordinator {
             from: handoverState,
             handbackInfo: noCAHandbackInfo,
             filesToRead: filesToRead,
-            shouldAutoInvalidateSession: false  // We'll control the session ending
+            shouldAutoInvalidateSession: false,  // We'll control the session ending
+            usePACEPolling: usePACEPolling
         )
 
         // Validate that all required files were read

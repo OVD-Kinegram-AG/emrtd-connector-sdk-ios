@@ -47,17 +47,19 @@ public class EmrtdConnector {
     // MARK: - Public Methods
 
     /// Validates a document in one simple call
-    /// 
+    ///
     /// This method handles the entire validation flow:
     /// 1. Connects to the server
     /// 2. Performs the validation
     /// 3. Disconnects from the server
     /// 4. Returns the result
     ///
-    /// - Parameter accessKey: MRZ or CAN key for chip access
+    /// - Parameters:
+    ///   - accessKey: MRZ or CAN key for chip access
+    ///   - usePACEPolling: Whether to use PACE polling for PACE-enabled documents (requires iOS 16+)
     /// - Returns: Validation result
     /// - Throws: Various errors if validation fails
-    public func validate(with accessKey: AccessKey) async throws -> ValidationResult {
+    public func validate(with accessKey: AccessKey, usePACEPolling: Bool = false) async throws -> ValidationResult {
         // Connect if needed
         if !isConnected {
             try await connect()
@@ -65,7 +67,7 @@ public class EmrtdConnector {
 
         do {
             // Perform validation
-            let result = try await startValidation(accessKey: accessKey)
+            let result = try await startValidation(accessKey: accessKey, usePACEPolling: usePACEPolling)
 
             // Always disconnect after validation
             await disconnect()
@@ -172,21 +174,25 @@ public class EmrtdConnector {
     }
 
     /// Start validation with an access key
-    /// - Parameter accessKey: MRZ or CAN key for chip access
+    /// - Parameters:
+    ///   - accessKey: MRZ or CAN key for chip access
+    ///   - usePACEPolling: Whether to use PACE polling for PACE-enabled documents (requires iOS 16+)
     /// - Returns: Validation result
     @discardableResult
-    public func startValidation(accessKey: AccessKey) async throws -> ValidationResult {
-        return try await startValidation(accessKey: accessKey, filesToRead: .standard)
+    public func startValidation(accessKey: AccessKey, usePACEPolling: Bool = false) async throws -> ValidationResult {
+        return try await startValidation(accessKey: accessKey, filesToRead: .standard, usePACEPolling: usePACEPolling)
     }
 
     /// Start validation with custom file selection
     /// - Parameters:
     ///   - accessKey: MRZ or CAN key for chip access
     ///   - filesToRead: Set of data groups to read
+    ///   - usePACEPolling: Whether to use PACE polling for PACE-enabled documents (requires iOS 16+)
     /// - Returns: Validation result
     public func startValidation(
         accessKey: AccessKey,
-        filesToRead: DataGroupSet
+        filesToRead: DataGroupSet,
+        usePACEPolling: Bool = false
     ) async throws -> ValidationResult {
         // Check NFC availability first
         guard NFCCapabilityChecker.isAvailable else {
@@ -222,7 +228,8 @@ public class EmrtdConnector {
 
             let chipResult = try await coordinator.performChipReading(
                 accessKey: accessKey,
-                activeAuthChallenge: activeAuthChallenge
+                activeAuthChallenge: activeAuthChallenge,
+                usePACEPolling: usePACEPolling
             )
 
             // Check if we have DG14 for Chip Authentication
@@ -276,7 +283,8 @@ public class EmrtdConnector {
                 completeResult = try await coordinator.completeChipReading(
                     handoverState: chipResult.handoverState,
                     handbackInfo: handbackInfo,
-                    filesToRead: filesToRead
+                    filesToRead: filesToRead,
+                    usePACEPolling: usePACEPolling
                 )
             } else {
                 // No CA flow: Skip handover/handback, continue reading directly
@@ -287,7 +295,8 @@ public class EmrtdConnector {
                 // Complete reading without CA
                 completeResult = try await coordinator.completeChipReadingWithoutCA(
                     handoverState: chipResult.handoverState,
-                    filesToRead: filesToRead
+                    filesToRead: filesToRead,
+                    usePACEPolling: usePACEPolling
                 )
             }
 

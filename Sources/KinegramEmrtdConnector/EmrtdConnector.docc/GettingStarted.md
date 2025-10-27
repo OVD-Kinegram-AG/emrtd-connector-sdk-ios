@@ -8,30 +8,53 @@ Add the package via Swift Package Manager using the repository URL provided by K
 
 **Requirements:** iOS 15.0+, Swift 5.5+, Physical device with NFC
 
-## Setup Your App
+## Setup Your App: Requirements Setup
 
 ### 1. Enable NFC Capability
 
-In your project settings, enable **Near Field Communication Tag Reading**.
+This needed entitlement is added automatically by Xcode when enabling the
+**Near Field Communication Tag Reading** capability in the target
+**Signing & Capabilities**.
 
-### 2. Update Info.plist
+After enabling the capability the `*.entitlements` file needs to contain
+the `TAG` _(Application specific tag, including ISO 7816 Tags)_ and `PACE` _(Needed for PACE polling support (some ID cards))_ format:
 
-Add the NFC usage description:
 ```xml
-<key>NFCReaderUsageDescription</key>
-<string>This app uses NFC to read eMRTD documents</string>
+...
+<dict>
+    <key>com.apple.developer.nfc.readersession.formats</key>
+    <array>
+        <string>PACE</string>
+        <string>TAG</string>
+    </array>
+</dict>
+...
 ```
 
-### 3. Update Entitlements
 
-Add to your `.entitlements` file:
+### 2. Info.plist (AID & NFCReaderUsageDescription)
+
+The app needs to define the list of `AIDs` it can connect to, in the `Info.plist` file.
+
+The `AID` is a way of uniquely identifying an application on a ISO 7816 tag.
+eMRTDS use the AIDs `A0000002471001` and `A0000002472001`.
+Your *Info.plist* entry should look like this:
+
 ```xml
-<key>com.apple.developer.nfc.readersession.formats</key>
-<array>
-    <string>NDEF</string>
-    <string>TAG</string>
-</array>
+    <key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+    <array>
+        <string>A0000002471001</string>
+        <string>A0000002472001</string>
+    </array>
 ```
+
+- Additionally set the `NFCReaderUsageDescription` key:
+
+```xml
+    <key>NFCReaderUsageDescription</key>
+    <string>This app uses NFC to verify passports</string>
+```
+
 
 ## Basic Implementation
 
@@ -113,6 +136,41 @@ class DocumentValidator: EmrtdConnectorDelegate {
     }
 }
 ```
+
+### Reading PACE-enabled Documents
+
+Some identity documents require PACE (Password Authenticated Connection Establishment) polling to be detected. This includes French ID cards (FRA ID) and Omani ID cards (OMN ID).
+
+```swift
+import KinegramEmrtdConnector
+
+class DocumentValidator {
+    func validatePACEDocument() async {
+        let connector = EmrtdConnector(
+            serverURL: URL(string: "wss://server.example.com/ws2/validate")!,
+            validationId: UUID().uuidString,
+            clientId: "YOUR-CLIENT-ID"
+        )
+
+        let canKey = CANKey(can: "123456")
+
+        do {
+            // Enable PACE polling for PACE-enabled documents (requires iOS 16+)
+            let result = try await connector.validate(with: canKey, usePACEPolling: true)
+
+            if result.isValid {
+                print("Valid document")
+            }
+        } catch EmrtdReaderError.PACEPollingNotAvailable {
+            print("PACE polling requires iOS 16 or later")
+        } catch {
+            print("Validation failed: \(error)")
+        }
+    }
+}
+```
+
+> Important: PACE polling is only available on iOS 16 and later. It cannot detect standard passports - use it only when you know the document requires it.
 
 ## Custom HTTP Headers (Optional)
 

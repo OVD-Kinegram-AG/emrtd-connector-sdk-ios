@@ -129,6 +129,21 @@ let canKey = CANKey(can: "123456") // 6-digit CAN
 let result = try await connector.validate(with: canKey)
 ```
 
+### Reading PACE-enabled Documents
+
+Some identity documents require PACE (Password Authenticated Connection Establishment) polling to be detected. This includes French ID cards (FRA ID) and Omani ID cards (OMN ID).
+
+```swift
+// Enable PACE polling for PACE-enabled documents (requires iOS 16+)
+let canKey = CANKey(can: "123456")
+let result = try await connector.validate(with: canKey, usePACEPolling: true)
+```
+
+**Important:**
+- PACE polling is only available on iOS 16 and later
+- **PACE polling cannot detect standard passports** - use it only when you know the document requires it
+- A `PACEPollingNotAvailable` error will be thrown if you try to use PACE polling on iOS 15 or earlier
+
 ### Custom HTTP Headers (Optional)
 
 If your server requires custom headers (e.g., for authentication), you can optionally provide them. These headers will be forwarded by DocVal to your result server:
@@ -249,29 +264,54 @@ let result = try await connector.validate(with: accessKey)
 ## Requirements Setup
 
 ### 1. Enable NFC Capability
-In Xcode, enable "Near Field Communication Tag Reading" capability.
 
-### 2. Info.plist
+This needed entitlement is added automatically by Xcode when enabling the
+**Near Field Communication Tag Reading** capability in the target
+**Signing & Capabilities**.
+
+After enabling the capability the `*.entitlements` file needs to contain
+the `TAG` _(Application specific tag, including ISO 7816 Tags)_ and `PACE` _(Needed for PACE polling support (some ID cards))_ format:
+
 ```xml
-<key>NFCReaderUsageDescription</key>
-<string>This app uses NFC to read eMRTD documents</string>
+...
+<dict>
+    <key>com.apple.developer.nfc.readersession.formats</key>
+    <array>
+        <string>PACE</string>
+        <string>TAG</string>
+    </array>
+</dict>
+...
 ```
 
-### 3. Entitlements
+
+### 2. Info.plist (AID & NFCReaderUsageDescription)
+
+The app needs to define the list of `AIDs` it can connect to, in the `Info.plist` file.
+
+The `AID` is a way of uniquely identifying an application on a ISO 7816 tag.
+eMRTDS use the AIDs `A0000002471001` and `A0000002472001`.
+Your *Info.plist* entry should look like this:
+
 ```xml
-<key>com.apple.developer.nfc.readersession.formats</key>
-<array>
-    <string>NDEF</string>
-    <string>TAG</string>
-</array>
+    <key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+    <array>
+        <string>A0000002471001</string>
+        <string>A0000002472001</string>
+    </array>
 ```
+
+- Additionally set the `NFCReaderUsageDescription` key:
+
+```xml
+    <key>NFCReaderUsageDescription</key>
+    <string>This app uses NFC to verify passports</string>
+```
+
 
 ## Debug Logging
 
 Debug logging is automatically enabled in DEBUG builds. Log messages will appear in the console during development.
 
-## License
-
-Proprietary - KINEGRAM AG
 
 [docval]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/

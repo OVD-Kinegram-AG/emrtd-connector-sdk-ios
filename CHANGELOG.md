@@ -1,5 +1,11 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.0.15
+
+* **New Feature**: Add `usePACEPolling` parameter to support more documents
+  * Required for reading French ID cards (FRA ID), Omani ID cards (OMN ID), etc.
+  * Please be aware, that this requires changes to your app's entitlements (add `PACE` to `com.apple.developer.nfc.readersession.formats`) as described in the README
+
 ## 2.0.14
 
 * Added support for CocoaPods again (in addition to SPM)
