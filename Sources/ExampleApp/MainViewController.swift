@@ -84,6 +84,31 @@ class MainViewController: UIViewController {
         view.endEditing(true) // Hide keyboard
         saveToUserDefaults()
         activityIndicator.startAnimating()
+
+        // Default: start with `.iso14443` for non-PACE documents (e.g., standard passports).
+        // NOTE: For PACE-enabled IDs (e.g., FRA/OMN), you must start with `.pace` (only available iOS 16+).
+        // `.pace` is exclusive and cannot be combined with other polling options; decide BEFORE starting.
+        //
+        // Example for PACE (uncomment to use):
+        // Decide BEFORE starting the session using a simple heuristic:
+        // - Treat MRZ document code starting with 'I' (e.g., "ID", "I<") as ID cards
+        // - Enable PACE for known countries (e.g., FRA, OMN)
+        // - Requires iOS 16+ and PACE entitlement
+        //
+        /*
+        let mrzDocumentCodeHint = "ID"      // e.g., first 1–2 chars from MRZ document code
+        let issuingCountryHint = "FRA"      // e.g., "FRA", "OMN"
+        let isIdCard = mrzDocumentCodeHint.trimmingCharacters(in: .whitespacesAndNewlines)
+            .uppercased().first == "I"
+        let requiresPacePolling = isIdCard && ["FRA", "OMN"].contains(issuingCountryHint.uppercased())
+        if #available(iOS 16.0, *), requiresPacePolling {
+            let session = NFCTagReaderSession(pollingOption: .pace, delegate: self, queue: .main)
+            session?.alertMessage = "Hold Document to Phone"
+            session?.begin()
+            return
+        }
+        */
+
         guard let session = NFCTagReaderSession(pollingOption: [.iso14443], delegate: self, queue: .main) else {
             labelNFCTagReaderError.text = "Failed to initialize NFC Reader session!"
             return

@@ -1,5 +1,12 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 1.2.2
+
+* Example App: Add PACE support guidance for PACE-enabled IDs (e.g., FRA)
+  * Entitlements: include `PACE` alongside `TAG`
+  * Info.plist: include both ISO7816 AIDs (`A0000002471001`, `A0000002472001`) and `NFCReaderUsageDescription`
+  * Session: demonstrate selecting `.pace` (iOS 16+) vs `.iso14443` before starting `NFCTagReaderSession` (exclusive options)
+
 ## 1.2.1
 
 * Add a flag `enableDiagnostics` to interface functions for enabling diagnostics in the DocVal server.

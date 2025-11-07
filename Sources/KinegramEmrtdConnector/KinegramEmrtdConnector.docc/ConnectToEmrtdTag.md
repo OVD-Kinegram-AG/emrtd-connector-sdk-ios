@@ -79,13 +79,27 @@ class MainViewController: UIViewController {
     }
     
     private func beginNFCSession() {
-        guard let session = NFCTagReaderSession(pollingOption: [.iso14443], 
-                delegate: self, queue: .main) else {
-            print("Failed to initialize NFC Reader session!")
-            return
+        // Note: For PACE-enabled IDs (e.g., FRA/OMN), start with `.pace` (iOS 16+)
+        // and ensure the PACE entitlement is present. `.pace` is exclusive and
+        // cannot be combined with other polling options.
+        let requiresPACE = false // set to true for PACE-enabled IDs in your app
+        if #available(iOS 16.0, *), requiresPACE {
+            guard let session = NFCTagReaderSession(pollingOption: .pace,
+                                                    delegate: self, queue: .main) else {
+                print("Failed to initialize NFC Reader session!")
+                return
+            }
+            session.alertMessage = "Hold Document to Phone"
+            session.begin()
+        } else {
+            guard let session = NFCTagReaderSession(pollingOption: [.iso14443],
+                                                    delegate: self, queue: .main) else {
+                print("Failed to initialize NFC Reader session!")
+                return
+            }
+            session.alertMessage = "Hold Passport to Phone"
+            session.begin()
         }
-        session.alertMessage = "Hold Passport to Phone"
-        session.begin()
     }
 }
 

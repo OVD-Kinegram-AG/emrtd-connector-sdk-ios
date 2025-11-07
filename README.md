@@ -35,6 +35,12 @@ The *Kinegram eMRTD Connector* enables the [Document Validation Server (DocVal)]
 
 The Xcode Project `Sources/ExampleApp.xcodeproj` contains an Example App to demonstrate usage and functionality.
 
+PACE-enabled IDs (e.g., French ID – FRA) on iOS:
+- Add `PACE` (and `TAG`) to `com.apple.developer.nfc.readersession.formats` entitlements
+- Include AIDs `A0000002471001` and `A0000002472001` in Info.plist
+- Start `NFCTagReaderSession` with `.pace` (iOS 16+) for PACE IDs; use `.iso14443` for non‑PACE docs
+- `.pace` is exclusive and cannot be combined with other polling options
+
 ### Requirements
 
 * **Xcode 15** or later

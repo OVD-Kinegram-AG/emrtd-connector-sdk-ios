@@ -114,6 +114,9 @@ import CoreNFC
     }
 
     private func startNFCSession() {
+        // Note: For PACE-enabled IDs (e.g., FRA), `.pace` must be used on iOS 16+
+        // and cannot be combined with other polling options. This sample uses
+        // `.iso14443` by default; adjust in your app if you target PACE IDs.
         session = NFCTagReaderSession(pollingOption: .iso14443, delegate: self, queue: .main)
         session?.alertMessage = "Place the top of your phone on the document\n"
         session?.begin()
