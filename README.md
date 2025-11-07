@@ -59,7 +59,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.0.0")
+    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.1.0")
 ]
 ```
 
@@ -70,7 +70,7 @@ The package includes the KinegramEmrtd.xcframework binary dependency automatical
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'KinegramEmrtdConnector', '~> 2.0.14'
+pod 'KinegramEmrtdConnector', '~> 2.1.0'
 ```
 
 Then run `pod install`.
@@ -143,6 +143,34 @@ let result = try await connector.validate(with: canKey, usePACEPolling: true)
 - PACE polling is only available on iOS 16 and later
 - **PACE polling cannot detect standard passports** - use it only when you know the document requires it
 - A `PACEPollingNotAvailable` error will be thrown if you try to use PACE polling on iOS 15 or earlier
+
+### Automatic PACE Selection (by document info)
+
+If you don’t want to decide `usePACEPolling` yourself, you can provide the document type and issuing country and let the SDK decide. This currently enables PACE polling for known ID cards that require it (e.g., FRA ID, OMN ID) and keeps it disabled for standard passports.
+
+```swift
+// Auto-select PACE polling based on document info
+// .idCard with country FRA enables PACE polling automatically
+let canKey = CANKey(can: "123456")
+// Option A: Specify document type explicitly
+let result = try await connector.validate(
+    with: canKey,
+    documentType: .idCard,
+    issuingCountry: "FRA" // ISO 3166-1 alpha-3
+)
+
+// Option B: Derive document type from MRZ document code prefix (e.g., "ID", "I<", "P<", "PM")
+let docType = DocumentType.fromMRZDocumentCode("ID")
+let result2 = try await connector.validate(
+    with: canKey,
+    documentType: docType,
+    issuingCountry: "FRA"
+)
+```
+
+Notes:
+- You still need the PACE entitlement in your app when PACE might be used (see Requirements Setup).
+- For unknown countries or for passports, the SDK defaults to no PACE polling (you can still use the manual flag if needed).
 
 ### Custom HTTP Headers (Optional)
 

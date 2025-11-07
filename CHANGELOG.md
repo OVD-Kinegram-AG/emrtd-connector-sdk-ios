@@ -1,5 +1,13 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.1.0
+
+* New: Automatic PACE selection based on document info
+  * New overloads: `validate(with:documentType:issuingCountry:)` and `startValidation(..., documentType:issuingCountry:)`
+  * Enables PACE polling automatically for known PACE-enabled ID cards (currently FRA, OMN), keeps it off for passports
+* New: `DocumentType` enum and MRZ helper `DocumentType.fromMRZDocumentCode(_:)`
+* Fix: Improve robustness of WebSocket connect/teardown
+
 ## 2.0.15
 
 * **New Feature**: Add `usePACEPolling` parameter to support more documents

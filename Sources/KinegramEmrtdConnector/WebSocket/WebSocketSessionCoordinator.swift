@@ -600,24 +600,15 @@ actor WebSocketSessionCoordinator {
 
     /// Wait for session to close after receiving result
     func waitForClose(timeout: TimeInterval = 5.0) async {
-        // Give the server time to send CLOSE message
-        let currentState = await stateMachine.currentState
-        if currentState == .completed {
-            // Wait for CLOSE message or timeout
-            let timeoutTask = Task {
-                try? await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
-            }
+        // Only wait after result to allow server to send CLOSE
+        guard await stateMachine.currentState == .completed else { return }
 
-            // Wait until we transition to closed state or timeout
-            while await stateMachine.currentState != .closed {
-                try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
-                if timeoutTask.isCancelled {
-                    break
-                }
-            }
-
-            timeoutTask.cancel()
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            if await stateMachine.currentState == .closed { return }
+            try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
         }
+        // Timed out waiting for CLOSE; continue cleanup
     }
 
     /// Transition to reading chip state

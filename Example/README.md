@@ -110,10 +110,12 @@ Add to your .entitlements file:
 ```xml
 <key>com.apple.developer.nfc.readersession.formats</key>
 <array>
-    <string>NDEF</string>
+    <string>PACE</string>
     <string>TAG</string>
 </array>
 ```
+
+Include `PACE` if you use automatic PACE selection or plan to read PACE-enabled ID cards (e.g., FRA ID, OMN ID).
 
 ## Features Demonstrated
 
@@ -156,6 +158,9 @@ All delegate methods are optional:
 - Saves last used values using `@AppStorage`
 - Visual feedback for validation status
 - Clear error messages
+
+Tip: In `ConnectorViewModel.swift`, see the commented lines near the `validate()` call
+for how to use automatic PACE selection with `documentType` and `issuingCountry`.
 
 ## Running the Example
 

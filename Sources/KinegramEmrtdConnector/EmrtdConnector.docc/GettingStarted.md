@@ -172,6 +172,59 @@ class DocumentValidator {
 
 > Important: PACE polling is only available on iOS 16 and later. It cannot detect standard passports - use it only when you know the document requires it.
 
+### Automatic PACE Selection (by document info)
+
+Let the SDK decide whether PACE polling is needed by providing the document type and issuing country. This enables PACE polling for known ID cards (e.g., FRA ID, OMN ID) and keeps it off for passports by default.
+
+```swift
+import KinegramEmrtdConnector
+
+class DocumentValidator {
+    func validatePACEDocumentAutomatically() async {
+        let connector = EmrtdConnector(
+            serverURL: URL(string: "wss://server.example.com/ws2/validate")!,
+            validationId: UUID().uuidString,
+            clientId: "YOUR-CLIENT-ID"
+        )
+
+        let canKey = CANKey(can: "123456")
+
+        do {
+            // Auto-select PACE polling for FRA ID card (explicit document type)
+            let result = try await connector.validate(
+                with: canKey,
+                documentType: .idCard,
+                issuingCountry: "FRA"
+            )
+
+            if result.isValid {
+                print("Valid document")
+            }
+        } catch EmrtdReaderError.PACEPollingNotAvailable {
+            print("PACE polling requires iOS 16 or later")
+        } catch {
+            print("Validation failed: \(error)")
+        }
+    }
+}
+```
+
+You can also derive the document type directly from the MRZ document code prefix:
+
+```swift
+// e.g., "ID" or "I<" -> idCard; otherwise passport (e.g., "P<", "PM")
+let docType = DocumentType.fromMRZDocumentCode("ID")
+let result = try await connector.validate(
+    with: CANKey(can: "123456"),
+    documentType: docType,
+    issuingCountry: "FRA"
+)
+```
+
+Notes:
+- Include the `PACE` entitlement when PACE might be used (see Requirements Setup).
+- For unknown combinations and for passports, automatic selection defaults to no PACE polling. You can still use the manual `usePACEPolling` flag if required.
+
 ## Custom HTTP Headers (Optional)
 
 Most users don't need custom headers. This feature is only for specific use cases where your result server requires additional authentication or metadata. The headers will be forwarded by DocVal to your result server.

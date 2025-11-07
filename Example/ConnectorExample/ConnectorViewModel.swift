@@ -70,7 +70,22 @@ class ConnectorViewModel: ObservableObject {
             debugPrint("👥 Delegate set")
 
             debugPrint("🚀 Starting validation...")
+            // Default usage: validate with MRZ or CAN; PACE polling remains off unless specified
             let result = try await connector!.validate(with: accessKey)
+
+            // Alternative: Automatic PACE selection based on document info
+            // let result = try await connector!.validate(
+            //     with: accessKey,
+            //     documentType: .idCard,
+            //     issuingCountry: "FRA"
+            // )
+            //
+            // Or derive the document type from the MRZ document code prefix (e.g., "ID", "I<", "P<", "PM")
+            // let result = try await connector!.validate(
+            //     with: accessKey,
+            //     documentType: DocumentType.fromMRZDocumentCode("ID"),
+            //     issuingCountry: "FRA"
+            // )
 
             debugPrint("📊 Validation complete")
             debugPrint("  - Status: \(result.status)")

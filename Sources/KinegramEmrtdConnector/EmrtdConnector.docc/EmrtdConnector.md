@@ -63,4 +63,30 @@ if result.isValid {
 }
 ```
 
+## Automatic PACE Selection
+
+If you provide the document type and issuing country, the SDK decides whether to enable PACE polling automatically.
+
+```swift
+// Auto-select PACE polling for FRA ID card
+let canKey = CANKey(can: "123456")
+let result = try await connector.validate(
+    with: canKey,
+    documentType: .idCard,
+    issuingCountry: "FRA" // ISO 3166-1 alpha-3
+)
+```
+
+You can also derive the document type directly from the MRZ document code prefix:
+
+```swift
+// "ID" or "I<" -> .idCard; otherwise .passport (e.g., "P<", "PM")
+let docType = DocumentType.fromMRZDocumentCode("ID")
+let result2 = try await connector.validate(
+    with: canKey,
+    documentType: docType,
+    issuingCountry: "FRA"
+)
+```
+
 [docval]: https://kta.pages.kurzdigital.com/kta-kinegram-document-validation-service/

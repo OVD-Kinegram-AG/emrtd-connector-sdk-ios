@@ -12,6 +12,7 @@
 		D215CCC32D6766DA003139DA /* ConnectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D215CCBA2D6766DA003139DA /* ConnectorViewModel.swift */; };
 		D215CCC42D6766DA003139DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D215CCB72D6766DA003139DA /* Assets.xcassets */; };
 		D23C65D12E3C0F980054E573 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C65D02E3C0F980054E573 /* HelperViews.swift */; };
+		D25A0A5B2EBDE958003A7B1D /* KinegramEmrtdConnector in Frameworks */ = {isa = PBXBuildFile; productRef = D25A0A5A2EBDE958003A7B1D /* KinegramEmrtdConnector */; };
 		D2BD4DC22D6776F800B42E8C /* CryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BD4DC12D6776F800B42E8C /* CryptoKit.framework */; };
 		D2BD4DC42D67770000B42E8C /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BD4DC32D67770000B42E8C /* CoreNFC.framework */; };
 		D2C92D7E2E463C450005AE5D /* KinegramEmrtdConnector in Frameworks */ = {isa = PBXBuildFile; productRef = D2C92D7D2E463C450005AE5D /* KinegramEmrtdConnector */; };
@@ -39,6 +40,7 @@
 				D2BD4DC22D6776F800B42E8C /* CryptoKit.framework in Frameworks */,
 				D2BD4DC42D67770000B42E8C /* CoreNFC.framework in Frameworks */,
 				D2C92D7E2E463C450005AE5D /* KinegramEmrtdConnector in Frameworks */,
+				D25A0A5B2EBDE958003A7B1D /* KinegramEmrtdConnector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +106,7 @@
 			name = ConnectorExample;
 			packageProductDependencies = (
 				D2C92D7D2E463C450005AE5D /* KinegramEmrtdConnector */,
+				D25A0A5A2EBDE958003A7B1D /* KinegramEmrtdConnector */,
 			);
 			productName = KinegramEmrtdExample;
 			productReference = D2AEADAC2D67643D004C668D /* ConnectorExample.app */;
@@ -134,7 +137,7 @@
 			mainGroup = D2AEADA32D67643D004C668D;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				D2C92D7C2E463C450005AE5D /* XCLocalSwiftPackageReference "../../kinegram-emrtd-connector-sdk-ios" */,
+				D25A0A592EBDE958003A7B1D /* XCLocalSwiftPackageReference "../" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D2AEADAD2D67643D004C668D /* Products */;
@@ -386,13 +389,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		D2C92D7C2E463C450005AE5D /* XCLocalSwiftPackageReference "../../kinegram-emrtd-connector-sdk-ios" */ = {
+		D25A0A592EBDE958003A7B1D /* XCLocalSwiftPackageReference "../" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../kinegram-emrtd-connector-sdk-ios";
+			relativePath = "../";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D25A0A5A2EBDE958003A7B1D /* KinegramEmrtdConnector */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KinegramEmrtdConnector;
+		};
 		D2C92D7D2E463C450005AE5D /* KinegramEmrtdConnector */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KinegramEmrtdConnector;

@@ -48,7 +48,7 @@ catch EmrtdConnectorError.nfcNotAvailable(let reason) {
 catch EmrtdConnectorError.protocolError(let message) {
     // Server protocol violation
     print("Protocol error: \(message)")
-} catch EmrtdConnectorError.invalidResponse(let details) {
+} catch EmrtdConnectorError.invalidServerResponse(let details) {
     // Invalid server response
     print("Invalid response: \(details)")
 }

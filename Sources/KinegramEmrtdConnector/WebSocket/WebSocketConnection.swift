@@ -145,42 +145,35 @@ actor WebSocketConnection {
     private func waitForConnectionConfirmation() async -> Bool {
         guard let task = webSocketTask else { return false }
 
-        // Use a task with timeout
-        return await withTaskGroup(of: Bool.self) { group in
-            // Add timeout task (3 seconds for ping/pong)
-            group.addTask {
-                do {
-                    try await Task.sleep(nanoseconds: 3_000_000_000) // 3 seconds
-                    return false // Timeout reached
-                } catch {
-                    return false
+        // Race ping completion against a timeout without leaking continuations
+        return await withCheckedContinuation { continuation in
+            // Ensure we only resume once
+            let lock = NSLock()
+            var resumed = false
+            func resumeOnce(_ value: Bool) {
+                lock.lock(); defer { lock.unlock() }
+                if resumed { return }
+                resumed = true
+                continuation.resume(returning: value)
+            }
+
+            // Schedule timeout (3 seconds)
+            Task { [weak self] in
+                // If the actor deinitializes, just resume false to be safe
+                try? await Task.sleep(nanoseconds: 3_000_000_000)
+                resumeOnce(false)
+            }
+
+            // Send a ping to confirm connection
+            task.sendPing { error in
+                if let error = error {
+                    Logger.debug("Connection confirmation ping failed: \(error)")
+                    resumeOnce(false)
+                } else {
+                    // Ping succeeded - connection is confirmed
+                    resumeOnce(true)
                 }
             }
-
-            // Add ping task
-            group.addTask {
-                return await withCheckedContinuation { continuation in
-                    task.sendPing { error in
-                        if let error = error {
-                            Logger.debug("Connection confirmation ping failed: \(error)")
-                            continuation.resume(returning: false)
-                        } else {
-                            // Ping succeeded - connection is confirmed
-                            continuation.resume(returning: true)
-                        }
-                    }
-                }
-            }
-
-            // Return the first completed task
-            // If ping succeeds first, we're connected
-            // If timeout happens first, we're not connected
-            for await result in group {
-                group.cancelAll() // Cancel the other task
-                return result
-            }
-
-            return false
         }
     }
 

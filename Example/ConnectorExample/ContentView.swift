@@ -40,6 +40,9 @@ struct ContentView: View {
                 mrzInputView
             }
 
+            // Tip: You can also enable automatic PACE selection in ConnectorViewModel.
+            // See the commented example near the validate() call.
+
             // Action button
             Button(action: {
                 Task {
@@ -177,6 +180,7 @@ struct ContentView: View {
         }
         .padding(.horizontal)
     }
+
 }
 
 #Preview {

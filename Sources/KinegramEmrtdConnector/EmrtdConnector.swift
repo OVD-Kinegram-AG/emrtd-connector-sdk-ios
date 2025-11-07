@@ -80,6 +80,22 @@ public class EmrtdConnector {
         }
     }
 
+    /// Validates a document with automatic PACE selection based on document information.
+    ///
+    /// This overload decides whether to enable PACE polling internally based on
+    /// the provided `documentType` and `issuingCountry`. Passports default to
+    /// no PACE polling. Known ID cards (e.g., FRA, OMN) enable PACE polling.
+    ///
+    /// - Parameters:
+    ///   - accessKey: MRZ or CAN key for chip access
+    ///   - documentType: `.passport` or `.idCard`
+    ///   - issuingCountry: Three-letter ISO 3166-1 alpha-3 code (e.g., "FRA")
+    /// - Returns: Validation result
+    public func validate(with accessKey: AccessKey, documentType: DocumentType, issuingCountry: String) async throws -> ValidationResult {
+        let autoPACE = PACEPolicy.requiresPACEPolling(for: documentType, issuingCountryCode: issuingCountry)
+        return try await validate(with: accessKey, usePACEPolling: autoPACE)
+    }
+
     /// Connect to the WebSocket server
     /// 
     /// Note: You don't need to call this directly if using the `validate` methods.
@@ -181,6 +197,18 @@ public class EmrtdConnector {
     @discardableResult
     public func startValidation(accessKey: AccessKey, usePACEPolling: Bool = false) async throws -> ValidationResult {
         return try await startValidation(accessKey: accessKey, filesToRead: .standard, usePACEPolling: usePACEPolling)
+    }
+
+    /// Start validation with automatic PACE selection and default file set.
+    /// - Parameters:
+    ///   - accessKey: MRZ or CAN key for chip access
+    ///   - documentType: `.passport` or `.idCard`
+    ///   - issuingCountry: Three-letter ISO 3166-1 alpha-3 code (e.g., "FRA")
+    /// - Returns: Validation result
+    @discardableResult
+    public func startValidation(accessKey: AccessKey, documentType: DocumentType, issuingCountry: String) async throws -> ValidationResult {
+        let autoPACE = PACEPolicy.requiresPACEPolling(for: documentType, issuingCountryCode: issuingCountry)
+        return try await startValidation(accessKey: accessKey, filesToRead: .standard, usePACEPolling: autoPACE)
     }
 
     /// Start validation with custom file selection
@@ -329,6 +357,23 @@ public class EmrtdConnector {
             }
             throw error
         }
+    }
+
+    /// Start validation with custom file selection and automatic PACE selection.
+    /// - Parameters:
+    ///   - accessKey: MRZ or CAN key for chip access
+    ///   - filesToRead: Set of data groups to read
+    ///   - documentType: `.passport` or `.idCard`
+    ///   - issuingCountry: Three-letter ISO 3166-1 alpha-3 code (e.g., "FRA")
+    /// - Returns: Validation result
+    public func startValidation(
+        accessKey: AccessKey,
+        filesToRead: DataGroupSet,
+        documentType: DocumentType,
+        issuingCountry: String
+    ) async throws -> ValidationResult {
+        let autoPACE = PACEPolicy.requiresPACEPolling(for: documentType, issuingCountryCode: issuingCountry)
+        return try await startValidation(accessKey: accessKey, filesToRead: filesToRead, usePACEPolling: autoPACE)
     }
 }
 
