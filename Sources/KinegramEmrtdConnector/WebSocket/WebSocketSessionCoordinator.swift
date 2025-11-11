@@ -99,6 +99,11 @@ actor WebSocketSessionCoordinator {
     }
 
     // MARK: - Public Methods
+    /// Expose current protocol state for callers that need to make
+    /// decisions based on where we are in the flow (read-only)
+    nonisolated func currentProtocolState() async -> ProtocolState {
+        await stateMachine.currentState
+    }
 
     // MARK: - Chip Session Management Methods
 
@@ -719,29 +724,36 @@ actor WebSocketSessionCoordinator {
             }
 
         } catch {
-            // Treat "Socket is not connected" (57) as an immediate disconnect unless we've already completed/closed.
+            // Treat "Socket is not connected" (57) as a disconnect signal
             let nsError = error as NSError
             if nsError.code == 57 {
                 Logger.debug("Socket disconnected")
             }
 
-            // Only log if it's not a normal disconnection after completion
             let currentState = await stateMachine.currentState
-            if currentState != .completed && currentState != .closed {
-                Logger.debug("Message handling error: \(error)")
 
-                // Only notify about the error if it's not after successful completion (and not already notified)
-                if !errorNotified {
-                    errorNotified = true
-                    onError?(error)
-                }
+            // In fire-and-forget mode, a disconnect while finishing is expected.
+            // Ignore the transient receive error to avoid spurious failures.
+            if nsError.code == 57 && !receiveResult && (currentState == .finishing || currentState == .handbackReceived) {
+                Logger.debug("Fire-and-forget: ignoring socket disconnect while finishing")
+                return
             }
 
-            // ALWAYS close NFC session and resume continuations on error,
-            // even if state is already .closed (to avoid hanging operations)
+            // If we've already reached a terminal state (completed/closed), ignore trailing errors
+            if currentState == .completed || currentState == .closed {
+                return
+            }
+
+            Logger.debug("Message handling error: \(error)")
+
+            if !errorNotified {
+                errorNotified = true
+                onError?(error)
+            }
+
+            // Close NFC session on error and resume any waiting continuations
             await closeNFCSession()
 
-            // Resume any waiting continuations with error
             acceptContinuation?.resume(throwing: error)
             acceptContinuation = nil
             handbackContinuation?.resume(throwing: error)
@@ -772,6 +784,12 @@ actor WebSocketSessionCoordinator {
 
             let isTerminal = await stateMachine.isTerminal
             let currentState = await stateMachine.currentState
+
+            // In fire-and-forget mode, disconnects while finishing/handback are normal
+            if !receiveResult && (currentState == .finishing || currentState == .handbackReceived) {
+                Logger.debug("Fire-and-forget: ignoring disconnect during finishing phase")
+                return
+            }
 
             // Don't treat disconnection as error if we're already completed
             if currentState == .completed {

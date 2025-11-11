@@ -285,6 +285,27 @@ public struct ValidationResult: Codable {
     }
 }
 
+public extension ValidationResult {
+    /// Minimal placeholder for fire-and-forget mode (no RESULT expected).
+    /// - PA assumed true based on successful file transmission; CA/AA marked UNAVAILABLE.
+    static func fireAndForgetPlaceholder() -> ValidationResult {
+        ValidationResult(
+            sodInfo: nil,
+            mrzInfo: nil,
+            facePhoto: nil,
+            signaturePhotos: nil,
+            additionalPersonalDetails: nil,
+            additionalDocumentDetails: nil,
+            chipAuthenticationResult: "UNAVAILABLE",
+            activeAuthenticationResult: "UNAVAILABLE",
+            passiveAuthenticationDetails: nil,
+            passiveAuthentication: true,
+            filesBinary: nil,
+            errors: nil
+        )
+    }
+}
+
 // Passive authentication details from server
 struct PassiveAuthDetails: Codable {
     let sodSignatureValid: Bool

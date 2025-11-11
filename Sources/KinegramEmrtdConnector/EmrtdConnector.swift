@@ -350,20 +350,23 @@ public class EmrtdConnector {
             // Progress is reported via NFC status updates
             try await coordinator.sendFinish(completeResult.finishData)
 
-            // Wait for RESULT message from server (if receiveResult=true, server will send it)
+            // Wait for RESULT message from server (if receiveResult=true)
             await delegate?.connector(self, didUpdateNFCStatus: .validatingWithServer)
-            let validationResult = try await coordinator.waitForResult()
+            if receiveResult {
+                let validationResult = try await coordinator.waitForResult()
 
-            // Done status is already sent by coordinator after file validation
-            await delegate?.connectorDidCompleteValidation(self, result: validationResult)
+                // Done status is already sent by coordinator after file validation
+                await delegate?.connectorDidCompleteValidation(self, result: validationResult)
 
-            // Wait for server to send CLOSE message before cleaning up
-            // This addresses iOS WebSocket issue where close messages can be missed
-            await coordinator.waitForClose(timeout: 2.0)
+                // Wait for server to send CLOSE message before cleaning up
+                await coordinator.waitForClose(timeout: 2.0)
 
-            // Session is already closed by coordinator after showing Done status
-
-            return validationResult
+                return validationResult
+            } else {
+                // Fire-and-forget: do not wait for RESULT. We expect a CLOSE next.
+                // Return a conservative placeholder result immediately.
+                return ValidationResult.fireAndForgetPlaceholder()
+            }
 
         } catch {
             // Close NFC session and clear reader reference on error

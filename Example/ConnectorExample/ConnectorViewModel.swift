@@ -16,6 +16,8 @@ class ConnectorViewModel: ObservableObject {
     private var connector: EmrtdConnector?
     private let serverURL = "wss://docval.kurzdigital.com/ws2/validate"
     private let clientId = "example_client" // <-- Replace with your actual client ID
+    // If set to false (fire-and-forget), the app will NOT receive/show a ValidationResult
+    private let receiveResult = false
 
     // MARK: - Public Methods
     private func connectAndValidate(with accessKey: AccessKey) async {
@@ -40,7 +42,8 @@ class ConnectorViewModel: ObservableObject {
             connector = EmrtdConnector(
                 serverURL: url,
                 validationId: validationId,
-                clientId: clientId
+                clientId: clientId,
+                receiveResult: receiveResult
             )
 
             /*
@@ -87,16 +90,22 @@ class ConnectorViewModel: ObservableObject {
             //     issuingCountry: "FRA"
             // )
 
-            debugPrint("📊 Validation complete")
-            debugPrint("  - Status: \(result.status)")
-            debugPrint("  - Is Valid: \(result.isValid)")
-            if let mrzInfo = result.mrzInfo {
-                debugPrint("  - Name: \(mrzInfo.primaryIdentifier) \(mrzInfo.secondaryIdentifier)")
-                debugPrint("  - Document: \(mrzInfo.documentNumber)")
+            if receiveResult {
+                debugPrint("📊 Validation complete")
+                debugPrint("  - Status: \(result.status)")
+                debugPrint("  - Is Valid: \(result.isValid)")
+                if let mrzInfo = result.mrzInfo {
+                    debugPrint("  - Name: \(mrzInfo.primaryIdentifier) \(mrzInfo.secondaryIdentifier)")
+                    debugPrint("  - Document: \(mrzInfo.documentNumber)")
+                }
+                validationResult = result
+                statusText = "Validation complete"
+            } else {
+                // Fire-and-forget: do not present a result
+                debugPrint("📊 Validation posted (fire-and-forget mode)")
+                validationResult = nil
+                statusText = "Posted to server"
             }
-
-            validationResult = result
-            statusText = "Validation complete"
 
         } catch {
             debugPrint("❌ Process failed: \(error.localizedDescription)")
@@ -183,6 +192,10 @@ extension ConnectorViewModel: EmrtdConnectorDelegate {
         debugPrint("✅ Delegate: Server successfully posted results (Close Code 1000)")
         // This confirms the server has successfully processed and posted the validation
         // Especially useful when using receiveResult: false
+        if !receiveResult {
+            statusText = "Server posted results"
+            isValidating = false
+        }
     }
 
     func connector(_ connector: EmrtdConnector, didFailWithError error: Error) async {

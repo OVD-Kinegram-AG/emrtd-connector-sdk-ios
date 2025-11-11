@@ -1,5 +1,10 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.1.2
+
+* Fix: Stabilize fire-and-forget mode (`receiveResult=false`)
+* Example: Hide result output when `receiveResult=false`
+
 ## 2.1.1
 
 * Fix: Remove NFC race‑guard and double‑cleanup; update KinegramEmrtd framework for stable async flow
