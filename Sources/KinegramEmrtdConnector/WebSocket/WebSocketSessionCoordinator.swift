@@ -341,14 +341,19 @@ actor WebSocketSessionCoordinator {
             // Check for cancellation before starting
             try Task.checkCancellation()
 
-            // Simple approach: Just call startWithHandover and handle cancellation in catch
+            // Ensure the NFC session is invalidated if this task is cancelled while awaiting
+            // the underlying SDK call, to avoid leaking continuations inside the SDK.
             do {
-                let handoverState = try await reader.startWithHandover(
-                    accessKey: accessKey,
-                    activeAuthChallenge: activeAuthChallenge,
-                    apduRelayHandler: nil,
-                    usePACEPolling: usePACEPolling
-                )
+                let handoverState = try await withTaskCancellationHandler(operation: {
+                    try await reader.startWithHandover(
+                        accessKey: accessKey,
+                        activeAuthChallenge: activeAuthChallenge,
+                        apduRelayHandler: nil,
+                        usePACEPolling: usePACEPolling
+                    )
+                }, onCancel: {
+                    reader.invalidateSession(errorMessage: "Operation cancelled")
+                })
 
                 // Check for cancellation after NFC operation
                 try Task.checkCancellation()
@@ -362,10 +367,8 @@ actor WebSocketSessionCoordinator {
                 )
             } catch {
                 // On any error (including cancellation), ensure session is properly closed
-                if error is CancellationError {
-                    Logger.debug("Task cancelled during NFC operation")
-                    reader.invalidateSession(errorMessage: "Operation cancelled")
-                }
+                Logger.debug("NFC operation error: \(error)")
+                reader.invalidateSession(errorMessage: "Connection timed out")
                 throw error
             }
         }
@@ -660,8 +663,6 @@ actor WebSocketSessionCoordinator {
     /// Close the session
     func closeSession(reason: String? = nil) async {
         if await stateMachine.canTransition(to: .closed) {
-            let closeMessage = CloseMessage(reason: reason, code: nil)
-            try? await connection.send(message: closeMessage)
             try? await stateMachine.transition(to: .closed)
         }
 
@@ -718,11 +719,10 @@ actor WebSocketSessionCoordinator {
             }
 
         } catch {
-            // Ignore "Socket is not connected" errors - these are expected after CLOSE
+            // Treat "Socket is not connected" (57) as an immediate disconnect unless we've already completed/closed.
             let nsError = error as NSError
-            if nsError.code == 57 { // Socket is not connected
-                Logger.debug("Socket disconnected - waiting for CLOSE message processing")
-                return
+            if nsError.code == 57 {
+                Logger.debug("Socket disconnected")
             }
 
             // Only log if it's not a normal disconnection after completion
@@ -737,7 +737,8 @@ actor WebSocketSessionCoordinator {
                 }
             }
 
-            // Close NFC session on error
+            // ALWAYS close NFC session and resume continuations on error,
+            // even if state is already .closed (to avoid hanging operations)
             await closeNFCSession()
 
             // Resume any waiting continuations with error
@@ -772,9 +773,24 @@ actor WebSocketSessionCoordinator {
             let isTerminal = await stateMachine.isTerminal
             let currentState = await stateMachine.currentState
 
-            // Don't treat disconnection as error if we're already completed or closed
-            if currentState == .completed || currentState == .closed {
+            // Don't treat disconnection as error if we're already completed
+            if currentState == .completed {
                 Logger.debug("Connection closed after successful completion - ignoring")
+                return
+            }
+
+            // But if state is .closed without completion, we still need to clean up
+            if currentState == .closed {
+                Logger.debug("Connection closed while already in closed state - cleaning up")
+                // Still need to resume any hanging continuations
+                acceptContinuation?.resume(throwing: EmrtdConnectorError.connectionClosed(reason: "Connection lost"))
+                acceptContinuation = nil
+                handbackContinuation?.resume(throwing: EmrtdConnectorError.connectionClosed(reason: "Connection lost"))
+                handbackContinuation = nil
+                resultContinuation?.resume(throwing: EmrtdConnectorError.connectionClosed(reason: "Connection lost"))
+                resultContinuation = nil
+                activeContinuation?.resume(throwing: EmrtdConnectorError.connectionClosed(reason: "Connection lost"))
+                activeContinuation = nil
                 return
             }
 
@@ -880,6 +896,11 @@ actor WebSocketSessionCoordinator {
             // If we already got the result, just return
             if previousState == .completed {
                 Logger.debug("Already received result, closing normally")
+                return
+            }
+            // If we are in fire-and-forget mode, treat normal close as success and return
+            if !receiveResult {
+                Logger.debug("Fire-and-forget mode - treating normal close as success")
                 return
             }
         }

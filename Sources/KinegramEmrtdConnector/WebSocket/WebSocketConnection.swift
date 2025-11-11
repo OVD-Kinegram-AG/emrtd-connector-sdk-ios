@@ -190,7 +190,7 @@ actor WebSocketConnection {
 
                 // IMPORTANT: Continue receiving even if we think we're done
                 // iOS WebSocket requires continuous receive calls to get close frames
-                if await self.isConnected && self.webSocketTask != nil {
+                if await self.hasActiveTask() {
                     await self.receiveMessage()
                 } else {
                     Logger.debug("Stopping receive loop - disconnected or no task")
@@ -232,6 +232,11 @@ actor WebSocketConnection {
         }
     }
 
+    /// Check whether we still have an active connection and task
+    private func hasActiveTask() -> Bool {
+        return isConnected && webSocketTask != nil
+    }
+
     /// Handle unexpected disconnection
     private func handleDisconnection() async {
         guard isConnected else { return }
@@ -255,7 +260,7 @@ actor WebSocketConnection {
     private func startPingTimer() {
         pingTimer?.invalidate()
 
-        pingTimer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { [weak self] _ in
+        pingTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { [weak self] _ in
             Task { [weak self] in
                 await self?.sendPing()
             }
@@ -283,8 +288,11 @@ extension URLSession {
     /// Create a URLSession configured for WebSocket use
     static func webSocketSession() -> URLSession {
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 10
-        configuration.timeoutIntervalForResource = 10
+        // Handshake/request operations can legitimately take longer in
+        // adverse network conditions. Also, reading on-device can take
+        // significant time with few WS exchanges – avoid spurious timeouts.
+        configuration.timeoutIntervalForRequest = 60   // seconds
+        configuration.timeoutIntervalForResource = 600 // seconds
         configuration.waitsForConnectivity = false  // Don't wait for connectivity - fail fast
         configuration.allowsCellularAccess = true
 

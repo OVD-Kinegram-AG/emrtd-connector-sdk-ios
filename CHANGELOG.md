@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.1.1
+
+* Fix: Remove NFC race‑guard and double‑cleanup; update KinegramEmrtd framework for stable async flow
+
 ## 2.1.0
 
 * New: Automatic PACE selection based on document info

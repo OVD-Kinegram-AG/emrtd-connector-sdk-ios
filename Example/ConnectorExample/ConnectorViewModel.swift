@@ -98,15 +98,9 @@ class ConnectorViewModel: ObservableObject {
             validationResult = result
             statusText = "Validation complete"
 
-            // No need to disconnect - validate() does it automatically
-            connector = nil
-
         } catch {
             debugPrint("❌ Process failed: \(error.localizedDescription)")
             statusText = "Failed: \(error.localizedDescription)"
-
-            // Clean up on error (validate() already disconnected)
-            connector = nil
         }
 
         isValidating = false
@@ -195,12 +189,8 @@ extension ConnectorViewModel: EmrtdConnectorDelegate {
         debugPrint("📡 Delegate: \(error.localizedDescription)")
         statusText = "Delegate: \(error.localizedDescription)"
         isValidating = false
-
-        // Clean up connector on error
-        if self.connector != nil {
-            await self.connector?.disconnect()
-            self.connector = nil
-        }
+        // Do not call disconnect() here; validate() handles cleanup on error
+        self.connector = nil
     }
 
     func connector(_ connector: EmrtdConnector, didUpdateNFCStatus status: NFCProgressStatus) async {

@@ -74,8 +74,12 @@ public class EmrtdConnector {
 
             return result
         } catch {
-            // Ensure disconnection on error
-            await disconnect()
+            // Don't call disconnect() here - it can cause deadlocks
+            // The connection is already broken when we get here due to the error
+            // Just mark as disconnected and throw
+            isConnected = false
+            sessionCoordinator = nil
+            connection = nil
             throw error
         }
     }
@@ -170,18 +174,32 @@ public class EmrtdConnector {
         // Mark as disconnected immediately to prevent double disconnection
         isConnected = false
 
-        // First close the session (sends CLOSE message if needed)
-        await sessionCoordinator?.closeSession()
+        // Add timeout protection to prevent hanging
+        await withTaskGroup(of: Void.self) { group in
+            group.addTask { [weak self] in
+                // First close the session (sends CLOSE message if needed)
+                await self?.sessionCoordinator?.closeSession()
 
-        // Wait a bit to ensure any pending messages are processed
-        // This addresses iOS WebSocket close handling issues
-        try? await Task.sleep(nanoseconds: 200_000_000) // 200ms
+                // Wait a bit to ensure any pending messages are processed
+                // This addresses iOS WebSocket close handling issues
+                try? await Task.sleep(nanoseconds: 200_000_000) // 200ms
 
-        // Then disconnect the WebSocket
-        await connection?.disconnect()
+                // Then disconnect the WebSocket
+                await self?.connection?.disconnect()
 
-        // Close any active NFC session and clear reader reference
-        await sessionCoordinator?.closeNFCSession()
+                // Close any active NFC session and clear reader reference
+                await self?.sessionCoordinator?.closeNFCSession()
+            }
+
+            group.addTask {
+                // Timeout after 1 second
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+            }
+
+            // Wait for first to complete, then cancel the rest
+            _ = await group.next()
+            group.cancelAll()
+        }
 
         connection = nil
         sessionCoordinator = nil

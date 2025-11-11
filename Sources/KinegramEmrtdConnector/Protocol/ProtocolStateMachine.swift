@@ -96,8 +96,7 @@ extension ProtocolStateMachine {
         let validStatesForMessage: [MessageType: Set<ProtocolState>] = [
             .start: [.connected],
             .caHandover: [.readingChip],
-            .finish: [.handbackReceived, .readingChip], // readingChip for no-CA flow
-            .close: [.connected, .started, .accepted, .readingChip, .handoverSent, .handbackReceived, .finishing, .completed, .failed]
+            .finish: [.handbackReceived, .readingChip] // readingChip for no-CA flow
         ]
 
         guard let validStates = validStatesForMessage[messageType],
@@ -138,34 +137,6 @@ extension ProtocolStateMachine {
         default:
             return .close
         }
-    }
-}
-
-// MARK: - Timeout Management
-
-extension ProtocolStateMachine {
-    /// Get the timeout duration for the current state
-    var stateTimeout: TimeInterval {
-        switch currentState {
-        case .connecting:
-            return 30.0 // 30 seconds to connect
-        case .started:
-            return 10.0 // 10 seconds for server to accept
-        case .readingChip:
-            return 20.0 // 20 seconds NFC timeout
-        case .handoverSent:
-            return 30.0 // 30 seconds for server CA
-        case .finishing:
-            return 60.0 // 60 seconds for large file transfers
-        default:
-            return 120.0 // 2 minutes default
-        }
-    }
-
-    /// Check if the current state should timeout
-    func checkTimeout(enteredAt: Date) -> Bool {
-        let elapsed = Date().timeIntervalSince(enteredAt)
-        return elapsed > stateTimeout
     }
 }
 
