@@ -70,7 +70,7 @@ The package includes the KinegramEmrtd.xcframework binary dependency automatical
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'KinegramEmrtdConnector', '~> 2.1.0'
+pod 'KinegramEmrtdConnector', '~> 2.1.1'
 ```
 
 Then run `pod install`.
