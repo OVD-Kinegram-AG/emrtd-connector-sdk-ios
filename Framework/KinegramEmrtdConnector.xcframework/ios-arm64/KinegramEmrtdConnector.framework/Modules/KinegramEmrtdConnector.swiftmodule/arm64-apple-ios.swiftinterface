@@ -1,0 +1,1439 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KinegramEmrtdConnector
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import CommonCrypto
+import CoreNFC
+import CryptoKit
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _CoreNFC_UIKit
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum ASN1Error : KinegramEmrtdConnector.ErrorWithMonitoringInfo {
+  case FailedToDecodeLength(_: Swift.String)
+  case FailedToReadValue(_: Swift.String)
+  case FailedToDecodeTagNumber(_: Swift.String)
+  case FailedToEncodeLength(_: Swift.Int)
+  case FailedToDecodeObjectIdentifier(_: Swift.String)
+  public var monitoringText: Swift.String {
+    get
+  }
+}
+public enum ASN1TagClass : Swift.UInt8 {
+  case Universal
+  case Application
+  case ContextSpecific
+  case Private
+  case Unknown
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public struct ASN1Tag : Swift.Equatable, Swift.CustomDebugStringConvertible, Swift.Hashable {
+  public let cls: KinegramEmrtdConnector.ASN1TagClass
+  public let primitive: Swift.Bool
+  public let number: Swift.UInt64
+  public var constructed: Swift.Bool {
+    get
+  }
+  public let rawBytes: Swift.ArraySlice<Swift.UInt8>
+  public static func == (lhs: KinegramEmrtdConnector.ASN1Tag, rhs: KinegramEmrtdConnector.ASN1Tag) -> Swift.Bool
+  public static func == (lhs: KinegramEmrtdConnector.ASN1Tag, rhs: [Swift.UInt8]) -> Swift.Bool
+  public var debugDescription: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias ASN1TLV = (rawBytes: Swift.ArraySlice<Swift.UInt8>, tag: KinegramEmrtdConnector.ASN1Tag, length: Swift.Int, value: Swift.ArraySlice<Swift.UInt8>)
+public struct ASN1Integer : Swift.Hashable {
+  public let rawBytes: [Swift.UInt8]
+  public let int: Swift.Int64?
+  public static func == (a: KinegramEmrtdConnector.ASN1Integer, b: KinegramEmrtdConnector.ASN1Integer) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ASN1ObjectIdentifier : Swift.Hashable {
+  public let rawBytes: [Swift.UInt8]
+  public let string: Swift.String
+  public static func == (a: KinegramEmrtdConnector.ASN1ObjectIdentifier, b: KinegramEmrtdConnector.ASN1ObjectIdentifier) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol AccessKey {
+  var type: Swift.UInt8 { get }
+  var keyString: Swift.String { get }
+}
+public struct MRZKey : KinegramEmrtdConnector.AccessKey {
+  public var type: Swift.UInt8 {
+    get
+  }
+  public var keyString: Swift.String {
+    get
+  }
+  public init(documentNumber: Swift.String, birthDateyyMMdd: Swift.String, expiryDateyyMMdd: Swift.String)
+  public init(documentNumber: Swift.String, birthDate: Foundation.Date, expiryDate: Foundation.Date)
+}
+public struct CANKey : KinegramEmrtdConnector.AccessKey {
+  public var type: Swift.UInt8 {
+    get
+  }
+  public let keyString: Swift.String
+  @available(*, deprecated, message: "Use init(can:) instead.")
+  public init(keyString: Swift.String)
+  public init(can: Swift.String)
+}
+@_hasMissingDesignatedInitializers @_documentation(visibility: internal) public class Bignum {
+  public init(_ dec: Swift.String)
+  public init(hex: Swift.String)
+  convenience public init(_ value: Swift.Int32 = 0)
+  convenience public init(data: [Swift.UInt8])
+  @objc deinit
+  public var isOdd: Swift.Bool {
+    get
+  }
+  public var bitLength: Swift.Int32 {
+    get
+  }
+  public var data: [Swift.UInt8]? {
+    get
+  }
+  public var dec: Swift.String {
+    get
+  }
+  public var hex: Swift.String {
+    get
+  }
+  public var intValue: Swift.Int32? {
+    get
+  }
+}
+extension KinegramEmrtdConnector.Bignum : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension KinegramEmrtdConnector.Bignum : Swift.Comparable {
+  public static func == (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> Swift.Bool
+  public static func == (lhs: KinegramEmrtdConnector.Bignum, rhs: Swift.Int32) -> Swift.Bool
+  public static func < (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> Swift.Bool
+  public static func < (lhs: KinegramEmrtdConnector.Bignum, rhs: Swift.Int32) -> Swift.Bool
+}
+@_documentation(visibility: internal) public func exp(_ a: KinegramEmrtdConnector.Bignum, _ p: KinegramEmrtdConnector.Bignum, mod: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func exp(_ a: KinegramEmrtdConnector.Bignum, _ p: Swift.Int32, mod: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func sqr(_ a: KinegramEmrtdConnector.Bignum, mod: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func add(_ a: KinegramEmrtdConnector.Bignum, _ b: KinegramEmrtdConnector.Bignum, mod: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func mul(_ a: KinegramEmrtdConnector.Bignum, _ b: KinegramEmrtdConnector.Bignum, mod: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func % (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func % (lhs: KinegramEmrtdConnector.Bignum, rhs: Swift.Int32) -> Swift.Int32
+@_documentation(visibility: internal) public func * (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func * (lhs: Swift.Int32, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func + (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func + (lhs: Swift.Int32, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func + (lhs: KinegramEmrtdConnector.Bignum, rhs: Swift.Int32) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func - (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func - (lhs: Swift.Int32, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func - (lhs: KinegramEmrtdConnector.Bignum, rhs: Swift.Int32) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func / (lhs: KinegramEmrtdConnector.Bignum, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func / (lhs: Swift.Int32, rhs: KinegramEmrtdConnector.Bignum) -> KinegramEmrtdConnector.Bignum
+@_documentation(visibility: internal) public func / (lhs: KinegramEmrtdConnector.Bignum, rhs: Swift.Int32) -> KinegramEmrtdConnector.Bignum
+@available(*, deprecated, message: "Access the X509Wrapper properties instead.")
+@_documentation(visibility: internal) public enum CertificateItem : Swift.String {
+  case fingerprint
+  case issuerName
+  case subjectName
+  case serialNumber
+  case signatureAlgorithm
+  case publicKeyParams
+  case notBefore
+  case notAfter
+  public init?(rawValue: Swift.String)
+  @available(*, deprecated, message: "Access the X509Wrapper properties instead.")
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension KinegramEmrtdConnector.X509Wrapper {
+  @available(*, deprecated, message: "Access the X509Wrapper properties instead.")
+  public func getItemsAsDict() -> [KinegramEmrtdConnector.CertificateItem : Swift.String]
+}
+@_documentation(visibility: internal) public class X509Wrapper {
+  final public let cert: Swift.OpaquePointer
+  public init(withCopyOf cert: Swift.OpaquePointer)
+  @objc deinit
+  public func getDERBinary() throws -> [Swift.UInt8]
+  public var fingerprint: Swift.String? {
+    get
+  }
+  public var notBeforeDate: Swift.String? {
+    get
+  }
+  public var notAfterDate: Swift.String? {
+    get
+  }
+  public var serialNumber: Swift.String? {
+    get
+  }
+  public var signatureAlgorithm: Swift.String? {
+    get
+  }
+  public var publicKeyParams: Swift.String? {
+    get
+  }
+  public var issuerName: Swift.String? {
+    get
+  }
+  public var subjectName: Swift.String? {
+    get
+  }
+}
+public typealias EmrtdPassportReader = KinegramEmrtdConnector.EmrtdReader
+public typealias EmrtdPassportReaderError = KinegramEmrtdConnector.EmrtdReaderError
+@objc @_inheritsConvenienceInitializers public class EmrtdReader : ObjectiveC.NSObject {
+  public var errorLocalization: (_ error: KinegramEmrtdConnector.EmrtdReaderError) -> Swift.String
+  public var stepLocalization: (_ currentStep: KinegramEmrtdConnector.ReadAndVerifyStep) -> Swift.String
+  public var fileReadProgressLocalization: (_ currentFile: KinegramEmrtdConnector.ElementaryFileName, _ readBytes: Swift.Int, _ totalBytes: Swift.Int) -> Swift.String
+  public init(errorLocalization: ((KinegramEmrtdConnector.EmrtdReaderError) -> Swift.String)? = nil, stepLocalization: ((KinegramEmrtdConnector.ReadAndVerifyStep) -> Swift.String)? = nil, fileReadProgressLocalization: ((_ currentFile: KinegramEmrtdConnector.ElementaryFileName, _ readBytes: Swift.Int, _ totalBytes: Swift.Int) -> Swift.String)? = nil)
+  public func readMasterlist(from masterListUrl: Foundation.URL, masterlistIssuerCertificateUrl: Foundation.URL? = nil) throws
+  public func read(accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.EmrtdResult
+  public func readAndVerify(accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.EmrtdResult
+  @_documentation(visibility: internal) public func startWithHandover(accessKey: any KinegramEmrtdConnector.AccessKey, activeAuthChallenge: Foundation.Data? = nil, apduRelayHandler: (any KinegramEmrtdConnector.APDURelayHandler)? = nil, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.HandoverState
+  @_documentation(visibility: internal) public func sendExternalAPDU(_ commandData: Foundation.Data) async throws -> Foundation.Data
+  @_documentation(visibility: internal) public func closeSession()
+  @_documentation(visibility: internal) public func invalidateSession(errorMessage: Swift.String? = nil)
+  @_documentation(visibility: internal) public func continueAfterHandback(from state: KinegramEmrtdConnector.HandoverState, handbackInfo: KinegramEmrtdConnector.CAHandbackInfo, filesToRead: KinegramEmrtdConnector.DataGroupSet = .standard, shouldAutoInvalidateSession: Swift.Bool = true, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.EmrtdResult
+  @objc deinit
+}
+indirect public enum ReadAndVerifyStep {
+  case waitingForPassport
+  case readFileAtrInfo
+  case readFileCardAccess
+  case doPaceOrBac(continueWith: KinegramEmrtdConnector.ReadAndVerifyStep)
+  case readFileSOD
+  case readFileDG14
+  case doChipAuthenticationIfAvailable(dg14File: KinegramEmrtdConnector.File)
+  case readFileDG15
+  case doActiveAuthentication(dg15File: KinegramEmrtdConnector.File)
+  case readRemainingElementaryFiles
+  case doPassiveAuthentication
+  case done
+  case readFile(KinegramEmrtdConnector.ElementaryFileName)
+  public var description: Swift.String {
+    get
+  }
+}
+public enum EmrtdReaderError : KinegramEmrtdConnector.ErrorWithMonitoringInfo {
+  case NFCNotSupported(CoreNFC.NFCTagReaderSession.PollingOption)
+  case MoreThanOneTagFound
+  case WrongTag
+  case UserInvalidatedSession
+  case SessionInvalidated(CoreNFC.NFCReaderError.Code?)
+  case ConnectingFailed((any Swift.Error)?)
+  case ConnectionLost
+  case PaceOrBacFailed((any Swift.Error)?)
+  case FileReadFailed(KinegramEmrtdConnector.EmrtdChipCommunicationError?, [KinegramEmrtdConnector.ElementaryFileName])
+  case IncompleteRead([KinegramEmrtdConnector.ElementaryFileName])
+  case IncorrectAccessKey(Swift.UInt8)
+  case InvalidHandoverData
+  case ChipAuthenticationFailed
+  case PACEPollingNotAvailable
+  public var errorDescription: Swift.String {
+    get
+  }
+  public var monitoringText: Swift.String {
+    get
+  }
+}
+public enum MasterlistReadError : KinegramEmrtdConnector.ErrorWithMonitoringInfo {
+  case FailedToReadMasterlistFile(any Swift.Error)
+  public var errorDescription: Swift.String {
+    get
+  }
+  public var monitoringText: Swift.String {
+    get
+  }
+}
+extension KinegramEmrtdConnector.EmrtdResult {
+  public static func generateMockSampleInstance(files: [KinegramEmrtdConnector.ElementaryFileName : Foundation.Data], masterlist: KinegramEmrtdConnector.MasterlistFile? = nil) throws -> KinegramEmrtdConnector.EmrtdResult
+}
+public enum VerificationResult<T> : Swift.Equatable where T : Swift.Equatable {
+  case Unavailable
+  case Aborted(failedToParseFile: KinegramEmrtdConnector.ElementaryFileName)
+  case Failed(reason: T)
+  case Success
+  public static func == (a: KinegramEmrtdConnector.VerificationResult<T>, b: KinegramEmrtdConnector.VerificationResult<T>) -> Swift.Bool
+}
+public typealias EmrtdPassport = KinegramEmrtdConnector.EmrtdResult
+@_hasMissingDesignatedInitializers public class EmrtdResult {
+  public var allReadFiles: [KinegramEmrtdConnector.ElementaryFileName : KinegramEmrtdConnector.File] {
+    get
+  }
+  public var chipAccessProtocolType: KinegramEmrtdConnector.ChipAccessType? {
+    get
+  }
+  public var chipAccessResult: Swift.Bool? {
+    get
+  }
+  public var chipAuthenticationResult: KinegramEmrtdConnector.VerificationResult<KinegramEmrtdConnector.ChipAuthenticationFailedReason>? {
+    get
+  }
+  public var activeAuthenticationResult: KinegramEmrtdConnector.VerificationResult<KinegramEmrtdConnector.ActiveAuthenticationFailedReason>? {
+    get
+  }
+  public var activeAuthenticationSignature: Foundation.Data? {
+    get
+  }
+  public var issuerCertificate: KinegramEmrtdConnector.X509Wrapper? {
+    get
+  }
+  public var validHashFiles: [KinegramEmrtdConnector.File] {
+    get
+  }
+  public var cardAccessFileAuthenticityConfirmed: Swift.Bool? {
+    get
+  }
+  public var passiveAuthenticationErrors: [KinegramEmrtdConnector.PassiveAuthenticationError] {
+    get
+  }
+  public var cardAccessFile: KinegramEmrtdConnector.CardAccessFile? {
+    get
+  }
+  public var sodFile: KinegramEmrtdConnector.SODFile? {
+    get
+  }
+  public var dg1File: KinegramEmrtdConnector.DataGroup1File? {
+    get
+  }
+  public var dg2File: KinegramEmrtdConnector.DataGroup2File? {
+    get
+  }
+  public var dg7File: KinegramEmrtdConnector.DataGroup7File? {
+    get
+  }
+  public var dg11File: KinegramEmrtdConnector.DataGroup11File? {
+    get
+  }
+  public var dg12File: KinegramEmrtdConnector.DataGroup12File? {
+    get
+  }
+  public var dg14File: KinegramEmrtdConnector.DataGroup14File? {
+    get
+  }
+  public var dg15File: KinegramEmrtdConnector.DataGroup15File? {
+    get
+  }
+  public var notCorrectlyParsedFiles: [KinegramEmrtdConnector.File] {
+    get
+  }
+  public var passiveAuthenticationResult: Swift.Bool? {
+    get
+  }
+  public var allHashesValid: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+public protocol ErrorWithMonitoringInfo : Swift.Error {
+  var monitoringText: Swift.String { get }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BiometricFace : KinegramEmrtdConnector.Biometric {
+  final public let version: Swift.String
+  final public let faceImageInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo]
+  @objc deinit
+}
+public enum Gender : Swift.Int {
+  case Unspecified
+  case Male
+  case Female
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum EyeColor : Swift.Int {
+  case Unspecified
+  case Black
+  case Blue
+  case Brown
+  case Gray
+  case Green
+  case MultiColored
+  case Pink
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum HairColor : Swift.Int {
+  case Unspecified
+  case Bald
+  case Black
+  case Blonde
+  case Brown
+  case Gray
+  case White
+  case Red
+  case Green
+  case Blue
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct Features {
+  public enum Flag : Swift.UInt32 {
+    case Glasses
+    case Moustache
+    case Beard
+    case TeethVisible
+    case Blink
+    case MouthOpen
+    case LeftEyePatch
+    case RightEyePatch
+    case DarkGlasses
+    case DistortingMedicalCondition
+    public init?(rawValue: Swift.UInt32)
+    public typealias RawValue = Swift.UInt32
+    public var rawValue: Swift.UInt32 {
+      get
+    }
+  }
+  public let featureMask: Swift.UInt32
+  public func hasFeature(featureFlag: KinegramEmrtdConnector.Features.Flag) -> Swift.Bool
+}
+public enum Expression : Swift.Int {
+  case Unspecified
+  case Neutral
+  case SmileClosed
+  case SmileOpen
+  case RaisedEyebrows
+  case EyesLookingAway
+  case Squinting
+  case Frowning
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum FaceImageType : Swift.Int {
+  case Basic
+  case FullFrontal
+  case TokenFrontal
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ImageDataType : Swift.Int {
+  case JPEG
+  case JPEG2000
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ColorSpace : Swift.Int {
+  case Unspecified
+  case RGB24
+  case YUV422
+  case Gray8
+  case Other
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SourceType : Swift.Int {
+  case Unspecified
+  case StaticPhotoUnknownSource
+  case StaticPhotoDigitalCam
+  case StaticPhotoScanner
+  case VideoFrameUnknownSource
+  case VideoFrameAnalogCam
+  case VideoFrameDigitalCam
+  case Unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias BiometricAngle = (yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)
+public typealias BiometricFeaturePoint = (type: Swift.UInt8, point: Swift.UInt8, x: Swift.UInt16, y: Swift.UInt16)
+public struct BiometricFaceImageInfo {
+  public let recordLength: Swift.UInt32
+  public let gender: KinegramEmrtdConnector.Gender
+  public let eyeColor: KinegramEmrtdConnector.EyeColor
+  public let hairColor: KinegramEmrtdConnector.HairColor
+  public let features: KinegramEmrtdConnector.Features?
+  public let expression: KinegramEmrtdConnector.Expression
+  public let poseAngle: KinegramEmrtdConnector.BiometricAngle
+  public let poseAngleUncertainty: KinegramEmrtdConnector.BiometricAngle
+  public let featurePoints: [KinegramEmrtdConnector.BiometricFeaturePoint]
+  public let faceImageType: KinegramEmrtdConnector.FaceImageType
+  public let imageDataType: KinegramEmrtdConnector.ImageDataType
+  public let width: Swift.UInt16
+  public let height: Swift.UInt16
+  public let colorspace: KinegramEmrtdConnector.ColorSpace
+  public let sourceType: KinegramEmrtdConnector.SourceType
+  public let deviceType: Swift.UInt16
+  public let quality: Swift.UInt16
+  public let rawImageData: [Swift.UInt8]
+  public let uiImage: UIKit.UIImage?
+}
+public enum BiometricError : KinegramEmrtdConnector.ErrorWithMonitoringInfo {
+  case InvalidFormat
+  public var monitoringText: Swift.String {
+    get
+  }
+  public static func == (a: KinegramEmrtdConnector.BiometricError, b: KinegramEmrtdConnector.BiometricError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct BiometricInformation<T> where T : KinegramEmrtdConnector.Biometric {
+  public let header: [KinegramEmrtdConnector.ASN1Tag : [Swift.UInt8]]
+  public let biometric: T
+}
+@_hasMissingDesignatedInitializers public class Biometric {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class File {
+  final public let fileName: KinegramEmrtdConnector.ElementaryFileName
+  final public let data: [Swift.UInt8]
+  final public let parsingError: (any Swift.Error)?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AtrInfoFile : KinegramEmrtdConnector.File {
+  public var maxCommandBytes: Swift.Int? {
+    get
+  }
+  public var maxResponseBytes: Swift.Int? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CardAccessFile : KinegramEmrtdConnector.File {
+  final public let paceInfos: [KinegramEmrtdConnector.PaceInfo]
+  final public let paceDomainParameterInfos: [KinegramEmrtdConnector.PaceDomainParameterInfo]
+  final public let chipAuthenticationInfos: [KinegramEmrtdConnector.ChipAuthenticationInfo]
+  final public let chipAuthenticationPublicKeyInfos: [KinegramEmrtdConnector.ChipAuthenticationPublicKeyInfo]
+  final public let activeAuthenticationInfos: [KinegramEmrtdConnector.ActiveAuthenticationInfo]
+  final public let terminalAuthenticationInfos: [KinegramEmrtdConnector.SecurityInfo]
+  final public let unknownSecurityInfos: [KinegramEmrtdConnector.SecurityInfo]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataGroup14File : KinegramEmrtdConnector.File {
+  final public let paceInfos: [KinegramEmrtdConnector.PaceInfo]
+  final public let paceDomainParameterInfos: [KinegramEmrtdConnector.PaceDomainParameterInfo]
+  final public let chipAuthenticationInfos: [KinegramEmrtdConnector.ChipAuthenticationInfo]
+  final public let chipAuthenticationPublicKeyInfos: [KinegramEmrtdConnector.ChipAuthenticationPublicKeyInfo]
+  final public let activeAuthenticationInfos: [KinegramEmrtdConnector.ActiveAuthenticationInfo]
+  final public let terminalAuthenticationInfos: [KinegramEmrtdConnector.SecurityInfo]
+  final public let unknownSecurityInfos: [KinegramEmrtdConnector.SecurityInfo]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataGroup15File : KinegramEmrtdConnector.File {
+  final public let publicKey: Swift.OpaquePointer
+  @objc deinit
+}
+public enum DocumentType : Swift.Int {
+  case TD1
+  case TD2
+  case TD3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class DataGroup1File : KinegramEmrtdConnector.File {
+  final public let documentType: KinegramEmrtdConnector.DocumentType
+  final public let documentCode: Swift.String
+  final public let issuingState: Swift.String
+  final public let primaryIdentifier: Swift.String
+  final public let secondaryIdentifier: Swift.String
+  final public let nationality: Swift.String
+  final public let documentNumber: Swift.String
+  final public let dateOfBirth: Foundation.Date?
+  final public let dateOfBirthRawString: Swift.String
+  final public let gender: Swift.Character?
+  final public let dateOfExpiry: Foundation.Date
+  final public let documentNumberCheckDigit: Swift.Character
+  final public let dateOfBirthCheckDigit: Swift.Character
+  final public let dateOfExpiryCheckDigit: Swift.Character
+  final public let compositeCheckDigit: Swift.Character
+  final public let optionalData1: Swift.String?
+  final public let optionalData2: Swift.String?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataGroup2File : KinegramEmrtdConnector.File {
+  final public let biometricInfos: [KinegramEmrtdConnector.BiometricInformation<KinegramEmrtdConnector.BiometricFace>]
+  public var faceInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo]? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataGroup11File : KinegramEmrtdConnector.File {
+  public var fullNameOfDocumentHolder: (primaryIdentifier: Swift.String?, secondaryIdentifier: Swift.String?) {
+    get
+  }
+  public var otherNames: [Swift.String]? {
+    get
+  }
+  public var personalNumber: Swift.String? {
+    get
+  }
+  public var fullDateOfBirth: Foundation.Date? {
+    get
+  }
+  public var placeOfBirth: Swift.String? {
+    get
+  }
+  public var permanentAddress: Swift.String? {
+    get
+  }
+  public var telephone: Swift.String? {
+    get
+  }
+  public var profession: Swift.String? {
+    get
+  }
+  public var title: Swift.String? {
+    get
+  }
+  public var personalSummary: Swift.String? {
+    get
+  }
+  public var proofOfCitizinShipRawImageData: [Swift.UInt8]? {
+    get
+  }
+  public var proofOfCitizinShipUIImage: UIKit.UIImage? {
+    get
+  }
+  public var otherValidTravelDocumentNumbers: [Swift.String]? {
+    get
+  }
+  public var custodyInformation: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataGroup12File : KinegramEmrtdConnector.File {
+  public var issuingAuthority: Swift.String? {
+    get
+  }
+  public var dateOfIssue: Foundation.Date? {
+    get
+  }
+  public var otherPersonNames: [Swift.String]? {
+    get
+  }
+  public var endorsementsObservations: Swift.String? {
+    get
+  }
+  public var taxExitRequirements: Swift.String? {
+    get
+  }
+  public var frontOfDocumentRawImageData: [Swift.UInt8]? {
+    get
+  }
+  public var frontOfDocumentUIImage: UIKit.UIImage? {
+    get
+  }
+  public var rearOfDocumentRawImageData: [Swift.UInt8]? {
+    get
+  }
+  public var rearOfDocumentUIImage: UIKit.UIImage? {
+    get
+  }
+  public var dateAndTimeOfDocumentPersonalization: Swift.String? {
+    get
+  }
+  public var serialNumberOfPersonalizationSystem: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataGroup7File : KinegramEmrtdConnector.File {
+  final public let signatureImagesRawData: [[Swift.UInt8]]
+  final public let signatureUIImages: [UIKit.UIImage?]
+  @objc deinit
+}
+public class MasterlistFile {
+  final public let masterlistSignerCertificate: KinegramEmrtdConnector.X509Wrapper
+  public init(fileUrl: Foundation.URL, issuerCertificateUrl: Foundation.URL? = nil) throws
+  public func getCertificates() -> [KinegramEmrtdConnector.X509Wrapper]
+  @objc deinit
+}
+public typealias LDSSecurityObject = (version: KinegramEmrtdConnector.ASN1Integer, hashAlgorithmObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, hashAlgorithm: KinegramEmrtdConnector.HashAlgorithm, hashes: [KinegramEmrtdConnector.ASN1Integer : [Swift.UInt8]], ldsVersionInfo: KinegramEmrtdConnector.LDSVersionInfo?)
+public typealias DataGroupHash = (datagroupNumber: KinegramEmrtdConnector.ASN1Integer, hashValue: [Swift.UInt8])
+public typealias LDSVersionInfo = (ldsVersion: Swift.String, unicodeVersion: Swift.String)
+public enum HashAlgorithm : Swift.String {
+  case MD2
+  case MD5
+  case SHA1
+  case SHA256
+  case SHA384
+  case SHA512
+  case Unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class SODFile : KinegramEmrtdConnector.File {
+  final public let documentCertificate: KinegramEmrtdConnector.X509Wrapper
+  final public let signatureValid: Swift.Bool
+  final public let ldsSecurityObject: KinegramEmrtdConnector.LDSSecurityObject
+  public var availableElementaryFiles: [KinegramEmrtdConnector.ElementaryFileName] {
+    get
+  }
+  public init(data: [Swift.UInt8]) throws
+  public func getHashValue(for otherFileName: KinegramEmrtdConnector.ElementaryFileName) -> [Swift.UInt8]?
+  @objc deinit
+}
+public typealias SecurityInfo = (protocol: KinegramEmrtdConnector.ASN1ObjectIdentifier, required: KinegramEmrtdConnector.ASN1TLV, optional: KinegramEmrtdConnector.ASN1TLV?)
+public enum CryptographicAlgorithm : Swift.String {
+  case TripleDES_CBC_CBC
+  case AES_CBC_CMAC_128
+  case AES_CBC_CMAC_192
+  case AES_CBC_CMAC_256
+  case Unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SignatureAlgorithmECDSA : Swift.String {
+  case SHA1
+  case SHA224
+  case SHA256
+  case SHA384
+  case SHA512
+  case RIPEMD160
+  case SHA3_224
+  case SHA3_256
+  case SHA3_384
+  case SHA3_512
+  case Unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias ActiveAuthenticationInfo = (protocolObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, version: KinegramEmrtdConnector.ASN1Integer, signatureAlgorithmObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, plainECDSASignatureAlgorithm: KinegramEmrtdConnector.SignatureAlgorithmECDSA)
+public enum ChipAuthenticationKeyAgreementType : Swift.String {
+  case DH
+  case ECDH
+  case Unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias ChipAuthenticationInfo = (protocolObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, keyAgreementType: KinegramEmrtdConnector.ChipAuthenticationKeyAgreementType, algorithm: KinegramEmrtdConnector.CryptographicAlgorithm, version: KinegramEmrtdConnector.ASN1Integer, keyId: KinegramEmrtdConnector.ASN1Integer?)
+public typealias ChipAuthenticationPublicKeyInfo = (protocolObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, keyAgreementType: KinegramEmrtdConnector.ChipAuthenticationKeyAgreementType, publicKey: KinegramEmrtdConnector.PublicKeyWrapper, keyId: KinegramEmrtdConnector.ASN1Integer?)
+@_hasMissingDesignatedInitializers public class PublicKeyWrapper : Swift.CustomStringConvertible {
+  @objc deinit
+  public var description: Swift.String {
+    get
+  }
+}
+public enum StandardizedDomainParameter : Swift.Int64 {
+  case GFP_1024_160
+  case GFP_2048_224
+  case GFP_2048_256
+  case ECP_NIST_P192_R1
+  case ECP_BRAINPOOL_P192_R1
+  case ECP_NIST_P224_R1
+  case ECP_BRAINPOOL_P224_R1
+  case ECP_NIST_P256_R1
+  case ECP_BRAINPOOL_P256_R1
+  case ECP_BRAINPOOL_P320_R1
+  case ECP_NIST_P384_R1
+  case ECP_BRAINPOOL_P384_R1
+  case ECP_BRAINPOOL_P512_R1
+  case ECP_NIST_P521_R1
+  public init?(rawValue: Swift.Int64)
+  public typealias RawValue = Swift.Int64
+  public var rawValue: Swift.Int64 {
+    get
+  }
+}
+public enum PaceMappingType : Swift.String {
+  case DH_GM
+  case EC_DH_GM
+  case DH_IM
+  case EC_DH_IM
+  case EC_DH_CAM
+  case Unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias PaceInfo = (protocolObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, mappingType: KinegramEmrtdConnector.PaceMappingType, algorithm: KinegramEmrtdConnector.CryptographicAlgorithm, version: KinegramEmrtdConnector.ASN1Integer, parameterId: KinegramEmrtdConnector.ASN1Integer?)
+public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEmrtdConnector.ASN1ObjectIdentifier, paceMappingType: KinegramEmrtdConnector.PaceMappingType, domainParameter: KinegramEmrtdConnector.ASN1ObjectIdentifier, parameterId: KinegramEmrtdConnector.ASN1Integer?)
+@_documentation(visibility: internal) public struct AccessKeyInfo : Swift.Codable, Swift.Sendable {
+  public enum KeyType : Swift.String, Swift.Codable, Swift.Sendable {
+    case mrz
+    case can
+    case unknown
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let type: KinegramEmrtdConnector.AccessKeyInfo.KeyType
+  public let documentNumber: Swift.String?
+  public let dateOfBirth: Swift.String?
+  public let dateOfExpiry: Swift.String?
+  public let can: Swift.String?
+  public init(documentNumber: Swift.String, dateOfBirth: Swift.String, dateOfExpiry: Swift.String)
+  public init(can: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: internal) public struct SecureMessagingInfo : Swift.Codable, Swift.Sendable {
+  public let algorithm: Swift.String
+  public let encKey: Swift.String
+  public let macKey: Swift.String
+  public let ssc: Swift.Int
+  public init(algorithm: Swift.String, encKey: Swift.String, macKey: Swift.String, ssc: Swift.Int)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: internal) public struct HandoverState : Swift.Codable, Swift.Sendable {
+  public let secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo
+  public let maxTransceiveLength: Swift.Int
+  public let maxBlockSize: Swift.Int
+  public let filesRead: [KinegramEmrtdConnector.ElementaryFileName : Foundation.Data]
+  public let accessKeyInfo: KinegramEmrtdConnector.AccessKeyInfo
+  public let activeAuthChallenge: Foundation.Data?
+  public let caHandoverData: KinegramEmrtdConnector.CAHandoverData?
+  public let sessionId: Swift.String?
+  public init(secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo, maxTransceiveLength: Swift.Int, maxBlockSize: Swift.Int, filesRead: [KinegramEmrtdConnector.ElementaryFileName : Foundation.Data], accessKeyInfo: KinegramEmrtdConnector.AccessKeyInfo, activeAuthChallenge: Foundation.Data? = nil, caHandoverData: KinegramEmrtdConnector.CAHandoverData? = nil, sessionId: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: internal) public enum CACheckResult : Swift.String, Swift.Codable, Swift.Sendable {
+  case success
+  case failed
+  case unavailable
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_documentation(visibility: internal) public struct CAHandbackInfo : Swift.Codable, Swift.Sendable {
+  public let checkResult: KinegramEmrtdConnector.CACheckResult
+  public let secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo?
+  public let dg1Data: Foundation.Data?
+  public init(checkResult: KinegramEmrtdConnector.CACheckResult, secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo? = nil, dg1Data: Foundation.Data? = nil)
+  public init(checkResult: Swift.String, secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo? = nil, dg1Data: Foundation.Data? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: internal) public protocol APDURelayHandler : AnyObject {
+  func sendAPDUCommand(_ command: Foundation.Data) async throws -> Foundation.Data
+}
+@_documentation(visibility: internal) public struct CAHandoverData : Swift.Codable, Swift.Sendable {
+  public let chipPublicKey: Foundation.Data
+  public let ephemeralPublicKey: Foundation.Data
+  public let keyIdRef: Foundation.Data?
+  public let algorithm: Swift.String
+  public let protocolOID: Swift.String?
+  public init(chipPublicKey: Foundation.Data, ephemeralPublicKey: Foundation.Data, keyIdRef: Foundation.Data? = nil, algorithm: Swift.String, protocolOID: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: internal) public struct DataGroupSet : Swift.OptionSet, Swift.Sendable {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public static let dg1: KinegramEmrtdConnector.DataGroupSet
+  public static let dg2: KinegramEmrtdConnector.DataGroupSet
+  public static let dg3: KinegramEmrtdConnector.DataGroupSet
+  public static let dg4: KinegramEmrtdConnector.DataGroupSet
+  public static let dg5: KinegramEmrtdConnector.DataGroupSet
+  public static let dg6: KinegramEmrtdConnector.DataGroupSet
+  public static let dg7: KinegramEmrtdConnector.DataGroupSet
+  public static let dg8: KinegramEmrtdConnector.DataGroupSet
+  public static let dg9: KinegramEmrtdConnector.DataGroupSet
+  public static let dg10: KinegramEmrtdConnector.DataGroupSet
+  public static let dg11: KinegramEmrtdConnector.DataGroupSet
+  public static let dg12: KinegramEmrtdConnector.DataGroupSet
+  public static let dg13: KinegramEmrtdConnector.DataGroupSet
+  public static let dg14: KinegramEmrtdConnector.DataGroupSet
+  public static let dg15: KinegramEmrtdConnector.DataGroupSet
+  public static let dg16: KinegramEmrtdConnector.DataGroupSet
+  public static let all: KinegramEmrtdConnector.DataGroupSet
+  public static let standard: KinegramEmrtdConnector.DataGroupSet
+  public typealias ArrayLiteralElement = KinegramEmrtdConnector.DataGroupSet
+  public typealias Element = KinegramEmrtdConnector.DataGroupSet
+  public typealias RawValue = Swift.Int
+}
+public enum ElementaryFileName : Swift.Int64, Swift.CaseIterable, Swift.Codable, Swift.Sendable {
+  case COM
+  case DG1
+  case DG2
+  case DG3
+  case DG4
+  case DG5
+  case DG6
+  case DG7
+  case DG8
+  case DG9
+  case DG10
+  case DG11
+  case DG12
+  case DG13
+  case DG14
+  case DG15
+  case DG16
+  case SOD
+  case CardAccess
+  case AtrInfo
+  @_documentation(visibility: internal) public var protocolName: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int64)
+  public typealias AllCases = [KinegramEmrtdConnector.ElementaryFileName]
+  public typealias RawValue = Swift.Int64
+  nonisolated public static var allCases: [KinegramEmrtdConnector.ElementaryFileName] {
+    get
+  }
+  public var rawValue: Swift.Int64 {
+    get
+  }
+}
+public enum EmrtdChipCommunicationError : KinegramEmrtdConnector.ErrorWithMonitoringInfo {
+  case APDUResponseError(sw1: Swift.UInt8, sw2: Swift.UInt8)
+  case SecureMessagingProtectFailed(any Swift.Error)
+  case SecureMessagingUnprotectFailed(any Swift.Error)
+  case UnexpectedFileFormat(any Swift.Error)
+  case NFCError(CoreNFC.NFCReaderError)
+  case UnexpectedError(_: (any Swift.Error)? = nil)
+  case ReadBinaryOffsetTooLarge(totalFileSize: Swift.Int)
+  public var monitoringText: Swift.String {
+    get
+  }
+}
+@available(*, deprecated, message: "Intelligent Database Message is used with Document Validation Server REST API v3. REST API v3 is deprecated. Please use API v4.")
+public struct IntelligentDatabaseMessageBuilder {
+  public init(app: Swift.String)
+  public func encodeAsJSON(emrtdResult: KinegramEmrtdConnector.EmrtdResult?, error: KinegramEmrtdConnector.EmrtdReaderError? = nil) throws -> Foundation.Data
+}
+public protocol MonitoringDelegate : AnyObject {
+  func onNewMonitoringEvent(message: Swift.String)
+}
+extension KinegramEmrtdConnector.EmrtdReader {
+  public func setMonitoringDelegate(_ delegate: any KinegramEmrtdConnector.MonitoringDelegate)
+}
+public enum ActiveAuthenticationFailedReason : KinegramEmrtdConnector.ErrorWithMonitoringInfo, Swift.Equatable {
+  case FailedToGenerateChallenge
+  case ChipInternalAuthenticationFailed(Swift.String)
+  case VerifyFailed(Swift.String)
+  case InvalidRSASignature(Swift.String)
+  case UnsupportedHashAlgorithm
+  case Unknown
+  public var monitoringText: Swift.String {
+    get
+  }
+  public static func == (a: KinegramEmrtdConnector.ActiveAuthenticationFailedReason, b: KinegramEmrtdConnector.ActiveAuthenticationFailedReason) -> Swift.Bool
+}
+public enum ChipAccessType : Swift.String {
+  case BasicAccessControl
+  case PasswordAuthenticatedConnectionEstablishment
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ChipAuthenticationFailedReason : KinegramEmrtdConnector.ErrorWithMonitoringInfo, Swift.Equatable {
+  case AlgorithmNotSupported
+  case NoChipAuthenticationPublicKeyInfoFound
+  case FailedToGenerateKeyPair(Swift.String)
+  case FailedToSetKeyAgreementTemplate(Swift.String)
+  case FailedToSetAuthenticationTemplate(Swift.String)
+  case FailedToGeneralAuthenticate(Swift.String)
+  case FailedToDeriveSharedSecret(Swift.String)
+  case SecureMessagingFailedAfterCA
+  case Unknown
+  public var monitoringText: Swift.String {
+    get
+  }
+  public static func == (a: KinegramEmrtdConnector.ChipAuthenticationFailedReason, b: KinegramEmrtdConnector.ChipAuthenticationFailedReason) -> Swift.Bool
+}
+public enum PassiveAuthenticationError : KinegramEmrtdConnector.ErrorWithMonitoringInfo {
+  case SODFileIsMissing
+  case VerifyTrustFailed(any Swift.Error)
+  case FailedToInitTrustStore(any Swift.Error)
+  case UnknownHashFunction
+  public var monitoringText: Swift.String {
+    get
+  }
+}
+public class EmrtdConnector {
+  weak public var delegate: (any KinegramEmrtdConnector.EmrtdConnectorDelegate)?
+  weak public var monitoringDelegate: (any KinegramEmrtdConnector.EmrtdConnectorMonitoringDelegate)?
+  public var nfcStatusLocalization: ((KinegramEmrtdConnector.NFCProgressStatus) -> Swift.String)?
+  public var isConnected: Swift.Bool {
+    get
+  }
+  public init(serverURL: Foundation.URL, validationId: Swift.String, clientId: Swift.String, httpHeaders: [Swift.String : Swift.String] = [:], enableDiagnostics: Swift.Bool = false, receiveResult: Swift.Bool = true)
+  public func validate(with accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.ValidationResult
+  public func validate(with accessKey: any KinegramEmrtdConnector.AccessKey, documentType: KinegramEmrtdConnector.DocumentKind, issuingCountry: Swift.String) async throws -> KinegramEmrtdConnector.ValidationResult
+  public func connect() async throws
+  public func connectWithRetry() async throws
+  public func disconnect() async
+  @discardableResult
+  public func startValidation(accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.ValidationResult
+  @discardableResult
+  public func startValidation(accessKey: any KinegramEmrtdConnector.AccessKey, documentType: KinegramEmrtdConnector.DocumentKind, issuingCountry: Swift.String) async throws -> KinegramEmrtdConnector.ValidationResult
+  public func startValidation(accessKey: any KinegramEmrtdConnector.AccessKey, filesToRead: KinegramEmrtdConnector.DataGroupSet, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.ValidationResult
+  public func startValidation(accessKey: any KinegramEmrtdConnector.AccessKey, filesToRead: KinegramEmrtdConnector.DataGroupSet, documentType: KinegramEmrtdConnector.DocumentKind, issuingCountry: Swift.String) async throws -> KinegramEmrtdConnector.ValidationResult
+  @objc deinit
+}
+extension KinegramEmrtdConnector.EmrtdConnector : KinegramEmrtdConnector.MonitoringDelegate {
+  public func onNewMonitoringEvent(message: Swift.String)
+}
+public protocol EmrtdConnectorDelegate : AnyObject {
+  func connectorDidConnect(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connectorDidDisconnect(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connectorDidStartValidation(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connectorWillReadChip(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connectorDidPerformHandover(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connectorWillCompleteReading(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connectorDidCompleteValidation(_ connector: KinegramEmrtdConnector.EmrtdConnector, result: KinegramEmrtdConnector.ValidationResult) async
+  func connectorDidSuccessfullyPostToServer(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didFailWithError error: any Swift.Error) async
+  func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didUpdateNFCStatus status: KinegramEmrtdConnector.NFCProgressStatus) async
+}
+public protocol EmrtdConnectorMonitoringDelegate : AnyObject {
+  func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didReceiveMonitoringMessage message: Swift.String) async
+}
+extension KinegramEmrtdConnector.EmrtdConnectorDelegate {
+  public func connectorDidConnect(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connectorDidDisconnect(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connectorDidStartValidation(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connectorWillReadChip(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connectorDidPerformHandover(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connectorWillCompleteReading(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connectorDidCompleteValidation(_ connector: KinegramEmrtdConnector.EmrtdConnector, result: KinegramEmrtdConnector.ValidationResult) async
+  public func connectorDidSuccessfullyPostToServer(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didFailWithError error: any Swift.Error) async
+  public func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didUpdateNFCStatus status: KinegramEmrtdConnector.NFCProgressStatus) async
+}
+extension KinegramEmrtdConnector.ValidationResult {
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var summary: Swift.String {
+    get
+  }
+}
+public enum CloseReason : Swift.String, Swift.CaseIterable {
+  case timeoutWhileWaitingForResponse
+  case timeoutWhileWaitingForStartMessage
+  case maxSessionTimeExceeded
+  case unexpectedMessage
+  case invalidStartMessage
+  case accessControlFailed
+  case invalidClientId
+  case invalidAccessKeyValues
+  case fileReadError
+  case nfcChipCommunicationFailed
+  case emrtdPassportReaderError
+  case serverError
+  case postToResultServerFailed
+  case communicationFailed
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public static func from(_ reasonString: Swift.String?) -> KinegramEmrtdConnector.CloseReason?
+  public var expectedCloseCode: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [KinegramEmrtdConnector.CloseReason]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [KinegramEmrtdConnector.CloseReason] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DocumentKind : Swift.Hashable {
+  case passport
+  case idCard
+  public static func == (a: KinegramEmrtdConnector.DocumentKind, b: KinegramEmrtdConnector.DocumentKind) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PACEPolicy {
+  public static func requiresPACEPolling(for documentType: KinegramEmrtdConnector.DocumentKind, issuingCountryCode: Swift.String) -> Swift.Bool
+}
+extension KinegramEmrtdConnector.DocumentKind {
+  public static func fromMRZDocumentCode(_ code: Swift.String) -> KinegramEmrtdConnector.DocumentKind
+  public init(mrzDocumentCode code: Swift.String)
+}
+public enum EmrtdConnectorError : Foundation.LocalizedError {
+  case connectionFailed(underlying: (any Swift.Error)?)
+  case connectionClosed(reason: Swift.String?)
+  case connectionTimeout
+  case notConnected
+  case noNetworkConnection
+  case protocolError(message: Swift.String)
+  case unexpectedMessage(expected: KinegramEmrtdConnector.MessageType, received: Swift.String)
+  case invalidServerResponse(Swift.String)
+  case handoverFailed(reason: Swift.String)
+  case handbackFailed(reason: Swift.String)
+  case webSocketError(any Swift.Error)
+  case messageSendFailed(any Swift.Error)
+  case messageDecodingFailed(any Swift.Error)
+  case nfcNotAvailable(reason: Swift.String)
+  case nfcSessionFailed(any Swift.Error)
+  case nfcTimeout
+  case chipReadError(any Swift.Error)
+  case incompleteRead(missingFiles: [Swift.String], reason: Swift.String)
+  case invalidState(current: Swift.String, expected: Swift.String)
+  case sessionExpired
+  case serverError(code: Swift.Int, message: Swift.String?, reason: KinegramEmrtdConnector.CloseReason?)
+  case validationFailed(result: KinegramEmrtdConnector.ValidationResult)
+  case fileTransferFailed(fileId: Swift.String, reason: Swift.String)
+  case chunkedTransferIncomplete(fileId: Swift.String)
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var recoverySuggestion: Swift.String? {
+    get
+  }
+}
+public enum MessageType : Swift.String, Swift.Codable {
+  case start
+  case accept
+  case caHandover
+  case caHandback
+  case finish
+  case result
+  case close
+  case monitoring
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ChipAuthInfo : Swift.Codable {
+  public let ephemeralPublicKey: Swift.String
+  public let keyAgreementOID: Swift.String
+  public let cipherOID: Swift.String?
+  public let keyId: Swift.Int
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case ephemeralPublicKey
+    case keyAgreementOID
+    case cipherOID
+    case keyId
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public init(ephemeralPublicKey: Swift.String, keyAgreementOID: Swift.String, cipherOID: Swift.String?, keyId: Swift.Int)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ValidationResult : Swift.Codable {
+  public let sodInfo: KinegramEmrtdConnector.SODInfo?
+  public let mrzInfo: KinegramEmrtdConnector.MRZInfo?
+  public let facePhoto: Swift.String?
+  public let signaturePhotos: [Swift.String]?
+  public let additionalPersonalDetails: KinegramEmrtdConnector.AdditionalPersonalDetails?
+  public let additionalDocumentDetails: KinegramEmrtdConnector.AdditionalDocumentDetails?
+  public let filesBinary: [Swift.String : Swift.String]?
+  public let errors: [Swift.String]?
+  public var status: Swift.String {
+    get
+  }
+  public var chipAuthResult: Swift.String? {
+    get
+  }
+  public var passiveAuthResult: Swift.String? {
+    get
+  }
+  public var activeAuthResult: Swift.String? {
+    get
+  }
+  public var dataGroupChecks: [Swift.String : Swift.String]? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension KinegramEmrtdConnector.ValidationResult {
+  public static func fireAndForgetPlaceholder() -> KinegramEmrtdConnector.ValidationResult
+}
+public struct SODInfo : Swift.Codable {
+  public let hashAlgorithm: Swift.String
+  public let hashForDataGroup: [Swift.String : Swift.String]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MRZInfo : Swift.Codable {
+  public let documentType: Swift.String
+  public let documentCode: Swift.String
+  public let issuingState: Swift.String
+  public let primaryIdentifier: Swift.String
+  public let secondaryIdentifier: [Swift.String]
+  public let nationality: Swift.String
+  public let documentNumber: Swift.String
+  public let dateOfBirth: Swift.String
+  public let gender: Swift.String
+  public let dateOfExpiry: Swift.String
+  public let optionalData1: Swift.String?
+  public let optionalData2: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AdditionalPersonalDetails : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AdditionalDocumentDetails : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AuthenticationResult : Swift.Codable {
+  public let result: Swift.String
+  public let message: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum AuthenticationResultOrBool : Swift.Codable {
+  case result(KinegramEmrtdConnector.AuthenticationResult)
+  case boolean(Swift.Bool)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct NFCProgressStatus {
+  public let step: KinegramEmrtdConnector.NFCProgressStatus.ReadingStep
+  public let progress: KinegramEmrtdConnector.NFCProgressStatus.Progress
+  public let alertMessage: Swift.String
+  public enum ReadingStep {
+    case connectingToServer
+    case waitingForPassport
+    case connecting
+    case performingAccessControl
+    case readingSOD
+    case readingDG14
+    case performingCA
+    case readingDG1
+    case readingDG2(progress: Swift.Float)
+    case readingDG7
+    case readingDG11
+    case readingDG12
+    case readingDG15
+    case performingAA
+    case validatingWithServer
+    case finishing
+    case done
+    case error(message: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct Progress {
+  }
+  public init(step: KinegramEmrtdConnector.NFCProgressStatus.ReadingStep)
+  public static func fileProgress(fileName: KinegramEmrtdConnector.ElementaryFileName, readBytes: Swift.Int, totalBytes: Swift.Int) -> KinegramEmrtdConnector.NFCProgressStatus
+  public static let connectingToServer: KinegramEmrtdConnector.NFCProgressStatus
+  public static let waitingForPassport: KinegramEmrtdConnector.NFCProgressStatus
+  public static let connecting: KinegramEmrtdConnector.NFCProgressStatus
+  public static let validatingWithServer: KinegramEmrtdConnector.NFCProgressStatus
+  public static let done: KinegramEmrtdConnector.NFCProgressStatus
+  public static func error(_ message: Swift.String) -> KinegramEmrtdConnector.NFCProgressStatus
+}
+extension CoreNFC.NFCReaderSession {
+  public func updateProgress(_ status: KinegramEmrtdConnector.NFCProgressStatus)
+}
+@_hasMissingDesignatedInitializers public class ErrorLocalizer {
+  public static func localizedMessage(for error: any Swift.Error) -> Swift.String
+  public static func recoverySuggestion(for error: any Swift.Error) -> Swift.String?
+  @objc deinit
+}
+public struct ErrorDisplayInfo {
+  public let title: Swift.String
+  public let message: Swift.String
+  public let recoverySuggestion: Swift.String?
+  public let isRetryable: Swift.Bool
+  public init(for error: any Swift.Error)
+}
+public struct NFCCapabilityChecker {
+  public static var isAvailable: Swift.Bool {
+    get
+  }
+  public static var unavailabilityReason: Swift.String? {
+    get
+  }
+}
+public actor RetryHandler {
+  public init(maxAttempts: Swift.Int = 3, retryDelay: Foundation.TimeInterval = 1.0)
+  public func execute<T>(operation: () async throws -> T, isRetryable: (any Swift.Error) -> Swift.Bool = { _ in true }, onRetry: ((Swift.Int, any Swift.Error) async -> Swift.Void)? = nil) async throws -> T
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+public enum RetryError : Foundation.LocalizedError {
+  case maxAttemptsReached
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: KinegramEmrtdConnector.RetryError, b: KinegramEmrtdConnector.RetryError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Error {
+  public var isRetryable: Swift.Bool {
+    get
+  }
+}
+public struct KinegramEmrtdInfo {
+  public static let version: Swift.String
+  public static let buildVersion: Swift.String
+  public init()
+  public static func printVersions()
+}
+extension KinegramEmrtdConnector.ASN1TagClass : Swift.Equatable {}
+extension KinegramEmrtdConnector.ASN1TagClass : Swift.Hashable {}
+extension KinegramEmrtdConnector.ASN1TagClass : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.CryptographicAlgorithm : Swift.Equatable {}
+extension KinegramEmrtdConnector.CryptographicAlgorithm : Swift.Hashable {}
+extension KinegramEmrtdConnector.CryptographicAlgorithm : Swift.RawRepresentable {}
+@available(*, deprecated, message: "Access the X509Wrapper properties instead.")
+extension KinegramEmrtdConnector.CertificateItem : Swift.Equatable {}
+@available(*, deprecated, message: "Access the X509Wrapper properties instead.")
+extension KinegramEmrtdConnector.CertificateItem : Swift.Hashable {}
+@available(*, deprecated, message: "Access the X509Wrapper properties instead.")
+extension KinegramEmrtdConnector.CertificateItem : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.Gender : Swift.Equatable {}
+extension KinegramEmrtdConnector.Gender : Swift.Hashable {}
+extension KinegramEmrtdConnector.Gender : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.EyeColor : Swift.Equatable {}
+extension KinegramEmrtdConnector.EyeColor : Swift.Hashable {}
+extension KinegramEmrtdConnector.EyeColor : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.HairColor : Swift.Equatable {}
+extension KinegramEmrtdConnector.HairColor : Swift.Hashable {}
+extension KinegramEmrtdConnector.HairColor : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.Features.Flag : Swift.Equatable {}
+extension KinegramEmrtdConnector.Features.Flag : Swift.Hashable {}
+extension KinegramEmrtdConnector.Features.Flag : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.Expression : Swift.Equatable {}
+extension KinegramEmrtdConnector.Expression : Swift.Hashable {}
+extension KinegramEmrtdConnector.Expression : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.FaceImageType : Swift.Equatable {}
+extension KinegramEmrtdConnector.FaceImageType : Swift.Hashable {}
+extension KinegramEmrtdConnector.FaceImageType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.ImageDataType : Swift.Equatable {}
+extension KinegramEmrtdConnector.ImageDataType : Swift.Hashable {}
+extension KinegramEmrtdConnector.ImageDataType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.ColorSpace : Swift.Equatable {}
+extension KinegramEmrtdConnector.ColorSpace : Swift.Hashable {}
+extension KinegramEmrtdConnector.ColorSpace : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.SourceType : Swift.Equatable {}
+extension KinegramEmrtdConnector.SourceType : Swift.Hashable {}
+extension KinegramEmrtdConnector.SourceType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.BiometricError : Swift.Equatable {}
+extension KinegramEmrtdConnector.BiometricError : Swift.Hashable {}
+extension KinegramEmrtdConnector.DocumentType : Swift.Equatable {}
+extension KinegramEmrtdConnector.DocumentType : Swift.Hashable {}
+extension KinegramEmrtdConnector.DocumentType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.HashAlgorithm : Swift.Equatable {}
+extension KinegramEmrtdConnector.HashAlgorithm : Swift.Hashable {}
+extension KinegramEmrtdConnector.HashAlgorithm : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.SignatureAlgorithmECDSA : Swift.Equatable {}
+extension KinegramEmrtdConnector.SignatureAlgorithmECDSA : Swift.Hashable {}
+extension KinegramEmrtdConnector.SignatureAlgorithmECDSA : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.ChipAuthenticationKeyAgreementType : Swift.Equatable {}
+extension KinegramEmrtdConnector.ChipAuthenticationKeyAgreementType : Swift.Hashable {}
+extension KinegramEmrtdConnector.ChipAuthenticationKeyAgreementType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.StandardizedDomainParameter : Swift.Equatable {}
+extension KinegramEmrtdConnector.StandardizedDomainParameter : Swift.Hashable {}
+extension KinegramEmrtdConnector.StandardizedDomainParameter : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.PaceMappingType : Swift.Equatable {}
+extension KinegramEmrtdConnector.PaceMappingType : Swift.Hashable {}
+extension KinegramEmrtdConnector.PaceMappingType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.AccessKeyInfo.KeyType : Swift.Equatable {}
+extension KinegramEmrtdConnector.AccessKeyInfo.KeyType : Swift.Hashable {}
+extension KinegramEmrtdConnector.AccessKeyInfo.KeyType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.CACheckResult : Swift.Equatable {}
+extension KinegramEmrtdConnector.CACheckResult : Swift.Hashable {}
+extension KinegramEmrtdConnector.CACheckResult : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.ElementaryFileName : Swift.Equatable {}
+extension KinegramEmrtdConnector.ElementaryFileName : Swift.Hashable {}
+extension KinegramEmrtdConnector.ElementaryFileName : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.ChipAccessType : Swift.Equatable {}
+extension KinegramEmrtdConnector.ChipAccessType : Swift.Hashable {}
+extension KinegramEmrtdConnector.ChipAccessType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.CloseReason : Swift.Equatable {}
+extension KinegramEmrtdConnector.CloseReason : Swift.Hashable {}
+extension KinegramEmrtdConnector.CloseReason : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.MessageType : Swift.Equatable {}
+extension KinegramEmrtdConnector.MessageType : Swift.Hashable {}
+extension KinegramEmrtdConnector.MessageType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.ChipAuthInfo.CodingKeys : Swift.Equatable {}
+extension KinegramEmrtdConnector.ChipAuthInfo.CodingKeys : Swift.Hashable {}
+extension KinegramEmrtdConnector.ChipAuthInfo.CodingKeys : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.RetryError : Swift.Equatable {}
+extension KinegramEmrtdConnector.RetryError : Swift.Hashable {}

@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "KinegramEmrtdConnector"
-  spec.version       = "2.1.2"
+  spec.version       = "2.9.0"
   spec.summary       = "Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection."
   spec.description   = <<-DESC
     Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection.
@@ -22,19 +22,9 @@ Pod::Spec.new do |spec|
   spec.source        = { :git => "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios.git", :tag => "#{spec.version}" }
   spec.swift_version = "5.7"
 
-  # Source files for the Swift connector layer
-  spec.source_files  = "Sources/KinegramEmrtdConnector/**/*.swift"
-
-  # Binary framework dependency (the core eMRTD reading library)
-  spec.vendored_frameworks = "Framework/KinegramEmrtd.xcframework"
-
-  # Preserve paths to ensure XCFramework is available during build
-  spec.preserve_paths = "Framework/KinegramEmrtd.xcframework"
-
-  # Privacy manifest for Apple's privacy requirements
-  spec.resource_bundles = {
-    'KinegramEmrtdConnector' => ['Sources/KinegramEmrtdConnector/PrivacyInfo.xcprivacy']
-  }
+  # Binary distribution: ship prebuilt Connector XCFramework
+  spec.vendored_frameworks = "Framework/KinegramEmrtdConnector.xcframework"
+  spec.preserve_paths = "Framework/KinegramEmrtdConnector.xcframework"
 
   # Required system frameworks
   spec.frameworks = "CoreNFC", "Foundation"
@@ -49,7 +39,7 @@ Pod::Spec.new do |spec|
   # Pod target xcconfig to ensure XCFramework is in search path during compilation
   # Exclude x86_64 simulator architecture as the XCFramework only supports arm64
   spec.pod_target_xcconfig = {
-    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/KinegramEmrtdConnector/Framework" "${PODS_XCFRAMEWORKS_BUILD_DIR}/KinegramEmrtd"',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/KinegramEmrtdConnector/Framework"',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64'
   }
 

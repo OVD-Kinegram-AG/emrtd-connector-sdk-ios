@@ -16,16 +16,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Select Xcode 16.4
         run: sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
-      - name: Build DocC archive
-        run: >
-          xcodebuild docbuild
-          -scheme "Kinegram eMRTD Connector"
-          -destination 'generic/platform=iOS'
-          -configuration Release
-          -derivedDataPath $RUNNER_TEMP
-          DOCC_HOSTING_BASE_PATH=${{ github.event.repository.name }}
-      - name: Copy DocC documentation to directory "_site"
-        run: mkdir _site && find $RUNNER_TEMP -name '*.doccarchive' -exec cp -R {}/. _site/ \;
+      - name: Unzip Connector DocC archive
+        run: |
+          mkdir -p $RUNNER_TEMP/docc
+          unzip -q Framework/KinegramEmrtdConnector.doccarchive.zip -d $RUNNER_TEMP/docc
+      - name: Transform DocC for static hosting
+        run: |
+          mkdir -p _site
+          xcrun docc process-archive transform-for-static-hosting \
+            "$RUNNER_TEMP/docc/KinegramEmrtdConnector.doccarchive" \
+            --output-path _site \
+            --hosting-base-path ${{ github.event.repository.name }}
       - name: Render Markdown files to directory "_site"
         run: |
           for file in *.md; do

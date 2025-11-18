@@ -1,5 +1,11 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.9.0
+
+* Simplified distribution and usage: binary‑only Connector with a single XCFramework.
+* No API changes required. Usage as before: Integrate via CocoaPods or SPM
+* Note: Version jump comes from unification with the underlying core framework.
+
 ## 2.1.2
 
 * Fix: Stabilize fire-and-forget mode (`receiveResult=false`)
@@ -14,7 +20,7 @@
 * New: Automatic PACE selection based on document info
   * New overloads: `validate(with:documentType:issuingCountry:)` and `startValidation(..., documentType:issuingCountry:)`
   * Enables PACE polling automatically for known PACE-enabled ID cards (currently FRA, OMN), keeps it off for passports
-* New: `DocumentType` enum and MRZ helper `DocumentType.fromMRZDocumentCode(_:)`
+* New: `DocumentKind` enum and MRZ helper `DocumentKind.fromMRZDocumentCode(_:)`
 * Fix: Improve robustness of WebSocket connect/teardown
 
 ## 2.0.15

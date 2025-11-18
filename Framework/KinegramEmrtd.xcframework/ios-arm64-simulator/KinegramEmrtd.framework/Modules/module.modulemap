@@ -1,4 +1,0 @@
-framework module KinegramEmrtd {
-  header "KinegramEmrtd-Swift.h"
-  requires objc
-}

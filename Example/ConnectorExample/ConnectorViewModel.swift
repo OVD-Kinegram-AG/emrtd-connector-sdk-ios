@@ -86,7 +86,7 @@ class ConnectorViewModel: ObservableObject {
             // Or derive the document type from the MRZ document code prefix (e.g., "ID", "I<", "P<", "PM")
             // let result = try await connector!.validate(
             //     with: accessKey,
-            //     documentType: DocumentType.fromMRZDocumentCode("ID"),
+            //     documentType: DocumentKind.fromMRZDocumentCode("ID"),
             //     issuingCountry: "FRA"
             // )
 

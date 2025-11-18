@@ -59,7 +59,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.1.2")
+    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.9.0")
 ]
 ```
 
@@ -70,7 +70,7 @@ The package includes the KinegramEmrtd.xcframework binary dependency automatical
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'KinegramEmrtdConnector', '~> 2.1.2'
+pod 'KinegramEmrtdConnector', '~> 2.9.0'
 ```
 
 Then run `pod install`.
@@ -160,7 +160,7 @@ let result = try await connector.validate(
 )
 
 // Option B: Derive document type from MRZ document code prefix (e.g., "ID", "I<", "P<", "PM")
-let docType = DocumentType.fromMRZDocumentCode("ID")
+let docType = DocumentKind.fromMRZDocumentCode("ID")
 let result2 = try await connector.validate(
     with: canKey,
     documentType: docType,

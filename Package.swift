@@ -14,17 +14,10 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
+        // Binary distribution of the Connector
         .binaryTarget(
-            name: "KinegramEmrtd",
-            path: "Framework/KinegramEmrtd.xcframework"
-        ),
-        .target(
             name: "KinegramEmrtdConnector",
-            dependencies: ["KinegramEmrtd"],
-            path: "Sources/KinegramEmrtdConnector",
-            resources: [
-                .copy("PrivacyInfo.xcprivacy")
-            ]
+            path: "Framework/KinegramEmrtdConnector.xcframework"
         )
     ]
 )
