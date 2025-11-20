@@ -1,5 +1,12 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.9.1
+
+* Fix: Chip Authentication on Russian passports
+* Fix: Fixes an issue with reading DG1/DG2 on some Chinese passports
+* Fix: Increases compatibility with Italian ID cards
+* Build: Weak-link `CoreNFC` in the provided xcframework so consuming apps are not forced into a strong CoreNFC dependency.
+
 ## 2.9.0
 
 * Simplified distribution and usage: binary‑only Connector with a single XCFramework.

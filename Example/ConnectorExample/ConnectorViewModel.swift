@@ -17,7 +17,7 @@ class ConnectorViewModel: ObservableObject {
     private let serverURL = "wss://docval.kurzdigital.com/ws2/validate"
     private let clientId = "example_client" // <-- Replace with your actual client ID
     // If set to false (fire-and-forget), the app will NOT receive/show a ValidationResult
-    private let receiveResult = false
+    private let receiveResult = true
 
     // MARK: - Public Methods
     private func connectAndValidate(with accessKey: AccessKey) async {

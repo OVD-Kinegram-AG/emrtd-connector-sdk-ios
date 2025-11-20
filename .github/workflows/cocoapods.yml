@@ -1,0 +1,17 @@
+name: CocoaPods
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  push_KinegramEmrtdConnector:
+    env:
+      COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+    runs-on: macos-latest
+    steps:
+      - name: Check-out repo
+        uses: actions/checkout@v4
+      - name: Push KinegramEmrtdConnector to Cocoapods
+        run: pod spec lint KinegramEmrtdConnector.podspec && pod trunk push KinegramEmrtdConnector.podspec

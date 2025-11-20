@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "KinegramEmrtdConnector"
-  spec.version       = "2.9.0"
+  spec.version       = "2.9.1"
   spec.summary       = "Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection."
   spec.description   = <<-DESC
     Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection.
@@ -27,10 +27,12 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = "Framework/KinegramEmrtdConnector.xcframework"
 
   # Required system frameworks
-  spec.frameworks = "CoreNFC", "Foundation"
+  # CoreNFC is weak-linked in the prebuilt XCFramework and for the app target
+  # (via OTHER_LDFLAGS) so that integrating the Connector does not force a
+  # strong CoreNFC dependency.
+  spec.frameworks = "Foundation"
 
-  # CoreNFC is weakly linked to support simulator builds
-  # Framework search paths for vendored XCFramework
+  # Framework search paths and weak CoreNFC link flag for the app target
   spec.xcconfig = {
     'OTHER_LDFLAGS' => '-weak_framework CoreNFC',
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/KinegramEmrtdConnector/Framework"'
