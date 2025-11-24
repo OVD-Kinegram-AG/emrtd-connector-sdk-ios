@@ -1,5 +1,12 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.10.0
+
+* Build: Simplify xcframework creation and set the connector binary to build for iOS 13+.
+* Avoid redundant DG1 reads after CA by reusing DG1 provided by the DocVal server in the handback flow.
+* Improve post‑CA behavior
+* Improve NFC status reporting, surface clearer error messages
+
 ## 2.9.1
 
 * Fix: Chip Authentication on Russian passports

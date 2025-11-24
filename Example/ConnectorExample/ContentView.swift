@@ -180,7 +180,12 @@ struct ContentView: View {
         }
         .padding(.horizontal)
     }
+}
 
+final class ConsoleMonitoringLogger: EmrtdConnectorMonitoringDelegate {
+    func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didReceiveMonitoringMessage message: String) async {
+        print("MONITORING: \(message)")
+    }
 }
 
 #Preview {

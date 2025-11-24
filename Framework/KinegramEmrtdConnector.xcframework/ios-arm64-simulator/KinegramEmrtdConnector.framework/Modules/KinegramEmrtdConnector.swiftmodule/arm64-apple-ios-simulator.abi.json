@@ -16107,6 +16107,160 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDomain",
+            "printedName": "errorDomain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector0B11ReaderErrorO11errorDomainSSvpZ",
+            "mangledName": "$s22KinegramEmrtdConnector0B11ReaderErrorO11errorDomainSSvpZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector0B11ReaderErrorO11errorDomainSSvgZ",
+                "mangledName": "$s22KinegramEmrtdConnector0B11ReaderErrorO11errorDomainSSvgZ",
+                "moduleName": "KinegramEmrtdConnector",
+                "static": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorCode",
+            "printedName": "errorCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector0B11ReaderErrorO9errorCodeSivp",
+            "mangledName": "$s22KinegramEmrtdConnector0B11ReaderErrorO9errorCodeSivp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector0B11ReaderErrorO9errorCodeSivg",
+                "mangledName": "$s22KinegramEmrtdConnector0B11ReaderErrorO9errorCodeSivg",
+                "moduleName": "KinegramEmrtdConnector",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorUserInfo",
+            "printedName": "errorUserInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector0B11ReaderErrorO13errorUserInfoSDySSypGvp",
+            "mangledName": "$s22KinegramEmrtdConnector0B11ReaderErrorO13errorUserInfoSDySSypGvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector0B11ReaderErrorO13errorUserInfoSDySSypGvg",
+                "mangledName": "$s22KinegramEmrtdConnector0B11ReaderErrorO13errorUserInfoSDySSypGvg",
+                "moduleName": "KinegramEmrtdConnector",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Enum",
@@ -16152,6 +16306,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomNSError",
+            "printedName": "CustomNSError",
+            "usr": "s:10Foundation13CustomNSErrorP",
+            "mangledName": "$s10Foundation13CustomNSErrorP"
           }
         ]
       },
@@ -76468,6 +76629,46 @@
               },
               {
                 "kind": "Var",
+                "name": "readingDG3",
+                "printedName": "readingDG3",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO10readingDG3yA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO10readingDG3yA2EmF",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
                 "name": "readingDG7",
                 "printedName": "readingDG7",
                 "children": [
@@ -76501,10 +76702,7 @@
                 "declKind": "EnumElement",
                 "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO10readingDG7yA2EmF",
                 "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO10readingDG7yA2EmF",
-                "moduleName": "KinegramEmrtdConnector",
-                "declAttributes": [
-                  "RawDocComment"
-                ]
+                "moduleName": "KinegramEmrtdConnector"
               },
               {
                 "kind": "Var",
@@ -81985,6 +82183,46 @@
           },
           {
             "kind": "Var",
+            "name": "serverBinaryFiles",
+            "printedName": "serverBinaryFiles",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Foundation.Data]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC17serverBinaryFiles33_BCB7F86FE7F262E530EBA9B75408EF56LLSDySS10Foundation4DataVGvp",
+            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC17serverBinaryFiles33_BCB7F86FE7F262E530EBA9B75408EF56LLSDySS10Foundation4DataVGvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 19,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
             "name": "closeError",
             "printedName": "closeError",
             "children": [
@@ -82014,7 +82252,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 19,
+            "fixedbinaryorder": 20,
             "hasStorage": true
           },
           {
@@ -82040,7 +82278,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 20,
+            "fixedbinaryorder": 21,
             "hasStorage": true
           },
           {
@@ -82088,7 +82326,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 21,
+            "fixedbinaryorder": 22,
             "hasStorage": true
           },
           {
@@ -82134,7 +82372,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 22,
+            "fixedbinaryorder": 23,
             "hasStorage": true
           },
           {
@@ -82181,7 +82419,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 23,
+            "fixedbinaryorder": 24,
             "hasStorage": true
           },
           {
@@ -82227,7 +82465,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 24,
+            "fixedbinaryorder": 25,
             "hasStorage": true
           },
           {
@@ -82272,7 +82510,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 25,
+            "fixedbinaryorder": 26,
             "hasStorage": true
           },
           {
@@ -82298,7 +82536,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 26,
+            "fixedbinaryorder": 27,
             "ownership": 1,
             "hasStorage": true
           },
@@ -86105,7 +86343,7 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
-      "offset": 31590,
+      "offset": 31757,
       "length": 4,
       "value": "true"
     },
@@ -87547,28 +87785,28 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 10749,
+      "offset": 10947,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 16846,
+      "offset": 17044,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 22961,
+      "offset": 23159,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 24220,
+      "offset": 24418,
       "length": 1,
       "value": "0"
     },
@@ -87966,50 +88204,57 @@
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
+      "kind": "Dictionary",
+      "offset": 1860,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1933,
+      "offset": 2055,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2692,
+      "offset": 2814,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2729,
+      "offset": 2851,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13267,
+      "offset": 13493,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 15748,
+      "offset": 15974,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 18247,
+      "offset": 19533,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "FloatLiteral",
-      "offset": 23690,
+      "offset": 24976,
       "length": 3,
       "value": "5.0"
     },
@@ -88017,15 +88262,15 @@
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 258,
-      "length": 7,
-      "value": "\"2.9.1\""
+      "length": 8,
+      "value": "\"2.10.0\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 370,
       "length": 16,
-      "value": "\"20251120140214\""
+      "value": "\"20251124154915\""
     }
   ]
 }

@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KinegramEmrtdConnector
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KinegramEmrtdConnector
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import CommonCrypto
 import CoreNFC
@@ -262,6 +262,17 @@ public enum MasterlistReadError : KinegramEmrtdConnector.ErrorWithMonitoringInfo
     get
   }
   public var monitoringText: Swift.String {
+    get
+  }
+}
+extension KinegramEmrtdConnector.EmrtdReaderError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
     get
   }
 }
@@ -1277,6 +1288,7 @@ public struct NFCProgressStatus {
     case performingCA
     case readingDG1
     case readingDG2(progress: Swift.Float)
+    case readingDG3
     case readingDG7
     case readingDG11
     case readingDG12

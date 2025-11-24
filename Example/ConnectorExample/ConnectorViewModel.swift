@@ -18,6 +18,7 @@ class ConnectorViewModel: ObservableObject {
     private let clientId = "example_client" // <-- Replace with your actual client ID
     // If set to false (fire-and-forget), the app will NOT receive/show a ValidationResult
     private let receiveResult = true
+    private let monitoringLogger = ConsoleMonitoringLogger()
 
     // MARK: - Public Methods
     private func connectAndValidate(with accessKey: AccessKey) async {
@@ -45,6 +46,9 @@ class ConnectorViewModel: ObservableObject {
                 clientId: clientId,
                 receiveResult: receiveResult
             )
+
+            // Enable monitoring (optional)
+            connector?.monitoringDelegate = monitoringLogger
 
             /*
              Optional configurations:
