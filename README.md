@@ -45,7 +45,7 @@ V2 solves the iOS 20-second NFC timeout issue by moving most APDU exchanges to t
 
 ## Requirements
 
-- iOS 15.0+
+- iOS 13.0+
 - Swift 5.5+
 - Physical device with NFC capability
 - KinegramEmrtd.xcframework (included)
@@ -59,7 +59,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.9.1")
+    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.10.1")
 ]
 ```
 
@@ -70,7 +70,7 @@ The package includes the KinegramEmrtd.xcframework binary dependency automatical
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'KinegramEmrtdConnector', '~> 2.9.1'
+pod 'KinegramEmrtdConnector', '~> 2.10.1'
 ```
 
 Then run `pod install`.

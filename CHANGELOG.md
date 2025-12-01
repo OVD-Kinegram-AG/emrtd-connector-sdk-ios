@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.10.1
+
+* Fix: Connector validation result summary now correctly reports an error when Passive Authentication (SOD signature) is invalid.
+
 ## 2.10.0
 
 * Build: Simplify xcframework creation and set the connector binary to build for iOS 13+.
