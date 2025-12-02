@@ -1,5 +1,10 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.10.2
+
+* Diagnostics: Added monitoring events
+* Compatibility: Improving read stability on sensitive IDs (e.g. VNM).
+
 ## 2.10.1
 
 * Fix: Connector validation result summary now correctly reports an error when Passive Authentication (SOD signature) is invalid.
