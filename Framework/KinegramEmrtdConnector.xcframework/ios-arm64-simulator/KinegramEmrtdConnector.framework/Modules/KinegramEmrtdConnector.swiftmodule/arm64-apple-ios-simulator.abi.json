@@ -12956,6 +12956,33 @@
           },
           {
             "kind": "Var",
+            "name": "sessionStartTime",
+            "printedName": "sessionStartTime",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector0B10ConnectionC16sessionStartTime33_A4F047D50F23FB36C59BF9B0A4551E61LL10Foundation4DateVvp",
+            "mangledName": "$s22KinegramEmrtdConnector0B10ConnectionC16sessionStartTime33_A4F047D50F23FB36C59BF9B0A4551E61LL10Foundation4DateVvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 1,
+            "isLet": true,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
             "name": "localization",
             "printedName": "localization",
             "children": [
@@ -13053,7 +13080,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 1,
+            "fixedbinaryorder": 2,
             "isLet": true,
             "hasStorage": true
           },
@@ -13079,7 +13106,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 2,
+            "fixedbinaryorder": 3,
             "isLet": true,
             "hasStorage": true
           },
@@ -13105,7 +13132,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 3,
+            "fixedbinaryorder": 4,
             "isLet": true,
             "hasStorage": true
           },
@@ -13131,7 +13158,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 4,
+            "fixedbinaryorder": 5,
             "isLet": true,
             "hasStorage": true
           },
@@ -13165,7 +13192,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 5,
+            "fixedbinaryorder": 6,
             "isLet": true,
             "hasStorage": true
           },
@@ -13191,7 +13218,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 6,
+            "fixedbinaryorder": 7,
             "hasStorage": true
           },
           {
@@ -13216,7 +13243,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 7,
+            "fixedbinaryorder": 8,
             "hasStorage": true
           },
           {
@@ -13240,7 +13267,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 8,
+            "fixedbinaryorder": 9,
             "hasStorage": true
           },
           {
@@ -13265,7 +13292,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 9,
+            "fixedbinaryorder": 10,
             "hasStorage": true
           },
           {
@@ -19842,6 +19869,13 @@
         "moduleName": "KinegramEmrtdConnector"
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KinegramEmrtdConnector"
+      },
+      {
         "kind": "TypeDecl",
         "name": "BiometricFace",
         "printedName": "BiometricFace",
@@ -19996,6 +20030,2217 @@
             ],
             "throwing": true,
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794Face",
+            "printedName": "parseISO39794Face(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(version: Swift.String, faceImageInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo])?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(version: Swift.String, faceImageInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo])",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[KinegramEmrtdConnector.BiometricFaceImageInfo]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "BiometricFaceImageInfo",
+                            "printedName": "KinegramEmrtdConnector.BiometricFaceImageInfo",
+                            "usr": "s:22KinegramEmrtdConnector22BiometricFaceImageInfoV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC013parseISO39794E05valueSS7version_SayAA0dE9ImageInfoVG04faceJ5InfostSgs10ArraySliceVys5UInt8VG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC013parseISO39794E05valueSS7version_SayAA0dE9ImageInfoVG04faceJ5InfostSgs10ArraySliceVys5UInt8VG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794DataBlock",
+            "printedName": "parseISO39794DataBlock(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(version: Swift.String, faceImageInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo])?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(version: Swift.String, faceImageInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo])",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[KinegramEmrtdConnector.BiometricFaceImageInfo]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "BiometricFaceImageInfo",
+                            "printedName": "KinegramEmrtdConnector.BiometricFaceImageInfo",
+                            "usr": "s:22KinegramEmrtdConnector22BiometricFaceImageInfoV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC22parseISO39794DataBlock5valueSS7version_SayAA0dE9ImageInfoVG04faceL5InfostSgs10ArraySliceVys5UInt8VG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC22parseISO39794DataBlock5valueSS7version_SayAA0dE9ImageInfoVG04faceL5InfostSgs10ArraySliceVys5UInt8VG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794VersionBlock",
+            "printedName": "parseISO39794VersionBlock(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC25parseISO39794VersionBlock4dataSSSgs10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC25parseISO39794VersionBlock4dataSSSgs10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794RepresentationBlocks",
+            "printedName": "parseISO39794RepresentationBlocks(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[KinegramEmrtdConnector.BiometricFaceImageInfo]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BiometricFaceImageInfo",
+                    "printedName": "KinegramEmrtdConnector.BiometricFaceImageInfo",
+                    "usr": "s:22KinegramEmrtdConnector22BiometricFaceImageInfoV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC33parseISO39794RepresentationBlocks4dataSayAA0dE9ImageInfoVGs10ArraySliceVys5UInt8VG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC33parseISO39794RepresentationBlocks4dataSayAA0dE9ImageInfoVGs10ArraySliceVys5UInt8VG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794RepresentationBlock",
+            "printedName": "parseISO39794RepresentationBlock(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KinegramEmrtdConnector.BiometricFaceImageInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BiometricFaceImageInfo",
+                    "printedName": "KinegramEmrtdConnector.BiometricFaceImageInfo",
+                    "usr": "s:22KinegramEmrtdConnector22BiometricFaceImageInfoV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC32parseISO39794RepresentationBlock4dataAA0dE9ImageInfoVSgs10ArraySliceVys5UInt8VG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC32parseISO39794RepresentationBlock4dataAA0dE9ImageInfoVSgs10ArraySliceVys5UInt8VG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794ImageRepresentation",
+            "printedName": "parseISO39794ImageRepresentation(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(imageData: [Swift.UInt8]?, imageFormat: KinegramEmrtdConnector.ImageDataType, width: Swift.UInt16?, height: Swift.UInt16?, colorspace: KinegramEmrtdConnector.ColorSpace?, faceImageType: KinegramEmrtdConnector.FaceImageType?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.UInt8]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.UInt8]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImageDataType",
+                    "printedName": "KinegramEmrtdConnector.ImageDataType",
+                    "usr": "s:22KinegramEmrtdConnector13ImageDataTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.ColorSpace?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ColorSpace",
+                        "printedName": "KinegramEmrtdConnector.ColorSpace",
+                        "usr": "s:22KinegramEmrtdConnector10ColorSpaceO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.FaceImageType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FaceImageType",
+                        "printedName": "KinegramEmrtdConnector.FaceImageType",
+                        "usr": "s:22KinegramEmrtdConnector13FaceImageTypeO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC32parseISO39794ImageRepresentation4dataSays5UInt8VGSg9imageData_AA0hM4TypeO0L6Formats6UInt16VSg5widthAP6heightAA10ColorSpaceOSg10colorspaceAA0ehN0OSg04facehN0ts10ArraySliceVyAGG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC32parseISO39794ImageRepresentation4dataSays5UInt8VGSg9imageData_AA0hM4TypeO0L6Formats6UInt16VSg5widthAP6heightAA10ColorSpaceOSg10colorspaceAA0ehN0OSg04facehN0ts10ArraySliceVyAGG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794ImageRepresentation2D",
+            "printedName": "parseISO39794ImageRepresentation2D(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(imageData: [Swift.UInt8]?, imageFormat: KinegramEmrtdConnector.ImageDataType, width: Swift.UInt16?, height: Swift.UInt16?, colorspace: KinegramEmrtdConnector.ColorSpace?, faceImageType: KinegramEmrtdConnector.FaceImageType?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.UInt8]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.UInt8]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImageDataType",
+                    "printedName": "KinegramEmrtdConnector.ImageDataType",
+                    "usr": "s:22KinegramEmrtdConnector13ImageDataTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.ColorSpace?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ColorSpace",
+                        "printedName": "KinegramEmrtdConnector.ColorSpace",
+                        "usr": "s:22KinegramEmrtdConnector10ColorSpaceO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.FaceImageType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FaceImageType",
+                        "printedName": "KinegramEmrtdConnector.FaceImageType",
+                        "usr": "s:22KinegramEmrtdConnector13FaceImageTypeO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC34parseISO39794ImageRepresentation2D4dataSays5UInt8VGSg9imageData_AA0hM4TypeO0L6Formats6UInt16VSg5widthAP6heightAA10ColorSpaceOSg10colorspaceAA0ehN0OSg04facehN0ts10ArraySliceVyAGG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC34parseISO39794ImageRepresentation2D4dataSays5UInt8VGSg9imageData_AA0hM4TypeO0L6Formats6UInt16VSg5widthAP6heightAA10ColorSpaceOSg10colorspaceAA0ehN0OSg04facehN0ts10ArraySliceVyAGG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794ImageInformation2D",
+            "printedName": "parseISO39794ImageInformation2D(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(imageFormat: KinegramEmrtdConnector.ImageDataType, width: Swift.UInt16?, height: Swift.UInt16?, colorspace: KinegramEmrtdConnector.ColorSpace?, faceImageType: KinegramEmrtdConnector.FaceImageType?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImageDataType",
+                    "printedName": "KinegramEmrtdConnector.ImageDataType",
+                    "usr": "s:22KinegramEmrtdConnector13ImageDataTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.ColorSpace?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ColorSpace",
+                        "printedName": "KinegramEmrtdConnector.ColorSpace",
+                        "usr": "s:22KinegramEmrtdConnector10ColorSpaceO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.FaceImageType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FaceImageType",
+                        "printedName": "KinegramEmrtdConnector.FaceImageType",
+                        "usr": "s:22KinegramEmrtdConnector13FaceImageTypeO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC31parseISO39794ImageInformation2D4dataAA0H8DataTypeO11imageFormat_s6UInt16VSg5widthAK6heightAA10ColorSpaceOSg10colorspaceAA0ehL0OSg04facehL0ts10ArraySliceVys5UInt8VG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC31parseISO39794ImageInformation2D4dataAA0H8DataTypeO11imageFormat_s6UInt16VSg5widthAK6heightAA10ColorSpaceOSg10colorspaceAA0ehL0OSg04facehL0ts10ArraySliceVys5UInt8VG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794ImageSize",
+            "printedName": "parseISO39794ImageSize(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(width: Swift.UInt16?, height: Swift.UInt16?)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt16?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC22parseISO39794ImageSize4datas6UInt16VSg5width_AH6heightts10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC22parseISO39794ImageSize4datas6UInt16VSg5width_AH6heightts10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findImageDataInASN1",
+            "printedName": "findImageDataInASN1(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.UInt8]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.UInt8]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC19findImageDataInASN1ySays5UInt8VGSgs10ArraySliceVyAFGFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC19findImageDataInASN1ySays5UInt8VGSgs10ArraySliceVyAFGFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "detectImageType",
+            "printedName": "detectImageType(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImageDataType",
+                "printedName": "KinegramEmrtdConnector.ImageDataType",
+                "usr": "s:22KinegramEmrtdConnector13ImageDataTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC15detectImageType3forAA0g4DataH0OSays5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC15detectImageType3forAA0g4DataH0OSays5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "ISO39794IdentityMetadata",
+            "printedName": "ISO39794IdentityMetadata",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "gender",
+                "printedName": "gender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.Gender?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Gender",
+                        "printedName": "KinegramEmrtdConnector.Gender",
+                        "usr": "s:22KinegramEmrtdConnector6GenderO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV6genderAA6GenderOSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV6genderAA6GenderOSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 0,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KinegramEmrtdConnector.Gender?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Gender",
+                            "printedName": "KinegramEmrtdConnector.Gender",
+                            "usr": "s:22KinegramEmrtdConnector6GenderO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV6genderAA6GenderOSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV6genderAA6GenderOSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "eyeColor",
+                "printedName": "eyeColor",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.EyeColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EyeColor",
+                        "printedName": "KinegramEmrtdConnector.EyeColor",
+                        "usr": "s:22KinegramEmrtdConnector8EyeColorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV8eyeColorAA03EyeJ0OSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV8eyeColorAA03EyeJ0OSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 1,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KinegramEmrtdConnector.EyeColor?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "EyeColor",
+                            "printedName": "KinegramEmrtdConnector.EyeColor",
+                            "usr": "s:22KinegramEmrtdConnector8EyeColorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV8eyeColorAA03EyeJ0OSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV8eyeColorAA03EyeJ0OSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "hairColor",
+                "printedName": "hairColor",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.HairColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HairColor",
+                        "printedName": "KinegramEmrtdConnector.HairColor",
+                        "usr": "s:22KinegramEmrtdConnector9HairColorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9hairColorAA04HairJ0OSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9hairColorAA04HairJ0OSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 2,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KinegramEmrtdConnector.HairColor?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "HairColor",
+                            "printedName": "KinegramEmrtdConnector.HairColor",
+                            "usr": "s:22KinegramEmrtdConnector9HairColorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9hairColorAA04HairJ0OSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9hairColorAA04HairJ0OSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "featuresMask",
+                "printedName": "featuresMask",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt32",
+                        "printedName": "Swift.UInt32",
+                        "usr": "s:s6UInt32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV12featuresMasks6UInt32VSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV12featuresMasks6UInt32VSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 3,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.UInt32?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt32",
+                            "printedName": "Swift.UInt32",
+                            "usr": "s:s6UInt32V"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV12featuresMasks6UInt32VSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV12featuresMasks6UInt32VSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "expression",
+                "printedName": "expression",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.Expression?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Expression",
+                        "printedName": "KinegramEmrtdConnector.Expression",
+                        "usr": "s:22KinegramEmrtdConnector10ExpressionO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV10expressionAA10ExpressionOSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV10expressionAA10ExpressionOSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 4,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KinegramEmrtdConnector.Expression?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Expression",
+                            "printedName": "KinegramEmrtdConnector.Expression",
+                            "usr": "s:22KinegramEmrtdConnector10ExpressionO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV10expressionAA10ExpressionOSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV10expressionAA10ExpressionOSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "poseAngle",
+                "printedName": "poseAngle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9poseAngles5UInt8V3yaw_AH5pitchAH4rolltSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9poseAngles5UInt8V3yaw_AH5pitchAH4rolltSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 5,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt8",
+                                "printedName": "Swift.UInt8",
+                                "usr": "s:s5UInt8V"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt8",
+                                "printedName": "Swift.UInt8",
+                                "usr": "s:s5UInt8V"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt8",
+                                "printedName": "Swift.UInt8",
+                                "usr": "s:s5UInt8V"
+                              }
+                            ]
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9poseAngles5UInt8V3yaw_AH5pitchAH4rolltSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9poseAngles5UInt8V3yaw_AH5pitchAH4rolltSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "poseAngleUncertainty",
+                "printedName": "poseAngleUncertainty",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV20poseAngleUncertaintys5UInt8V3yaw_AH5pitchAH4rolltSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV20poseAngleUncertaintys5UInt8V3yaw_AH5pitchAH4rolltSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 6,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt8",
+                                "printedName": "Swift.UInt8",
+                                "usr": "s:s5UInt8V"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt8",
+                                "printedName": "Swift.UInt8",
+                                "usr": "s:s5UInt8V"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt8",
+                                "printedName": "Swift.UInt8",
+                                "usr": "s:s5UInt8V"
+                              }
+                            ]
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV20poseAngleUncertaintys5UInt8V3yaw_AH5pitchAH4rolltSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV20poseAngleUncertaintys5UInt8V3yaw_AH5pitchAH4rolltSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "mouthOpen",
+                "printedName": "mouthOpen",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9mouthOpenSbSgvp",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9mouthOpenSbSgvp",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "HasStorage"
+                ],
+                "fixedbinaryorder": 7,
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Bool?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9mouthOpenSbSgvg",
+                    "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV9mouthOpenSbSgvg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(gender:eyeColor:hairColor:featuresMask:expression:poseAngle:poseAngleUncertainty:mouthOpen:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ISO39794IdentityMetadata",
+                    "printedName": "KinegramEmrtdConnector.BiometricFace.ISO39794IdentityMetadata",
+                    "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.Gender?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Gender",
+                        "printedName": "KinegramEmrtdConnector.Gender",
+                        "usr": "s:22KinegramEmrtdConnector6GenderO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.EyeColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EyeColor",
+                        "printedName": "KinegramEmrtdConnector.EyeColor",
+                        "usr": "s:22KinegramEmrtdConnector8EyeColorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.HairColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HairColor",
+                        "printedName": "KinegramEmrtdConnector.HairColor",
+                        "usr": "s:22KinegramEmrtdConnector9HairColorO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt32",
+                        "printedName": "Swift.UInt32",
+                        "usr": "s:s6UInt32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KinegramEmrtdConnector.Expression?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Expression",
+                        "printedName": "KinegramEmrtdConnector.Expression",
+                        "usr": "s:22KinegramEmrtdConnector10ExpressionO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV6gender8eyeColor04hairK012featuresMask10expression9poseAngle0pQ11Uncertainty9mouthOpenAeA6GenderOSg_AA03EyeK0OSgAA04HairK0OSgs6UInt32VSgAA10ExpressionOSgs5UInt8V3yaw_A2_5pitchA2_4rolltSgA6_SbSgtcfc",
+                "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV6gender8eyeColor04hairK012featuresMask10expression9poseAngle0pQ11Uncertainty9mouthOpenAeA6GenderOSg_AA03EyeK0OSgAA04HairK0OSgs6UInt32VSgAA10ExpressionOSgs5UInt8V3yaw_A2_5pitchA2_4rolltSgA6_SbSgtcfc",
+                "moduleName": "KinegramEmrtdConnector",
+                "implicit": true,
+                "init_kind": "Designated"
+              }
+            ],
+            "declKind": "Struct",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV",
+            "moduleName": "KinegramEmrtdConnector",
+            "isFromExtension": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794IdentityMetadata",
+            "printedName": "parseISO39794IdentityMetadata(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ISO39794IdentityMetadata",
+                "printedName": "KinegramEmrtdConnector.BiometricFace.ISO39794IdentityMetadata",
+                "usr": "s:22KinegramEmrtdConnector13BiometricFaceC24ISO39794IdentityMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC29parseISO39794IdentityMetadata4dataAC0ghI0Vs10ArraySliceVys5UInt8VG_tKFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC29parseISO39794IdentityMetadata4dataAC0ghI0Vs10ArraySliceVys5UInt8VG_tKFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794Properties",
+            "printedName": "parseISO39794Properties(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(mask: Swift.UInt32, mouthOpen: Swift.Bool)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt32",
+                    "printedName": "Swift.UInt32",
+                    "usr": "s:s6UInt32V"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC23parseISO39794Properties4datas6UInt32V4mask_Sb9mouthOpents10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC23parseISO39794Properties4datas6UInt32V4mask_Sb9mouthOpents10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794Expression",
+            "printedName": "parseISO39794Expression(data:mouthOpen:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Expression",
+                "printedName": "KinegramEmrtdConnector.Expression",
+                "usr": "s:22KinegramEmrtdConnector10ExpressionO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC23parseISO39794Expression4data9mouthOpenAA0H0Os10ArraySliceVys5UInt8VG_SbtFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC23parseISO39794Expression4data9mouthOpenAA0H0Os10ArraySliceVys5UInt8VG_SbtFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794Pose",
+            "printedName": "parseISO39794Pose(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(angle: (yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8), uncertainty: (yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8))",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC17parseISO39794Pose4datas5UInt8V3yaw_AG5pitchAG4rollt5angle_AgH_AgigJt11uncertaintyts10ArraySliceVyAGG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC17parseISO39794Pose4datas5UInt8V3yaw_AG5pitchAG4rollt5angle_AgH_AgigJt11uncertaintyts10ArraySliceVyAGG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794AngleBlock",
+            "printedName": "parseISO39794AngleBlock(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(value: Swift.UInt8, uncertainty: Swift.UInt8)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC23parseISO39794AngleBlock4datas5UInt8V5value_AG11uncertaintyts10ArraySliceVyAGG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC23parseISO39794AngleBlock4datas5UInt8V5value_AG11uncertaintyts10ArraySliceVyAGG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parseISO39794Quality",
+            "printedName": "parseISO39794Quality(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.UInt16?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt16",
+                    "printedName": "Swift.UInt16",
+                    "usr": "s:s6UInt16V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC20parseISO39794Quality4datas6UInt16VSgs10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC20parseISO39794Quality4datas6UInt16VSgs10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeScoreOrError",
+            "printedName": "decodeScoreOrError(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC18decodeScoreOrError4fromSiSgs10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC18decodeScoreOrError4fromSiSgs10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeChoiceCode",
+            "printedName": "decodeChoiceCode(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC16decodeChoiceCode4fromSiSgs10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC16decodeChoiceCode4fromSiSgs10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeInt",
+            "printedName": "decodeInt(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC9decodeInt4fromSiSgs10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC9decodeInt4fromSiSgs10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeBool",
+            "printedName": "decodeBool(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ArraySlice",
+                "printedName": "Swift.ArraySlice<Swift.UInt8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:s10ArraySliceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC10decodeBool4fromSbs10ArraySliceVys5UInt8VG_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC10decodeBool4fromSbs10ArraySliceVys5UInt8VG_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapISO39794ImageFormat",
+            "printedName": "mapISO39794ImageFormat(code:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImageDataType",
+                "printedName": "KinegramEmrtdConnector.ImageDataType",
+                "usr": "s:22KinegramEmrtdConnector13ImageDataTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC22mapISO39794ImageFormat4codeAA0H8DataTypeOSi_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC22mapISO39794ImageFormat4codeAA0H8DataTypeOSi_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapISO39794FaceImageKind",
+            "printedName": "mapISO39794FaceImageKind(code:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FaceImageType",
+                "printedName": "KinegramEmrtdConnector.FaceImageType",
+                "usr": "s:22KinegramEmrtdConnector13FaceImageTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC011mapISO39794E9ImageKind4codeAA0eH4TypeOSi_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC011mapISO39794E9ImageKind4codeAA0eH4TypeOSi_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapISO39794ColorSpace",
+            "printedName": "mapISO39794ColorSpace(code:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ColorSpace",
+                "printedName": "KinegramEmrtdConnector.ColorSpace",
+                "usr": "s:22KinegramEmrtdConnector10ColorSpaceO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC21mapISO39794ColorSpace4codeAA0hI0OSi_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC21mapISO39794ColorSpace4codeAA0hI0OSi_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapISO39794Gender",
+            "printedName": "mapISO39794Gender(code:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Gender",
+                "printedName": "KinegramEmrtdConnector.Gender",
+                "usr": "s:22KinegramEmrtdConnector6GenderO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC17mapISO39794Gender4codeAA0H0OSi_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC17mapISO39794Gender4codeAA0H0OSi_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapISO39794EyeColor",
+            "printedName": "mapISO39794EyeColor(code:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EyeColor",
+                "printedName": "KinegramEmrtdConnector.EyeColor",
+                "usr": "s:22KinegramEmrtdConnector8EyeColorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC19mapISO39794EyeColor4codeAA0hI0OSi_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC19mapISO39794EyeColor4codeAA0hI0OSi_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mapISO39794HairColor",
+            "printedName": "mapISO39794HairColor(code:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HairColor",
+                "printedName": "KinegramEmrtdConnector.HairColor",
+                "usr": "s:22KinegramEmrtdConnector9HairColorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector13BiometricFaceC20mapISO39794HairColor4codeAA0hI0OSi_tFZ",
+            "mangledName": "$s22KinegramEmrtdConnector13BiometricFaceC20mapISO39794HairColor4codeAA0hI0OSi_tFZ",
+            "moduleName": "KinegramEmrtdConnector",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -20029,6 +22274,13 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KinegramEmrtdConnector"
       },
       {
         "kind": "TypeDecl",
@@ -25228,6 +27480,233 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(recordLength:gender:eyeColor:hairColor:features:expression:poseAngle:poseAngleUncertainty:featurePoints:faceImageType:imageDataType:width:height:colorspace:sourceType:deviceType:quality:rawImageData:uiImage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BiometricFaceImageInfo",
+                "printedName": "KinegramEmrtdConnector.BiometricFaceImageInfo",
+                "usr": "s:22KinegramEmrtdConnector22BiometricFaceImageInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt32",
+                "printedName": "Swift.UInt32",
+                "usr": "s:s6UInt32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Gender",
+                "printedName": "KinegramEmrtdConnector.Gender",
+                "usr": "s:22KinegramEmrtdConnector6GenderO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "EyeColor",
+                "printedName": "KinegramEmrtdConnector.EyeColor",
+                "usr": "s:22KinegramEmrtdConnector8EyeColorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HairColor",
+                "printedName": "KinegramEmrtdConnector.HairColor",
+                "usr": "s:22KinegramEmrtdConnector9HairColorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KinegramEmrtdConnector.Features?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Features",
+                    "printedName": "KinegramEmrtdConnector.Features",
+                    "usr": "s:22KinegramEmrtdConnector8FeaturesV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Expression",
+                "printedName": "KinegramEmrtdConnector.Expression",
+                "usr": "s:22KinegramEmrtdConnector10ExpressionO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(yaw: Swift.UInt8, pitch: Swift.UInt8, roll: Swift.UInt8)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[(type: Swift.UInt8, point: Swift.UInt8, x: Swift.UInt16, y: Swift.UInt16)]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(type: Swift.UInt8, point: Swift.UInt8, x: Swift.UInt16, y: Swift.UInt16)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt16",
+                        "printedName": "Swift.UInt16",
+                        "usr": "s:s6UInt16V"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FaceImageType",
+                "printedName": "KinegramEmrtdConnector.FaceImageType",
+                "usr": "s:22KinegramEmrtdConnector13FaceImageTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImageDataType",
+                "printedName": "KinegramEmrtdConnector.ImageDataType",
+                "usr": "s:22KinegramEmrtdConnector13ImageDataTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ColorSpace",
+                "printedName": "KinegramEmrtdConnector.ColorSpace",
+                "usr": "s:22KinegramEmrtdConnector10ColorSpaceO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SourceType",
+                "printedName": "KinegramEmrtdConnector.SourceType",
+                "usr": "s:22KinegramEmrtdConnector10SourceTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22KinegramEmrtdConnector22BiometricFaceImageInfoV12recordLength6gender8eyeColor04hairL08features10expression9poseAngle0pQ11Uncertainty13featurePoints04faceF4Type09imageDataV05width6height10colorspace06sourceV006deviceV07quality03rawfX002uiF0ACs6UInt32V_AA6GenderOAA03EyeL0OAA04HairL0OAA8FeaturesVSgAA10ExpressionOs5UInt8V3yaw_A9_5pitchA9_4rolltA9_A10__A9_A11_A9_A12_tSayA9_4type_A9_5points6UInt16V1xA16_1ytGAA0efV0OAA0fxV0OA16_A16_AA0L5SpaceOAA06SourceV0OA16_A16_SayA9_GSo7UIImageCSgtcfc",
+            "mangledName": "$s22KinegramEmrtdConnector22BiometricFaceImageInfoV12recordLength6gender8eyeColor04hairL08features10expression9poseAngle0pQ11Uncertainty13featurePoints04faceF4Type09imageDataV05width6height10colorspace06sourceV006deviceV07quality03rawfX002uiF0ACs6UInt32V_AA6GenderOAA03EyeL0OAA04HairL0OAA8FeaturesVSgAA10ExpressionOs5UInt8V3yaw_A9_5pitchA9_4rolltA9_A10__A9_A11_A9_A12_tSayA9_4type_A9_5points6UInt16V1xA16_1ytGAA0efV0OAA0fxV0OA16_A16_AA0L5SpaceOAA06SourceV0OA16_A16_SayA9_GSo7UIImageCSgtcfc",
+            "moduleName": "KinegramEmrtdConnector",
+            "init_kind": "Designated"
           },
           {
             "kind": "Constructor",
@@ -47112,6 +49591,48 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector12DataGroupSetV11descriptionSSvp",
+            "mangledName": "$s22KinegramEmrtdConnector12DataGroupSetV11descriptionSSvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector12DataGroupSetV11descriptionSSvg",
+                "mangledName": "$s22KinegramEmrtdConnector12DataGroupSetV11descriptionSSvg",
+                "moduleName": "KinegramEmrtdConnector",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Struct",
@@ -47239,6 +49760,13 @@
             ],
             "usr": "s:s25ExpressibleByArrayLiteralP",
             "mangledName": "$ss25ExpressibleByArrayLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
           }
         ]
       },
@@ -49307,15 +51835,20 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22KinegramEmrtdConnector0B24ChipCommunicationSessionC16selectMasterFileyyYaF",
-            "mangledName": "$s22KinegramEmrtdConnector0B24ChipCommunicationSessionC16selectMasterFileyyYaF",
+            "usr": "s:22KinegramEmrtdConnector0B24ChipCommunicationSessionC16selectMasterFileSbyYaF",
+            "mangledName": "$s22KinegramEmrtdConnector0B24ChipCommunicationSessionC16selectMasterFileSbyYaF",
             "moduleName": "KinegramEmrtdConnector",
             "isOpen": true,
+            "declAttributes": [
+              "DiscardableResult",
+              "RawDocComment"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -84924,6 +87457,85 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "Collection",
+        "printedName": "Collection",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "indexOfSubarray",
+            "printedName": "indexOfSubarray(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "τ_0_0.Index?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.Index"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:Sl22KinegramEmrtdConnectors5UInt8V7ElementRtzSi5IndexRtzrlE15indexOfSubarrayySiSgSayACGF",
+            "mangledName": "$sSl22KinegramEmrtdConnectors5UInt8V7ElementRtzSi5IndexRtzrlE15indexOfSubarrayySiSgSayACGF",
+            "moduleName": "KinegramEmrtdConnector",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Collection, τ_0_0.Element == Swift.UInt8, τ_0_0.Index == Swift.Int>",
+            "sugared_genericSig": "<Self where Self : Swift.Collection, Self.Element == Swift.UInt8, Self.Index == Swift.Int>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:Sl",
+        "mangledName": "$sSl",
+        "moduleName": "Swift",
+        "genericSig": "<τ_0_0 : Swift.Sequence, τ_0_0.Element == τ_0_0.SubSequence.Element, τ_0_0.Index : Swift.Comparable, τ_0_0.Index == τ_0_0.Indices.Element, τ_0_0.Indices : Swift.Collection, τ_0_0.Indices == τ_0_0.Indices.SubSequence, τ_0_0.SubSequence : Swift.Collection, τ_0_0.SubSequence == τ_0_0.SubSequence.SubSequence, τ_0_0.Indices.Element == τ_0_0.Indices.Index, τ_0_0.Indices.Index == τ_0_0.SubSequence.Index>",
+        "sugared_genericSig": "<Self : Swift.Sequence, Self.Element == Self.SubSequence.Element, Self.Index : Swift.Comparable, Self.Index == Self.Indices.Element, Self.Indices : Swift.Collection, Self.Indices == Self.Indices.SubSequence, Self.SubSequence : Swift.Collection, Self.SubSequence == Self.SubSequence.SubSequence, Self.Indices.Element == Self.Indices.Index, Self.Indices.Index == Self.SubSequence.Index>",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "Data",
         "printedName": "Data",
         "children": [
@@ -86315,35 +88927,35 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
-      "offset": 638,
+      "offset": 680,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
-      "offset": 890,
+      "offset": 932,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "Array",
-      "offset": 20484,
+      "offset": 20857,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "IntegerLiteral",
-      "offset": 22408,
+      "offset": 22781,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/EmrtdConnection.swift",
       "kind": "BooleanLiteral",
-      "offset": 31757,
+      "offset": 32127,
       "length": 4,
       "value": "true"
     },
@@ -86418,450 +89030,450 @@
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 1508,
+      "offset": 196,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 1563,
+      "offset": 251,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 1620,
+      "offset": 308,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 1702,
+      "offset": 390,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 1996,
+      "offset": 684,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2052,
+      "offset": 740,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2107,
+      "offset": 795,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2163,
+      "offset": 851,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2218,
+      "offset": 906,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2274,
+      "offset": 962,
       "length": 4,
       "value": "0x05"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2337,
+      "offset": 1025,
       "length": 4,
       "value": "0x06"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2392,
+      "offset": 1080,
       "length": 4,
       "value": "0x07"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2474,
+      "offset": 1162,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2774,
+      "offset": 1462,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2829,
+      "offset": 1517,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2885,
+      "offset": 1573,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2942,
+      "offset": 1630,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2998,
+      "offset": 1686,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3053,
+      "offset": 1741,
       "length": 4,
       "value": "0x05"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3109,
+      "offset": 1797,
       "length": 4,
       "value": "0x06"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3163,
+      "offset": 1851,
       "length": 4,
       "value": "0x07"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3219,
+      "offset": 1907,
       "length": 4,
       "value": "0x08"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3274,
+      "offset": 1962,
       "length": 4,
       "value": "0x09"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3356,
+      "offset": 2044,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3809,
+      "offset": 2497,
       "length": 8,
       "value": "0x000002"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3885,
+      "offset": 2573,
       "length": 8,
       "value": "0x000004"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3957,
+      "offset": 2645,
       "length": 8,
       "value": "0x000008"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4036,
+      "offset": 2724,
       "length": 8,
       "value": "0x000010"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4108,
+      "offset": 2796,
       "length": 8,
       "value": "0x000020"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4184,
+      "offset": 2872,
       "length": 8,
       "value": "0x000040"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4263,
+      "offset": 2951,
       "length": 8,
       "value": "0x000080"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4343,
+      "offset": 3031,
       "length": 8,
       "value": "0x000100"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4421,
+      "offset": 3109,
       "length": 8,
       "value": "0x000200"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 4514,
+      "offset": 3202,
       "length": 8,
       "value": "0x000400"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5072,
+      "offset": 3760,
       "length": 6,
       "value": "0x0000"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5134,
+      "offset": 3822,
       "length": 6,
       "value": "0x0001"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5200,
+      "offset": 3888,
       "length": 6,
       "value": "0x0002"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5264,
+      "offset": 3952,
       "length": 6,
       "value": "0x0003"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5333,
+      "offset": 4021,
       "length": 6,
       "value": "0x0004"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5403,
+      "offset": 4091,
       "length": 6,
       "value": "0x0005"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5467,
+      "offset": 4155,
       "length": 6,
       "value": "0x0006"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5530,
+      "offset": 4218,
       "length": 6,
       "value": "0x0007"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5614,
+      "offset": 4302,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5921,
+      "offset": 4609,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 5983,
+      "offset": 4671,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6046,
+      "offset": 4734,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6128,
+      "offset": 4816,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6439,
+      "offset": 5127,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6498,
+      "offset": 5186,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6580,
+      "offset": 5268,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6892,
+      "offset": 5580,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 6948,
+      "offset": 5636,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7005,
+      "offset": 5693,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7061,
+      "offset": 5749,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7117,
+      "offset": 5805,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7199,
+      "offset": 5887,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7505,
+      "offset": 6193,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7580,
+      "offset": 6268,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7652,
+      "offset": 6340,
       "length": 4,
       "value": "0x02"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7721,
+      "offset": 6409,
       "length": 4,
       "value": "0x03"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7795,
+      "offset": 6483,
       "length": 4,
       "value": "0x04"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7865,
+      "offset": 6553,
       "length": 4,
       "value": "0x05"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 7936,
+      "offset": 6624,
       "length": 4,
       "value": "0x06"
     },
     {
-      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFace.swift",
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/FileParsing\/Biometrics\/BiometricFaceImageInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 8017,
+      "offset": 6705,
       "length": 2,
       "value": "-1"
     },
@@ -87785,35 +90397,35 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 10861,
+      "offset": 10984,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 15701,
+      "offset": 15824,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 17182,
+      "offset": 18198,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 23629,
+      "offset": 24645,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 24888,
+      "offset": 25904,
       "length": 1,
       "value": "0"
     },
@@ -88240,28 +90852,28 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13493,
+      "offset": 13273,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 15974,
+      "offset": 15754,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 19533,
+      "offset": 19313,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "FloatLiteral",
-      "offset": 24976,
+      "offset": 24756,
       "length": 3,
       "value": "5.0"
     },
@@ -88270,14 +90882,14 @@
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.10.2\""
+      "value": "\"2.10.5\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20251202194120\""
+      "value": "\"20251217141150\""
     }
   ]
 }

@@ -918,6 +918,11 @@ public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEm
   public typealias Element = KinegramEmrtdConnector.DataGroupSet
   public typealias RawValue = Swift.Int
 }
+extension KinegramEmrtdConnector.DataGroupSet : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
 public enum ElementaryFileName : Swift.Int64, Swift.CaseIterable, Swift.Codable, Swift.Sendable {
   case COM
   case DG1

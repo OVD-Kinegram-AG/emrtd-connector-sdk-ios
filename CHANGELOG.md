@@ -1,5 +1,10 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.10.5
+
+* Diagnostics: Added detailed APDU monitoring events
+* Optimize MF/CardAccess flow
+
 ## 2.10.2
 
 * Diagnostics: Added monitoring events
