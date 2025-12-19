@@ -90397,35 +90397,42 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 10984,
+      "offset": 11041,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 15824,
+      "offset": 15881,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 18198,
+      "offset": 15909,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 18320,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 24645,
+      "offset": 24767,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 25904,
+      "offset": 26026,
       "length": 1,
       "value": "0"
     },
@@ -90882,14 +90889,14 @@
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.10.5\""
+      "value": "\"2.10.6\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20251217141150\""
+      "value": "\"20251219144656\""
     }
   ]
 }

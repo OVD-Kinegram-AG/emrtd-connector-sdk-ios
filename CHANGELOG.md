@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.10.6
+* Optimize MF/CardAccess flow (to avoid CoreNFC timeouts)
+* Diagnostics: Log outbound APDU headers (no payload) for diagnostic sessions
+
 ## 2.10.5
 
 * Diagnostics: Added detailed APDU monitoring events
