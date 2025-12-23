@@ -59,7 +59,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.10.6")
+    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.10.7")
 ]
 ```
 
@@ -70,7 +70,7 @@ The package includes the KinegramEmrtd.xcframework binary dependency automatical
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'KinegramEmrtdConnector', '~> 2.10.6'
+pod 'KinegramEmrtdConnector', '~> 2.10.7'
 ```
 
 Then run `pod install`.

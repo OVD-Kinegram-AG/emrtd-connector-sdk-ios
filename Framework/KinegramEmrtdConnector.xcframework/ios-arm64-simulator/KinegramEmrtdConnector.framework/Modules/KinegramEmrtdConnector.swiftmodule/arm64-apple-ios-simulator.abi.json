@@ -90390,49 +90390,49 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 2122,
+      "offset": 2312,
       "length": 4,
       "value": "0xA0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 11041,
+      "offset": 11323,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 15881,
+      "offset": 16163,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 15909,
-      "length": 1,
-      "value": "0"
+      "offset": 16191,
+      "length": 2,
+      "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 18320,
+      "offset": 18603,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 24767,
+      "offset": 25050,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 26026,
+      "offset": 26309,
       "length": 1,
       "value": "0"
     },
@@ -90889,14 +90889,14 @@
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.10.6\""
+      "value": "\"2.10.7\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20251219144656\""
+      "value": "\"20251223105843\""
     }
   ]
 }
