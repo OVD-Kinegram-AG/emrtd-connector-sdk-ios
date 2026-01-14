@@ -1,5 +1,8 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.10.8
+* Fix: more robust close handling and NFC logging
+
 ## 2.10.7
 * Bugfix: More stable NFC handling
 

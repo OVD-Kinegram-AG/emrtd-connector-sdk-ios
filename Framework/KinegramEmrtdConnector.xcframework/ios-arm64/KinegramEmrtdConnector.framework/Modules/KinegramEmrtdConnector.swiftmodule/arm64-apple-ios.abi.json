@@ -90880,23 +90880,23 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "FloatLiteral",
-      "offset": 24756,
-      "length": 3,
-      "value": "5.0"
+      "offset": 24960,
+      "length": 4,
+      "value": "22.0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.10.7\""
+      "value": "\"2.10.8\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20251223105843\""
+      "value": "\"20260114174732\""
     }
   ]
 }
