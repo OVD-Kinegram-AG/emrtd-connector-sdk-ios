@@ -104,7 +104,7 @@ typedef void(^KinegramEMRTDCompletionBlock)(NSString * _Nullable passportJson, N
 - (IBAction)buttonTouched:(id)sender {
     _wrapper = [[KinegramEMRTDWrapper alloc] 
         initWithClientId:@"example_client"
-        webSocketUrl:@"wss://kinegramdocval.lkis.de/ws1/validate"
+        webSocketUrl:@"wss://docval.kurzdigital.com/ws1/validate"
     ];
 
     // Example with custom headers

@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     // Client ID Functions as an API Access key.
     private let clientId = "example_client"
     // URL of the DocVal Service API Endpoint.
-    private let url = "wss://kinegramdocval.lkis.de/ws1/validate"
+    private let url = "wss://docval.kurzdigital.com/ws1/validate"
 
     private lazy var emrtdConnector: EmrtdConnector? = {
         EmrtdConnector(clientId: clientId, webSocketUrl: url, delegate: self)
