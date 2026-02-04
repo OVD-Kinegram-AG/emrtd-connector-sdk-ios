@@ -1,5 +1,12 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.11.0
+* New: Add `connector(_:didClose:)` delegate callback that always fires when a session ends
+  * Provides `CloseInfo` with `trigger`, `code`, `reason`, and `postConfirmed`
+  * Use `info.postConfirmed` to check if the result was posted successfully
+  * Eliminates ambiguity when WebSocket connections drop before server confirmation
+  * Deprecates `connectorDidSuccessfullyPostToServer` (use `info.postConfirmed` instead)
+
 ## 2.10.8
 * Fix: more robust close handling and NFC logging
 

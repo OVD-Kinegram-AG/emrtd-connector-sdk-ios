@@ -366,6 +366,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -6283,6 +6290,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -8120,6 +8134,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "BitwiseCopyable",
             "printedName": "BitwiseCopyable",
             "usr": "s:s15BitwiseCopyableP",
@@ -9722,6 +9743,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -11202,6 +11230,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -16336,6 +16371,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "CustomNSError",
             "printedName": "CustomNSError",
             "usr": "s:10Foundation13CustomNSErrorP",
@@ -16527,6 +16569,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -19151,6 +19200,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -19433,6 +19489,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -28006,6 +28069,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -28526,6 +28596,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -32818,6 +32895,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -37183,6 +37267,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "BitwiseCopyable",
             "printedName": "BitwiseCopyable",
             "usr": "s:s15BitwiseCopyableP",
@@ -37753,6 +37844,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -45968,6 +46066,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -46472,6 +46577,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -46801,6 +46913,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -47457,6 +47576,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -47730,6 +47856,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -48141,6 +48274,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -48637,6 +48777,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -49731,6 +49878,13 @@
             ],
             "usr": "s:s10SetAlgebraP",
             "mangledName": "$ss10SetAlgebraP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -50929,6 +51083,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -51201,7 +51362,7 @@
                         "kind": "TypeNominal",
                         "name": "NFCReaderError",
                         "printedName": "CoreNFC.NFCReaderError",
-                        "usr": "s:SC14NFCReaderErrorLeV"
+                        "usr": "c:@E@NFCReaderError"
                       }
                     ]
                   },
@@ -51497,6 +51658,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -51505,7 +51673,10 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "KinegramEmrtdConnector"
+        "moduleName": "KinegramEmrtdConnector",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -54379,6 +54550,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -55290,7 +55468,7 @@
                         "kind": "TypeNominal",
                         "name": "NFCReaderError",
                         "printedName": "CoreNFC.NFCReaderError",
-                        "usr": "s:SC14NFCReaderErrorLeV"
+                        "usr": "c:@E@NFCReaderError"
                       }
                     ]
                   },
@@ -55397,6 +55575,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -56209,6 +56394,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -57138,6 +57330,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -57878,6 +58077,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -59070,7 +59276,7 @@
                         "kind": "TypeNominal",
                         "name": "NFCReaderError",
                         "printedName": "CoreNFC.NFCReaderError",
-                        "usr": "s:SC14NFCReaderErrorLeV"
+                        "usr": "c:@E@NFCReaderError"
                       }
                     ]
                   },
@@ -59177,6 +59383,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -60227,6 +60440,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -60670,6 +60890,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -62396,6 +62623,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "BitwiseCopyable",
             "printedName": "BitwiseCopyable",
             "usr": "s:s15BitwiseCopyableP",
@@ -63533,6 +63767,44 @@
             "moduleName": "KinegramEmrtdConnector",
             "genericSig": "<τ_0_0 where τ_0_0 : KinegramEmrtdConnector.EmrtdConnectorDelegate>",
             "sugared_genericSig": "<Self where Self : KinegramEmrtdConnector.EmrtdConnectorDelegate>",
+            "deprecated": true,
+            "protocolReq": true,
+            "declAttributes": [
+              "Available",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "connector",
+            "printedName": "connector(_:didClose:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "EmrtdConnector",
+                "printedName": "KinegramEmrtdConnector.EmrtdConnector",
+                "usr": "s:22KinegramEmrtdConnector0bC0C"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CloseInfo",
+                "printedName": "KinegramEmrtdConnector.CloseInfo",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector0bC8DelegateP9connector_8didCloseyAA0bC0C_AA0G4InfoVtYaF",
+            "mangledName": "$s22KinegramEmrtdConnector0bC8DelegateP9connector_8didCloseyAA0bC0C_AA0G4InfoVtYaF",
+            "moduleName": "KinegramEmrtdConnector",
+            "genericSig": "<τ_0_0 where τ_0_0 : KinegramEmrtdConnector.EmrtdConnectorDelegate>",
+            "sugared_genericSig": "<Self where Self : KinegramEmrtdConnector.EmrtdConnectorDelegate>",
             "protocolReq": true,
             "declAttributes": [
               "RawDocComment"
@@ -63829,6 +64101,38 @@
           {
             "kind": "Function",
             "name": "connector",
+            "printedName": "connector(_:didClose:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "EmrtdConnector",
+                "printedName": "KinegramEmrtdConnector.EmrtdConnector",
+                "usr": "s:22KinegramEmrtdConnector0bC0C"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CloseInfo",
+                "printedName": "KinegramEmrtdConnector.CloseInfo",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector0bC8DelegatePAAE9connector_8didCloseyAA0bC0C_AA0G4InfoVtYaF",
+            "mangledName": "$s22KinegramEmrtdConnector0bC8DelegatePAAE9connector_8didCloseyAA0bC0C_AA0G4InfoVtYaF",
+            "moduleName": "KinegramEmrtdConnector",
+            "genericSig": "<τ_0_0 where τ_0_0 : KinegramEmrtdConnector.EmrtdConnectorDelegate>",
+            "sugared_genericSig": "<Self where Self : KinegramEmrtdConnector.EmrtdConnectorDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "connector",
             "printedName": "connector(_:didFailWithError:)",
             "children": [
               {
@@ -63984,6 +64288,639 @@
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
             "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KinegramEmrtdConnector"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CloseInfo",
+        "printedName": "CloseInfo",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "CloseTrigger",
+            "printedName": "CloseTrigger",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "server",
+                "printedName": "server",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type) -> KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CloseTrigger",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                        "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CloseTrigger",
+                            "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                            "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO6serveryA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO6serveryA2EmF",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "connectionLost",
+                "printedName": "connectionLost",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type) -> KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CloseTrigger",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                        "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CloseTrigger",
+                            "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                            "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO14connectionLostyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO14connectionLostyA2EmF",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "timeout",
+                "printedName": "timeout",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type) -> KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CloseTrigger",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                        "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CloseTrigger",
+                            "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                            "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO7timeoutyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO7timeoutyA2EmF",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "client",
+                "printedName": "client",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type) -> KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CloseTrigger",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                        "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CloseTrigger",
+                            "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                            "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO6clientyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO6clientyA2EmF",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "==",
+                "printedName": "==(_:_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CloseTrigger",
+                    "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CloseTrigger",
+                    "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO2eeoiySbAE_AEtFZ",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO2eeoiySbAE_AEtFZ",
+                "moduleName": "KinegramEmrtdConnector",
+                "static": true,
+                "implicit": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Var",
+                "name": "hashValue",
+                "printedName": "hashValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO9hashValueSivp",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO9hashValueSivp",
+                "moduleName": "KinegramEmrtdConnector",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO9hashValueSivg",
+                    "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO9hashValueSivg",
+                    "moduleName": "KinegramEmrtdConnector",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "hash",
+                "printedName": "hash(into:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Hasher",
+                    "printedName": "Swift.Hasher",
+                    "paramValueOwnership": "InOut",
+                    "usr": "s:s6HasherV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO4hash4intoys6HasherVz_tF",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO4hash4intoys6HasherVz_tF",
+                "moduleName": "KinegramEmrtdConnector",
+                "implicit": true,
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO",
+            "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV0D7TriggerO",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "trigger",
+            "printedName": "trigger",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CloseTrigger",
+                "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector9CloseInfoV7triggerAC0D7TriggerOvp",
+            "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV7triggerAC0D7TriggerOvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CloseTrigger",
+                    "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                    "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV7triggerAC0D7TriggerOvg",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV7triggerAC0D7TriggerOvg",
+                "moduleName": "KinegramEmrtdConnector",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "code",
+            "printedName": "code",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector9CloseInfoV4codeSiSgvp",
+            "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV4codeSiSgvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV4codeSiSgvg",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV4codeSiSgvg",
+                "moduleName": "KinegramEmrtdConnector",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reason",
+            "printedName": "reason",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector9CloseInfoV6reasonSSSgvp",
+            "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV6reasonSSSgvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV6reasonSSSgvg",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV6reasonSSSgvg",
+                "moduleName": "KinegramEmrtdConnector",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "postConfirmed",
+            "printedName": "postConfirmed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector9CloseInfoV13postConfirmedSbvp",
+            "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV13postConfirmedSbvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV13postConfirmedSbvg",
+                "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV13postConfirmedSbvg",
+                "moduleName": "KinegramEmrtdConnector",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(trigger:code:reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CloseInfo",
+                "printedName": "KinegramEmrtdConnector.CloseInfo",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CloseTrigger",
+                "printedName": "KinegramEmrtdConnector.CloseInfo.CloseTrigger",
+                "usr": "s:22KinegramEmrtdConnector9CloseInfoV0D7TriggerO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22KinegramEmrtdConnector9CloseInfoV7trigger4code6reasonA2C0D7TriggerO_SiSgSSSgtcfc",
+            "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV7trigger4code6reasonA2C0D7TriggerO_SiSgSSSgtcfc",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:22KinegramEmrtdConnector9CloseInfoV",
+        "mangledName": "$s22KinegramEmrtdConnector9CloseInfoV",
+        "moduleName": "KinegramEmrtdConnector",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -66720,6 +67657,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -68111,6 +69055,13 @@
               },
               {
                 "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "BitwiseCopyable",
                 "printedName": "BitwiseCopyable",
                 "usr": "s:s15BitwiseCopyableP",
@@ -68753,6 +69704,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               },
               {
                 "kind": "Conformance",
@@ -69553,6 +70511,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               },
               {
                 "kind": "Conformance",
@@ -70367,6 +71332,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -71319,6 +72291,13 @@
               },
               {
                 "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "BitwiseCopyable",
                 "printedName": "BitwiseCopyable",
                 "usr": "s:s15BitwiseCopyableP",
@@ -72092,6 +73071,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               },
               {
                 "kind": "Conformance",
@@ -72869,6 +73855,13 @@
               },
               {
                 "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "BitwiseCopyable",
                 "printedName": "BitwiseCopyable",
                 "usr": "s:s15BitwiseCopyableP",
@@ -73472,6 +74465,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               },
               {
                 "kind": "Conformance",
@@ -77574,6 +78574,13 @@
               },
               {
                 "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "BitwiseCopyable",
                 "printedName": "BitwiseCopyable",
                 "usr": "s:s15BitwiseCopyableP",
@@ -78639,6 +79646,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -81408,6 +82422,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -82269,6 +83290,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -82524,6 +83552,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -83386,6 +84421,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -83643,6 +84685,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -85048,6 +86097,78 @@
           },
           {
             "kind": "Var",
+            "name": "onClose",
+            "printedName": "onClose",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((KinegramEmrtdConnector.CloseInfo) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.CloseInfo) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CloseInfo",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo",
+                        "usr": "s:22KinegramEmrtdConnector9CloseInfoV"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC7onClose33_BCB7F86FE7F262E530EBA9B75408EF56LLyAA0I4InfoVcSgvp",
+            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC7onClose33_BCB7F86FE7F262E530EBA9B75408EF56LLyAA0I4InfoVcSgvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 27,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "closeNotified",
+            "printedName": "closeNotified",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC13closeNotified33_BCB7F86FE7F262E530EBA9B75408EF56LLSbvp",
+            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC13closeNotified33_BCB7F86FE7F262E530EBA9B75408EF56LLSbvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 28,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
             "name": "monitoringDelegate",
             "printedName": "monitoringDelegate",
             "children": [
@@ -85069,14 +86190,14 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 27,
+            "fixedbinaryorder": 29,
             "ownership": 1,
             "hasStorage": true
           },
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(connection:validationId:clientId:enableDiagnostics:receiveResult:nfcStatusCallback:nfcStatusLocalization:errorCallback:successfulPostCallback:monitoringDelegate:)",
+            "printedName": "init(connection:validationId:clientId:enableDiagnostics:receiveResult:nfcStatusCallback:nfcStatusLocalization:errorCallback:successfulPostCallback:closeCallback:monitoringDelegate:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -85227,6 +86348,33 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
+                "printedName": "((KinegramEmrtdConnector.CloseInfo) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.CloseInfo) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CloseInfo",
+                        "printedName": "KinegramEmrtdConnector.CloseInfo",
+                        "usr": "s:22KinegramEmrtdConnector9CloseInfoV"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
                 "printedName": "(any KinegramEmrtdConnector.MonitoringDelegate)?",
                 "children": [
                   {
@@ -85241,8 +86389,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC10connection12validationId06clientJ017enableDiagnostics13receiveResult17nfcStatusCallback0pQ12Localization05errorR0014successfulPostR018monitoringDelegateAcA0dE10ConnectionC_S2SS2byAA011NFCProgressQ0VcSgSSAQcSgys5Error_pcSgyycSgAA010MonitoringX0_pSgtcfc",
-            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC10connection12validationId06clientJ017enableDiagnostics13receiveResult17nfcStatusCallback0pQ12Localization05errorR0014successfulPostR018monitoringDelegateAcA0dE10ConnectionC_S2SS2byAA011NFCProgressQ0VcSgSSAQcSgys5Error_pcSgyycSgAA010MonitoringX0_pSgtcfc",
+            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC10connection12validationId06clientJ017enableDiagnostics13receiveResult17nfcStatusCallback0pQ12Localization05errorR0014successfulPostR005closeR018monitoringDelegateAcA0dE10ConnectionC_S2SS2byAA011NFCProgressQ0VcSgSSARcSgys5Error_pcSgyycSgyAA9CloseInfoVcSgAA010MonitoringY0_pSgtcfc",
+            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC10connection12validationId06clientJ017enableDiagnostics13receiveResult17nfcStatusCallback0pQ12Localization05errorR0014successfulPostR005closeR018monitoringDelegateAcA0dE10ConnectionC_S2SS2byAA011NFCProgressQ0VcSgSSARcSgys5Error_pcSgyycSgyAA9CloseInfoVcSgAA010MonitoringY0_pSgtcfc",
             "moduleName": "KinegramEmrtdConnector",
             "init_kind": "Designated"
           },
@@ -85941,6 +87089,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -87568,6 +88723,7 @@
         "intro_tvOS": "9.0",
         "intro_watchOS": "2.0",
         "declAttributes": [
+          "AddressableForDependencies",
           "Frozen",
           "Available",
           "Available",
@@ -87933,6 +89089,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Sequence",
             "printedName": "Sequence",
             "children": [
@@ -88058,6 +89221,35 @@
             ],
             "usr": "s:s21_ObjectiveCBridgeableP",
             "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Transferable",
+            "printedName": "Transferable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Representation",
+                "printedName": "Representation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some CoreTransferable.TransferRepresentation",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TransferRepresentation",
+                        "printedName": "CoreTransferable.TransferRepresentation",
+                        "usr": "s:16CoreTransferable22TransferRepresentationP"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "usr": "s:16CoreTransferable0B0P",
+            "mangledName": "$s16CoreTransferable0B0P"
           }
         ]
       },
@@ -88409,6 +89601,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Copyable",
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
@@ -88626,6 +89825,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -88749,6 +89955,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }
@@ -90362,77 +91575,77 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 178,
+      "offset": 211,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 464,
+      "offset": 497,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 681,
+      "offset": 714,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 918,
+      "offset": 951,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 2312,
+      "offset": 2345,
       "length": 4,
       "value": "0xA0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 11323,
+      "offset": 11356,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 16163,
+      "offset": 16196,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 16191,
+      "offset": 16224,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 18603,
+      "offset": 18636,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 25050,
+      "offset": 25083,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 26309,
+      "offset": 26342,
       "length": 1,
       "value": "0"
     },
@@ -90544,14 +91757,14 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 8827,
+      "offset": 9095,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 10156,
+      "offset": 10424,
       "length": 5,
       "value": "false"
     },
@@ -90845,42 +92058,49 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2814,
+      "offset": 2746,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2851,
+      "offset": 3010,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3047,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13273,
+      "offset": 13848,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 15754,
+      "offset": 16329,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 19313,
+      "offset": 19888,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "FloatLiteral",
-      "offset": 24960,
+      "offset": 25535,
       "length": 4,
       "value": "22.0"
     },
@@ -90889,14 +92109,14 @@
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.10.8\""
+      "value": "\"2.11.0\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20260114174732\""
+      "value": "\"20260204123709\""
     }
   ]
 }

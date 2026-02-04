@@ -192,14 +192,37 @@ extension ConnectorViewModel: EmrtdConnectorDelegate {
         statusText = "Authenticating with server..."
     }
 
-    func connectorDidSuccessfullyPostToServer(_ connector: EmrtdConnector) async {
-        debugPrint("✅ Delegate: Server successfully posted results (Close Code 1000)")
-        // This confirms the server has successfully processed and posted the validation
-        // Especially useful when using receiveResult: false
-        if !receiveResult {
-            statusText = "Server posted results"
-            isValidating = false
+    // MARK: - New Close Callback (recommended)
+
+    func connector(_ connector: EmrtdConnector, didClose info: CloseInfo) async {
+        debugPrint("🔒 Delegate: Session closed")
+        debugPrint("   - Trigger: \(info.trigger)")
+        debugPrint("   - Code: \(info.code.map(String.init) ?? "nil")")
+        debugPrint("   - Reason: \(info.reason ?? "none")")
+        debugPrint("   - Post confirmed: \(info.postConfirmed)")
+
+        if info.postConfirmed {
+            debugPrint("✅ Result server post confirmed")
+            if !receiveResult {
+                statusText = "Server posted results"
+                isValidating = false
+            }
+        } else {
+            // Either an error occurred (check didFailWithError) or connection was lost
+            debugPrint("⚠️ Post not confirmed - check didFailWithError for details")
+            if !receiveResult {
+                statusText = "Post not confirmed - check backend"
+                isValidating = false
+            }
         }
+    }
+
+    // MARK: - Deprecated (use didClose instead)
+
+    func connectorDidSuccessfullyPostToServer(_ connector: EmrtdConnector) async {
+        // This callback is deprecated. Use connector(_:didClose:) instead.
+        // Kept for backwards compatibility.
+        // debugPrint("✅ Delegate: [DEPRECATED] Server successfully posted results (Close Code 1000)")
     }
 
     func connector(_ connector: EmrtdConnector, didFailWithError error: Error) async {

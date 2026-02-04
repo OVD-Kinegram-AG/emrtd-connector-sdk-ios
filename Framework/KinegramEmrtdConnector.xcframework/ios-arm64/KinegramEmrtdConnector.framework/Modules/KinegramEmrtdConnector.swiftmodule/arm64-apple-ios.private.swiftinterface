@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KinegramEmrtdConnector
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import CommonCrypto
 import CoreNFC
 import CryptoKit
@@ -28,7 +28,9 @@ public enum ASN1TagClass : Swift.UInt8 {
   case ContextSpecific
   case Private
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -106,18 +108,22 @@ public struct CANKey : KinegramEmrtdConnector.AccessKey {
   public var bitLength: Swift.Int32 {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var data: [Swift.UInt8]? {
     get
   }
+  #endif
   public var dec: Swift.String {
     get
   }
   public var hex: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var intValue: Swift.Int32? {
     get
   }
+  #endif
 }
 extension KinegramEmrtdConnector.Bignum : Swift.CustomStringConvertible {
   public var description: Swift.String {
@@ -158,7 +164,9 @@ extension KinegramEmrtdConnector.Bignum : Swift.Comparable {
   case publicKeyParams
   case notBefore
   case notAfter
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   @available(*, deprecated, message: "Access the X509Wrapper properties instead.")
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -174,30 +182,46 @@ extension KinegramEmrtdConnector.X509Wrapper {
   public init(withCopyOf cert: Swift.OpaquePointer)
   @objc deinit
   public func getDERBinary() throws -> [Swift.UInt8]
+  #if compiler(>=5.3) && $NonescapableTypes
   public var fingerprint: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var notBeforeDate: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var notAfterDate: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var serialNumber: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var signatureAlgorithm: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var publicKeyParams: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var issuerName: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var subjectName: Swift.String? {
     get
   }
+  #endif
 }
 public typealias EmrtdPassportReader = KinegramEmrtdConnector.EmrtdReader
 public typealias EmrtdPassportReaderError = KinegramEmrtdConnector.EmrtdReaderError
@@ -205,14 +229,22 @@ public typealias EmrtdPassportReaderError = KinegramEmrtdConnector.EmrtdReaderEr
   public var errorLocalization: (_ error: KinegramEmrtdConnector.EmrtdReaderError) -> Swift.String
   public var stepLocalization: (_ currentStep: KinegramEmrtdConnector.ReadAndVerifyStep) -> Swift.String
   public var fileReadProgressLocalization: (_ currentFile: KinegramEmrtdConnector.ElementaryFileName, _ readBytes: Swift.Int, _ totalBytes: Swift.Int) -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(errorLocalization: ((KinegramEmrtdConnector.EmrtdReaderError) -> Swift.String)? = nil, stepLocalization: ((KinegramEmrtdConnector.ReadAndVerifyStep) -> Swift.String)? = nil, fileReadProgressLocalization: ((_ currentFile: KinegramEmrtdConnector.ElementaryFileName, _ readBytes: Swift.Int, _ totalBytes: Swift.Int) -> Swift.String)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func readMasterlist(from masterListUrl: Foundation.URL, masterlistIssuerCertificateUrl: Foundation.URL? = nil) throws
+  #endif
   public func read(accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.EmrtdResult
   public func readAndVerify(accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.EmrtdResult
+  #if compiler(>=5.3) && $NonescapableTypes
   @_documentation(visibility: internal) public func startWithHandover(accessKey: any KinegramEmrtdConnector.AccessKey, activeAuthChallenge: Foundation.Data? = nil, apduRelayHandler: (any KinegramEmrtdConnector.APDURelayHandler)? = nil, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.HandoverState
+  #endif
   @_documentation(visibility: internal) public func sendExternalAPDU(_ commandData: Foundation.Data) async throws -> Foundation.Data
   @_documentation(visibility: internal) public func closeSession()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_documentation(visibility: internal) public func invalidateSession(errorMessage: Swift.String? = nil)
+  #endif
   @_documentation(visibility: internal) public func continueAfterHandback(from state: KinegramEmrtdConnector.HandoverState, handbackInfo: KinegramEmrtdConnector.CAHandbackInfo, filesToRead: KinegramEmrtdConnector.DataGroupSet = .standard, shouldAutoInvalidateSession: Swift.Bool = true, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.EmrtdResult
   @objc deinit
 }
@@ -277,7 +309,9 @@ extension KinegramEmrtdConnector.EmrtdReaderError : Foundation.CustomNSError {
   }
 }
 extension KinegramEmrtdConnector.EmrtdResult {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func generateMockSampleInstance(files: [KinegramEmrtdConnector.ElementaryFileName : Foundation.Data], masterlist: KinegramEmrtdConnector.MasterlistFile? = nil) throws -> KinegramEmrtdConnector.EmrtdResult
+  #endif
 }
 public enum VerificationResult<T> : Swift.Equatable where T : Swift.Equatable {
   case Unavailable
@@ -318,39 +352,59 @@ public typealias EmrtdPassport = KinegramEmrtdConnector.EmrtdResult
   public var passiveAuthenticationErrors: [KinegramEmrtdConnector.PassiveAuthenticationError] {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var cardAccessFile: KinegramEmrtdConnector.CardAccessFile? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var sodFile: KinegramEmrtdConnector.SODFile? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg1File: KinegramEmrtdConnector.DataGroup1File? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg2File: KinegramEmrtdConnector.DataGroup2File? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg7File: KinegramEmrtdConnector.DataGroup7File? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg11File: KinegramEmrtdConnector.DataGroup11File? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg12File: KinegramEmrtdConnector.DataGroup12File? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg14File: KinegramEmrtdConnector.DataGroup14File? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dg15File: KinegramEmrtdConnector.DataGroup15File? {
     get
   }
+  #endif
   public var notCorrectlyParsedFiles: [KinegramEmrtdConnector.File] {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var passiveAuthenticationResult: Swift.Bool? {
     get
   }
+  #endif
   public var allHashesValid: Swift.Bool {
     get
   }
@@ -369,7 +423,9 @@ public enum Gender : Swift.Int {
   case Male
   case Female
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -385,7 +441,9 @@ public enum EyeColor : Swift.Int {
   case MultiColored
   case Pink
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -403,7 +461,9 @@ public enum HairColor : Swift.Int {
   case Green
   case Blue
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -421,7 +481,9 @@ public struct Features {
     case RightEyePatch
     case DarkGlasses
     case DistortingMedicalCondition
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.UInt32)
+    #endif
     public typealias RawValue = Swift.UInt32
     public var rawValue: Swift.UInt32 {
       get
@@ -440,7 +502,9 @@ public enum Expression : Swift.Int {
   case Squinting
   case Frowning
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -451,7 +515,9 @@ public enum FaceImageType : Swift.Int {
   case FullFrontal
   case TokenFrontal
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -461,7 +527,9 @@ public enum ImageDataType : Swift.Int {
   case JPEG
   case JPEG2000
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -474,7 +542,9 @@ public enum ColorSpace : Swift.Int {
   case Gray8
   case Other
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -489,7 +559,9 @@ public enum SourceType : Swift.Int {
   case VideoFrameAnalogCam
   case VideoFrameDigitalCam
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -579,7 +651,9 @@ public enum DocumentType : Swift.Int {
   case TD1
   case TD2
   case TD3
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -607,9 +681,11 @@ public enum DocumentType : Swift.Int {
 }
 @_hasMissingDesignatedInitializers public class DataGroup2File : KinegramEmrtdConnector.File {
   final public let biometricInfos: [KinegramEmrtdConnector.BiometricInformation<KinegramEmrtdConnector.BiometricFace>]
+  #if compiler(>=5.3) && $NonescapableTypes
   public var faceInfos: [KinegramEmrtdConnector.BiometricFaceImageInfo]? {
     get
   }
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class DataGroup11File : KinegramEmrtdConnector.File {
@@ -700,7 +776,9 @@ public enum DocumentType : Swift.Int {
 }
 public class MasterlistFile {
   final public let masterlistSignerCertificate: KinegramEmrtdConnector.X509Wrapper
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(fileUrl: Foundation.URL, issuerCertificateUrl: Foundation.URL? = nil) throws
+  #endif
   public func getCertificates() -> [KinegramEmrtdConnector.X509Wrapper]
   @objc deinit
 }
@@ -715,7 +793,9 @@ public enum HashAlgorithm : Swift.String {
   case SHA384
   case SHA512
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -729,7 +809,9 @@ public enum HashAlgorithm : Swift.String {
     get
   }
   public init(data: [Swift.UInt8]) throws
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getHashValue(for otherFileName: KinegramEmrtdConnector.ElementaryFileName) -> [Swift.UInt8]?
+  #endif
   @objc deinit
 }
 public typealias SecurityInfo = (protocol: KinegramEmrtdConnector.ASN1ObjectIdentifier, required: KinegramEmrtdConnector.ASN1TLV, optional: KinegramEmrtdConnector.ASN1TLV?)
@@ -739,7 +821,9 @@ public enum CryptographicAlgorithm : Swift.String {
   case AES_CBC_CMAC_192
   case AES_CBC_CMAC_256
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -757,7 +841,9 @@ public enum SignatureAlgorithmECDSA : Swift.String {
   case SHA3_384
   case SHA3_512
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -768,7 +854,9 @@ public enum ChipAuthenticationKeyAgreementType : Swift.String {
   case DH
   case ECDH
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -797,7 +885,9 @@ public enum StandardizedDomainParameter : Swift.Int64 {
   case ECP_BRAINPOOL_P384_R1
   case ECP_BRAINPOOL_P512_R1
   case ECP_NIST_P521_R1
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int64)
+  #endif
   public typealias RawValue = Swift.Int64
   public var rawValue: Swift.Int64 {
     get
@@ -810,7 +900,9 @@ public enum PaceMappingType : Swift.String {
   case EC_DH_IM
   case EC_DH_CAM
   case Unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -823,7 +915,9 @@ public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEm
     case mrz
     case can
     case unknown
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -857,7 +951,9 @@ public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEm
   public let activeAuthChallenge: Foundation.Data?
   public let caHandoverData: KinegramEmrtdConnector.CAHandoverData?
   public let sessionId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo, maxTransceiveLength: Swift.Int, maxBlockSize: Swift.Int, filesRead: [KinegramEmrtdConnector.ElementaryFileName : Foundation.Data], accessKeyInfo: KinegramEmrtdConnector.AccessKeyInfo, activeAuthChallenge: Foundation.Data? = nil, caHandoverData: KinegramEmrtdConnector.CAHandoverData? = nil, sessionId: Swift.String? = nil)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -865,7 +961,9 @@ public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEm
   case success
   case failed
   case unavailable
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -875,8 +973,12 @@ public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEm
   public let checkResult: KinegramEmrtdConnector.CACheckResult
   public let secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo?
   public let dg1Data: Foundation.Data?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(checkResult: KinegramEmrtdConnector.CACheckResult, secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo? = nil, dg1Data: Foundation.Data? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(checkResult: Swift.String, secureMessagingInfo: KinegramEmrtdConnector.SecureMessagingInfo? = nil, dg1Data: Foundation.Data? = nil)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -889,7 +991,9 @@ public typealias PaceDomainParameterInfo = (protocolObjectIdentifier: KinegramEm
   public let keyIdRef: Foundation.Data?
   public let algorithm: Swift.String
   public let protocolOID: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(chipPublicKey: Foundation.Data, ephemeralPublicKey: Foundation.Data, keyIdRef: Foundation.Data? = nil, algorithm: Swift.String, protocolOID: Swift.String? = nil)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -947,7 +1051,9 @@ public enum ElementaryFileName : Swift.Int64, Swift.CaseIterable, Swift.Codable,
   @_documentation(visibility: internal) public var protocolName: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int64)
+  #endif
   public typealias AllCases = [KinegramEmrtdConnector.ElementaryFileName]
   public typealias RawValue = Swift.Int64
   nonisolated public static var allCases: [KinegramEmrtdConnector.ElementaryFileName] {
@@ -972,7 +1078,9 @@ public enum EmrtdChipCommunicationError : KinegramEmrtdConnector.ErrorWithMonito
 @available(*, deprecated, message: "Intelligent Database Message is used with Document Validation Server REST API v3. REST API v3 is deprecated. Please use API v4.")
 public struct IntelligentDatabaseMessageBuilder {
   public init(app: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func encodeAsJSON(emrtdResult: KinegramEmrtdConnector.EmrtdResult?, error: KinegramEmrtdConnector.EmrtdReaderError? = nil) throws -> Foundation.Data
+  #endif
 }
 public protocol MonitoringDelegate : AnyObject {
   func onNewMonitoringEvent(message: Swift.String)
@@ -995,7 +1103,9 @@ public enum ActiveAuthenticationFailedReason : KinegramEmrtdConnector.ErrorWithM
 public enum ChipAccessType : Swift.String {
   case BasicAccessControl
   case PasswordAuthenticatedConnectionEstablishment
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1057,7 +1167,9 @@ public protocol EmrtdConnectorDelegate : AnyObject {
   func connectorDidPerformHandover(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
   func connectorWillCompleteReading(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
   func connectorDidCompleteValidation(_ connector: KinegramEmrtdConnector.EmrtdConnector, result: KinegramEmrtdConnector.ValidationResult) async
+  @available(*, deprecated, message: "Use connector(_:didClose:) instead. Check info.postConfirmed for success.")
   func connectorDidSuccessfullyPostToServer(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didClose info: KinegramEmrtdConnector.CloseInfo) async
   func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didFailWithError error: any Swift.Error) async
   func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didUpdateNFCStatus status: KinegramEmrtdConnector.NFCProgressStatus) async
 }
@@ -1073,6 +1185,7 @@ extension KinegramEmrtdConnector.EmrtdConnectorDelegate {
   public func connectorWillCompleteReading(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
   public func connectorDidCompleteValidation(_ connector: KinegramEmrtdConnector.EmrtdConnector, result: KinegramEmrtdConnector.ValidationResult) async
   public func connectorDidSuccessfullyPostToServer(_ connector: KinegramEmrtdConnector.EmrtdConnector) async
+  public func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didClose info: KinegramEmrtdConnector.CloseInfo) async
   public func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didFailWithError error: any Swift.Error) async
   public func connector(_ connector: KinegramEmrtdConnector.EmrtdConnector, didUpdateNFCStatus status: KinegramEmrtdConnector.NFCProgressStatus) async
 }
@@ -1083,6 +1196,28 @@ extension KinegramEmrtdConnector.ValidationResult {
   public var summary: Swift.String {
     get
   }
+}
+public struct CloseInfo : Swift.Sendable {
+  public enum CloseTrigger : Swift.Sendable {
+    case server
+    case connectionLost
+    case timeout
+    case client
+    public static func == (a: KinegramEmrtdConnector.CloseInfo.CloseTrigger, b: KinegramEmrtdConnector.CloseInfo.CloseTrigger) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public let trigger: KinegramEmrtdConnector.CloseInfo.CloseTrigger
+  public let code: Swift.Int?
+  public let reason: Swift.String?
+  public var postConfirmed: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(trigger: KinegramEmrtdConnector.CloseInfo.CloseTrigger, code: Swift.Int? = nil, reason: Swift.String? = nil)
+  #endif
 }
 public enum CloseReason : Swift.String, Swift.CaseIterable {
   case timeoutWhileWaitingForResponse
@@ -1102,11 +1237,15 @@ public enum CloseReason : Swift.String, Swift.CaseIterable {
   public var localizedDescription: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func from(_ reasonString: Swift.String?) -> KinegramEmrtdConnector.CloseReason?
+  #endif
   public var expectedCloseCode: Swift.Int {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias AllCases = [KinegramEmrtdConnector.CloseReason]
   public typealias RawValue = Swift.String
   nonisolated public static var allCases: [KinegramEmrtdConnector.CloseReason] {
@@ -1157,12 +1296,16 @@ public enum EmrtdConnectorError : Foundation.LocalizedError {
   case validationFailed(result: KinegramEmrtdConnector.ValidationResult)
   case fileTransferFailed(fileId: Swift.String, reason: Swift.String)
   case chunkedTransferIncomplete(fileId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var recoverySuggestion: Swift.String? {
     get
   }
+  #endif
 }
 public enum MessageType : Swift.String, Swift.Codable {
   case start
@@ -1173,7 +1316,9 @@ public enum MessageType : Swift.String, Swift.Codable {
   case result
   case close
   case monitoring
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1189,13 +1334,21 @@ public struct ChipAuthInfo : Swift.Codable {
     case keyAgreementOID
     case cipherOID
     case keyId
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.String
+    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
+    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -1203,7 +1356,9 @@ public struct ChipAuthInfo : Swift.Codable {
       get
     }
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(ephemeralPublicKey: Swift.String, keyAgreementOID: Swift.String, cipherOID: Swift.String?, keyId: Swift.Int)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1219,18 +1374,26 @@ public struct ValidationResult : Swift.Codable {
   public var status: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var chipAuthResult: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var passiveAuthResult: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var activeAuthResult: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dataGroupChecks: [Swift.String : Swift.String]? {
     get
   }
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1323,7 +1486,9 @@ extension CoreNFC.NFCReaderSession {
 }
 @_hasMissingDesignatedInitializers public class ErrorLocalizer {
   public static func localizedMessage(for error: any Swift.Error) -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func recoverySuggestion(for error: any Swift.Error) -> Swift.String?
+  #endif
   @objc deinit
 }
 public struct ErrorDisplayInfo {
@@ -1337,13 +1502,17 @@ public struct NFCCapabilityChecker {
   public static var isAvailable: Swift.Bool {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public static var unavailabilityReason: Swift.String? {
     get
   }
+  #endif
 }
 public actor RetryHandler {
   public init(maxAttempts: Swift.Int = 3, retryDelay: Foundation.TimeInterval = 1.0)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func execute<T>(operation: () async throws -> T, isRetryable: (any Swift.Error) -> Swift.Bool = { _ in true }, onRetry: ((Swift.Int, any Swift.Error) async -> Swift.Void)? = nil) async throws -> T
+  #endif
   @objc deinit
   @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
   @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency.UnownedSerialExecutor {
@@ -1352,9 +1521,11 @@ public actor RetryHandler {
 }
 public enum RetryError : Foundation.LocalizedError {
   case maxAttemptsReached
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
   public static func == (a: KinegramEmrtdConnector.RetryError, b: KinegramEmrtdConnector.RetryError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1443,6 +1614,8 @@ extension KinegramEmrtdConnector.ElementaryFileName : Swift.RawRepresentable {}
 extension KinegramEmrtdConnector.ChipAccessType : Swift.Equatable {}
 extension KinegramEmrtdConnector.ChipAccessType : Swift.Hashable {}
 extension KinegramEmrtdConnector.ChipAccessType : Swift.RawRepresentable {}
+extension KinegramEmrtdConnector.CloseInfo.CloseTrigger : Swift.Equatable {}
+extension KinegramEmrtdConnector.CloseInfo.CloseTrigger : Swift.Hashable {}
 extension KinegramEmrtdConnector.CloseReason : Swift.Equatable {}
 extension KinegramEmrtdConnector.CloseReason : Swift.Hashable {}
 extension KinegramEmrtdConnector.CloseReason : Swift.RawRepresentable {}

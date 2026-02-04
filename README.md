@@ -59,7 +59,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.10.8")
+    .package(url: "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios", from: "2.11.0")
 ]
 ```
 
@@ -70,7 +70,7 @@ The package includes the KinegramEmrtd.xcframework binary dependency automatical
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'KinegramEmrtdConnector', '~> 2.10.8'
+pod 'KinegramEmrtdConnector', '~> 2.11.0'
 ```
 
 Then run `pod install`.
@@ -254,15 +254,58 @@ func connector(_ connector: EmrtdConnector, didUpdateNFCStatus status: NFCProgre
 }
 ```
 
-## Server Post Confirmation
+## Session Close Callback (Recommended)
 
-The SDK provides a delegate callback to confirm when the server has successfully posted results (Close Code 1000):
+The SDK provides an "always-fire" callback that notifies you when the WebSocket session closes, regardless of success or failure. This is the recommended way to handle session completion:
 
 ```swift
-// This is called when server successfully posts to result server
+func connector(_ connector: EmrtdConnector, didClose info: CloseInfo) async {
+    if info.postConfirmed {
+        // Server confirmed successful post to result server (Close Code 1000)
+        print("✅ Results posted successfully")
+    } else {
+        // Either an error occurred or connection was lost
+        // Check didFailWithError for error details, or verify with your backend
+        print("⚠️ Post not confirmed")
+    }
+}
+```
+
+### CloseInfo Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `postConfirmed` | `Bool` | `true` if server confirmed successful post (code 1000) |
+| `trigger` | `CloseTrigger` | What caused the session to close |
+| `code` | `Int?` | WebSocket close code (1000 = success) |
+| `reason` | `String?` | Close reason from server |
+
+### CloseInfo.CloseTrigger
+
+| Trigger | Description |
+|---------|-------------|
+| `.server` | Server sent explicit CLOSE message |
+| `.connectionLost` | Connection dropped unexpectedly |
+| `.timeout` | Timeout waiting for server CLOSE |
+| `.client` | SDK called disconnect() |
+
+### Migration from `connectorDidSuccessfullyPostToServer`
+
+The old `connectorDidSuccessfullyPostToServer` callback is deprecated. It only fires on success (Code 1000), leaving you without information on failures or connection drops.
+
+**Before (deprecated):**
+```swift
 func connectorDidSuccessfullyPostToServer(_ connector: EmrtdConnector) async {
-    print("Server successfully posted results")
-    // You can now proceed knowing the server processed the data
+    print("Posted successfully")
+}
+```
+
+**After (recommended):**
+```swift
+func connector(_ connector: EmrtdConnector, didClose info: CloseInfo) async {
+    if info.postConfirmed {
+        print("Posted successfully")
+    }
 }
 ```
 
