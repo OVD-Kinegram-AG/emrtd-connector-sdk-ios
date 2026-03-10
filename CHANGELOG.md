@@ -1,5 +1,10 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.12.0
+* Fix: Chip Authentication relay now works correctly for documents requiring server-side key agreement
+* Fix: Face image parsing for passports with non-standard DG2 encoding
+* Improved: Diagnostic logging for relay and access control flows
+
 ## 2.11.0
 * New: Add `connector(_:didClose:)` delegate callback that always fires when a session ends
   * Provides `CloseInfo` with `trigger`, `code`, `reason`, and `postConfirmed`

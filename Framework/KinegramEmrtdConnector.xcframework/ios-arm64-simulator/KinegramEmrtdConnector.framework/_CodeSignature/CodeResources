@@ -6,35 +6,35 @@
 	<dict>
 		<key>Headers/KinegramEmrtdConnector-Swift.h</key>
 		<data>
-		+jYgxC7jPVakBvTWXNQg8lmgqZs=
+		UDBzVNdgu8Ry0Rh3ey33FLqwSRA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Kd/xT5u8Sx438Gigvw/UKNOz8a0=
+		vKhMe1EXbR1fCxbyw8QFuyWYZz0=
 		</data>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		GXP1xSZi8kx5xnENMCrMYKo3P4M=
+		JsqUX7A1uMAqmJUb7x53EmVM5i0=
 		</data>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		NbSxlTIABncyS+iQaGKbaS5lTWs=
+		HbJicthHyqQQhm5fE9ZcFbppsp8=
 		</data>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		ZzSQLDr6Z0LweFNlYfyTmuuze70=
+		BXaro+chCsMIXsE0wpLghQqTKwA=
 		</data>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		rcX/kYpMnRmEyuOiiMvor0fOD5w=
+		VXTVdy4W0mRaVagpsAc4QeC64TY=
 		</data>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZzSQLDr6Z0LweFNlYfyTmuuze70=
+		BXaro+chCsMIXsE0wpLghQqTKwA=
 		</data>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zz4QpJ8okEmFcvkMqvN675D54Us=
+		B0zY4oEDaDtlACVcryy4XRTJYqM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,49 +51,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mm4nwgEfCD5KMNpX2viq8WyaFklLYZPGbqe1VS+yb+E=
+			uujupw+f/v52CgIkk3yqhOJHl3fVcZu6ibQu37tBtb8=
 			</data>
 		</dict>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2IeOD05tIO7bd/de6e488h3uJVYDKXNsujQccW0uBqM=
+			eZOFglvPytWQZiEY0q6Nwpx6l80DQaSgDn/3YNjbzMM=
 			</data>
 		</dict>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M8jnpOmKsFCSSUBzCMU98ndLzx3oU7HYfeqZWlSU6Bg=
+			Mrn2mMucAUssYZKOtYlhaMM0DmSEvwZlvyyDC3Od6P8=
 			</data>
 		</dict>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uPd0ai2l2XdIpNKyExWVP4v1pkiH34it3yxyU9GP0aY=
+			yxXSPdB4n3HIQcQO2K2RLulpql7WqVzw6kjgWSdcTho=
 			</data>
 		</dict>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XtLp8P/XY9hnmAtesgUMxB/qmQBYGPODFGDRs+YY0DY=
+			2+MXPd8N4vtzIfUdzAuz3/60VGM1Cbg/vukhQLP8cDk=
 			</data>
 		</dict>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uPd0ai2l2XdIpNKyExWVP4v1pkiH34it3yxyU9GP0aY=
+			yxXSPdB4n3HIQcQO2K2RLulpql7WqVzw6kjgWSdcTho=
 			</data>
 		</dict>
 		<key>Modules/KinegramEmrtdConnector.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jmZmLQhpJateOQqQPeTn2x+Faa9UDcY0ylXLVlJ2Phw=
+			evJPushvsEtMxY11VL9psyDgroMWKqplaYA8Ug/SQ20=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
