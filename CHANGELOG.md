@@ -1,5 +1,11 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.13.0
+* Improved: Compatibility with certain Asian identity documents that don't tolerate redundant application selection
+* Improved: Faster error recovery when NFC connection is lost during chip communication
+* Fix: WebSocket connection is now properly closed when validation fails
+* Improved: Logging in diagnostic sessions
+
 ## 2.12.0
 * Fix: Chip Authentication relay now works correctly for documents requiring server-side key agreement
 * Fix: Face image parsing for passports with non-standard DG2 encoding
