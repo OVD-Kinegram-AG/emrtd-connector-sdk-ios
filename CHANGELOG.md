@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.13.1
+* Fix: User cancel during NFC reading is now correctly reported as `UserInvalidatedSession` instead of `ConnectionLost`
+* Fix: NFC timeout (no tag found within 60s) now returns `EmrtdConnectorError.nfcTimeout` instead of a raw `SessionInvalidated` error
+
 ## 2.13.0
 * Improved: Compatibility with certain Asian identity documents that don't tolerate redundant application selection
 * Improved: Faster error recovery when NFC connection is lost during chip communication
