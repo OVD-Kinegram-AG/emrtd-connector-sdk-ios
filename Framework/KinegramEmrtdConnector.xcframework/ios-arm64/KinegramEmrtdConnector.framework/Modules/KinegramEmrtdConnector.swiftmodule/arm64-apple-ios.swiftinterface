@@ -1477,6 +1477,13 @@ public struct NFCProgressStatus {
     case validatingWithServer
     case finishing
     case done
+    case connectionLost
+    case connectionTimedOut
+    case readingIncomplete
+    case operationCancelled
+    case incorrectAccessKey
+    case authenticationFailed
+    case fileReadFailed
     case error(message: Swift.String)
     public var description: Swift.String {
       get

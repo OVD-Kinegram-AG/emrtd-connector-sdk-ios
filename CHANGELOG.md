@@ -1,5 +1,12 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.13.2
+* Fix: Timeouts no longer produce a generic `SessionInvalidated` error. The SDK now reports the actual server close reason (e.g. `MAX_SESSION_TIME_EXCEEDED`) or `connectionTimeout`
+* Improved: All NFC dialog error messages are now routable through the `nfcStatusLocalization` callback
+* New: Typed `ReadingStep` cases for NFC dialog error localization:
+  * `.connectionLost`, `.connectionTimedOut`, `.readingIncomplete`, `.operationCancelled`, `.incorrectAccessKey`, `.authenticationFailed`, `.fileReadFailed`.
+  * Use these in `nfcStatusLocalization` instead of string matching
+
 ## 2.13.1
 * Fix: User cancel during NFC reading is now correctly reported as `UserInvalidatedSession` instead of `ConnectionLost`
 * Fix: NFC timeout (no tag found within 60s) now returns `EmrtdConnectorError.nfcTimeout` instead of a raw `SessionInvalidated` error

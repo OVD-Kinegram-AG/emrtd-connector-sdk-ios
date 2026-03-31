@@ -81080,6 +81080,268 @@
               },
               {
                 "kind": "Var",
+                "name": "connectionLost",
+                "printedName": "connectionLost",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO14connectionLostyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO14connectionLostyA2EmF",
+                "moduleName": "KinegramEmrtdConnector",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "connectionTimedOut",
+                "printedName": "connectionTimedOut",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO18connectionTimedOutyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO18connectionTimedOutyA2EmF",
+                "moduleName": "KinegramEmrtdConnector"
+              },
+              {
+                "kind": "Var",
+                "name": "readingIncomplete",
+                "printedName": "readingIncomplete",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO17readingIncompleteyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO17readingIncompleteyA2EmF",
+                "moduleName": "KinegramEmrtdConnector"
+              },
+              {
+                "kind": "Var",
+                "name": "operationCancelled",
+                "printedName": "operationCancelled",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO18operationCancelledyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO18operationCancelledyA2EmF",
+                "moduleName": "KinegramEmrtdConnector"
+              },
+              {
+                "kind": "Var",
+                "name": "incorrectAccessKey",
+                "printedName": "incorrectAccessKey",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO18incorrectAccessKeyyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO18incorrectAccessKeyyA2EmF",
+                "moduleName": "KinegramEmrtdConnector"
+              },
+              {
+                "kind": "Var",
+                "name": "authenticationFailed",
+                "printedName": "authenticationFailed",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO20authenticationFailedyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO20authenticationFailedyA2EmF",
+                "moduleName": "KinegramEmrtdConnector"
+              },
+              {
+                "kind": "Var",
+                "name": "fileReadFailed",
+                "printedName": "fileReadFailed",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type) -> KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReadingStep",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                        "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ReadingStep",
+                            "printedName": "KinegramEmrtdConnector.NFCProgressStatus.ReadingStep",
+                            "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO14fileReadFailedyA2EmF",
+                "mangledName": "$s22KinegramEmrtdConnector17NFCProgressStatusV11ReadingStepO14fileReadFailedyA2EmF",
+                "moduleName": "KinegramEmrtdConnector"
+              },
+              {
+                "kind": "Var",
                 "name": "error",
                 "printedName": "error",
                 "children": [
@@ -84251,27 +84513,40 @@
           },
           {
             "kind": "Var",
-            "name": "pingTimer",
-            "printedName": "pingTimer",
+            "name": "pingTask",
+            "printedName": "pingTask",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "Foundation.Timer?",
+                "printedName": "_Concurrency.Task<(), Swift.Never>?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
+                    "name": "Task",
+                    "printedName": "_Concurrency.Task<(), Swift.Never>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Never",
+                        "printedName": "Swift.Never",
+                        "usr": "s:s5NeverO"
+                      }
+                    ],
+                    "usr": "s:ScT"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:22KinegramEmrtdConnector19WebSocketConnectionC9pingTimer33_EC988148522F0319C790BA623E1C74ADLLSo7NSTimerCSgvp",
-            "mangledName": "$s22KinegramEmrtdConnector19WebSocketConnectionC9pingTimer33_EC988148522F0319C790BA623E1C74ADLLSo7NSTimerCSgvp",
+            "usr": "s:22KinegramEmrtdConnector19WebSocketConnectionC8pingTask33_EC988148522F0319C790BA623E1C74ADLLScTyyts5NeverOGSgvp",
+            "mangledName": "$s22KinegramEmrtdConnector19WebSocketConnectionC8pingTask33_EC988148522F0319C790BA623E1C74ADLLScTyyts5NeverOGSgvp",
             "moduleName": "KinegramEmrtdConnector",
             "isInternal": true,
             "declAttributes": [
@@ -86404,6 +86679,40 @@
           },
           {
             "kind": "Var",
+            "name": "transportError",
+            "printedName": "transportError",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KinegramEmrtdConnector.EmrtdConnectorError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EmrtdConnectorError",
+                    "printedName": "KinegramEmrtdConnector.EmrtdConnectorError",
+                    "usr": "s:22KinegramEmrtdConnector0bC5ErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC14transportError33_BCB7F86FE7F262E530EBA9B75408EF56LLAA0bcI0OSgvp",
+            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC14transportError33_BCB7F86FE7F262E530EBA9B75408EF56LLAA0bcI0OSgvp",
+            "moduleName": "KinegramEmrtdConnector",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 21,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
             "name": "errorNotified",
             "printedName": "errorNotified",
             "children": [
@@ -86425,7 +86734,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 21,
+            "fixedbinaryorder": 22,
             "hasStorage": true
           },
           {
@@ -86473,7 +86782,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 22,
+            "fixedbinaryorder": 23,
             "hasStorage": true
           },
           {
@@ -86519,7 +86828,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 23,
+            "fixedbinaryorder": 24,
             "hasStorage": true
           },
           {
@@ -86566,7 +86875,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 24,
+            "fixedbinaryorder": 25,
             "hasStorage": true
           },
           {
@@ -86612,7 +86921,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 25,
+            "fixedbinaryorder": 26,
             "hasStorage": true
           },
           {
@@ -86657,7 +86966,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 26,
+            "fixedbinaryorder": 27,
             "hasStorage": true
           },
           {
@@ -86703,7 +87012,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 27,
+            "fixedbinaryorder": 28,
             "hasStorage": true
           },
           {
@@ -86729,7 +87038,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 28,
+            "fixedbinaryorder": 29,
             "hasStorage": true
           },
           {
@@ -86755,7 +87064,7 @@
               "AccessControl",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 29,
+            "fixedbinaryorder": 30,
             "ownership": 1,
             "hasStorage": true
           },
@@ -86977,6 +87286,35 @@
             "moduleName": "KinegramEmrtdConnector",
             "declAttributes": [
               "Nonisolated",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTransportError",
+            "printedName": "getTransportError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KinegramEmrtdConnector.EmrtdConnectorError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EmrtdConnectorError",
+                    "printedName": "KinegramEmrtdConnector.EmrtdConnectorError",
+                    "usr": "s:22KinegramEmrtdConnector0bC5ErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22KinegramEmrtdConnector27WebSocketSessionCoordinatorC17getTransportErrorAA0bcJ0OSgyF",
+            "mangledName": "$s22KinegramEmrtdConnector27WebSocketSessionCoordinatorC17getTransportErrorAA0bcJ0OSgyF",
+            "moduleName": "KinegramEmrtdConnector",
+            "declAttributes": [
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
@@ -92581,7 +92919,7 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketConnection.swift",
       "kind": "Dictionary",
-      "offset": 686,
+      "offset": 697,
       "length": 3,
       "value": "[]"
     },
@@ -92630,56 +92968,56 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2055,
+      "offset": 2334,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2746,
+      "offset": 3025,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 3010,
+      "offset": 3289,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 3047,
+      "offset": 3326,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13848,
+      "offset": 14501,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 16329,
+      "offset": 17242,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 19888,
+      "offset": 20811,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/WebSocket\/WebSocketSessionCoordinator.swift",
       "kind": "FloatLiteral",
-      "offset": 25535,
+      "offset": 26468,
       "length": 4,
       "value": "22.0"
     },
@@ -92688,14 +93026,14 @@
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.13.1\""
+      "value": "\"2.13.2\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20260320141728\""
+      "value": "\"20260331214731\""
     }
   ]
 }
