@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: macos-15
-    env:
-      GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check-out repo
         uses: actions/checkout@v4
@@ -27,48 +25,32 @@ jobs:
             "$RUNNER_TEMP/docc/KinegramEmrtdConnector.doccarchive" \
             --output-path _site \
             --hosting-base-path ${{ github.event.repository.name }}
-      - name: Render Markdown files to directory "_site"
+      - name: Generate redirect stubs for the old documentation pages
         run: |
-          for file in *.md; do
-            title=$(head -n 1 "$file" | sed 's/^# //')
-            response=$(curl -s -o response.html -w "%{http_code}" -X POST "https://api.github.com/markdown/raw" \
-              -H "Content-Type: text/plain" --data-binary @"$file" \
-              -H "Authorization: Bearer $GH_API_TOKEN")
-          
-            if [[ "$response" -lt 200 || "$response" -ge 300 ]]; then
-              echo "Error: Received HTTP status code $response for file $file"
-              exit 1
-            fi
-            rendered_html=$(<response.html)
-            
-            cat <<EOF >"_site/$(basename "$file" .md).html"
+          DOCS=https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios
+          stub() {
+            cat <<EOF >"_site/$1.html"
           <!DOCTYPE html>
           <html lang="en">
           <head>
-            <title>$title</title>
-            <link rel="icon" href="favicon.svg">
-            <meta charset="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
-            <style>
-            .markdown-body { min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
-            @media (max-width: 767px) { .markdown-body { padding: 15px; } }
-            </style>
+          <meta charset="utf-8">
+          <title>Moved to docs.kinegram.digital</title>
+          <meta name="robots" content="noindex">
+          <meta http-equiv="refresh" content="0; url=$2">
+          <link rel="canonical" href="$2">
+          <link rel="icon" href="favicon.svg">
           </head>
-          <body class="markdown-body">
-          $(echo "$rendered_html" | sed -e 's/\.md"/\"/g' -e 's/\.md#/#/g' -e 's/id="user-content-/id="/g')
+          <body>
+          <p>This page has moved to <a href="$2">$2</a>.</p>
           </body>
           </html>
           EOF
-          done
-      - name: Convert favicon.svg to favicon.ico
-        run: |
-          brew install imagemagick
-          convert -background transparent -define 'icon:auto-resize=16,24,32,64,128' favicon.svg favicon.ico
-      - name: Copy favicons to directory "_site"
-        run: cp favicon.* _site/
-      - name: Rename README.html to index.html
-        run: mv _site/README.html _site/index.html
+          }
+          stub index "$DOCS/"
+          stub CHANGELOG "$DOCS/changelog"
+          stub MIGRATION_V1_TO_V2 "$DOCS/migration-v1-to-v2"
+      - name: Copy favicon to directory "_site"
+        run: cp favicon.svg _site/
       - name: Upload artifact for Github pages
         uses: actions/upload-pages-artifact@v3
   deploy:
