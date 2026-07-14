@@ -24,5 +24,5 @@ See the [Example App](Example) for a complete integration.
 [usage]: https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios/usage
 [migration]: https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios/migration-v1-to-v2
 [changelog]: https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios/changelog
-[docc]: https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios/documentation/kinegramemrtdconnector
+[docc]: https://docs.kinegram.digital/reference/emrtd-connector-ios/latest/documentation/kinegramemrtdconnector/
 [docval]: https://docs.kinegram.digital/mobile-chip-sdk/online/docval-service/

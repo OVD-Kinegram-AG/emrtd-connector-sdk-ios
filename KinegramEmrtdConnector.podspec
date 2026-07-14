@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
     that the chip was not cloned.
     The DocVal Server will post the result to your **Result-Server**.
     DESC
-  spec.homepage      = "https://ovd-kinegram-ag.github.io/emrtd-connector-sdk-ios"
+  spec.homepage      = "https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios/"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
   spec.author        = { "Alexander Manzer" => "alexander.manzer@kurzdigital.com" }
   spec.platform      = :ios, "13.0"

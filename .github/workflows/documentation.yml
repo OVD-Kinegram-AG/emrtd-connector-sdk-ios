@@ -8,26 +8,15 @@ on:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: ubuntu-latest
     steps:
       - name: Check-out repo
         uses: actions/checkout@v4
-      - name: Select Xcode 16.4
-        run: sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
-      - name: Unzip Connector DocC archive
-        run: |
-          mkdir -p $RUNNER_TEMP/docc
-          unzip -q Framework/KinegramEmrtdConnector.doccarchive.zip -d $RUNNER_TEMP/docc
-      - name: Transform DocC for static hosting
-        run: |
-          mkdir -p _site
-          xcrun docc process-archive transform-for-static-hosting \
-            "$RUNNER_TEMP/docc/KinegramEmrtdConnector.doccarchive" \
-            --output-path _site \
-            --hosting-base-path ${{ github.event.repository.name }}
       - name: Generate redirect stubs for the old documentation pages
         run: |
           DOCS=https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios
+          REFERENCE=https://docs.kinegram.digital/reference/emrtd-connector-ios/latest
+          mkdir -p _site/documentation/kinegramemrtdconnector
           stub() {
             cat <<EOF >"_site/$1.html"
           <!DOCTYPE html>
@@ -49,6 +38,7 @@ jobs:
           stub index "$DOCS/"
           stub CHANGELOG "$DOCS/changelog"
           stub MIGRATION_V1_TO_V2 "$DOCS/migration-v1-to-v2"
+          stub documentation/kinegramemrtdconnector/index "$REFERENCE/documentation/kinegramemrtdconnector/"
       - name: Copy favicon to directory "_site"
         run: cp favicon.svg _site/
       - name: Upload artifact for Github pages
