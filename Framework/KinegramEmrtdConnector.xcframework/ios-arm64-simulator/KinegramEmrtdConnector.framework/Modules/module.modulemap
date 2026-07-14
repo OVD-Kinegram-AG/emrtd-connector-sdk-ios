@@ -1,4 +1,3 @@
 framework module KinegramEmrtdConnector {
   header "KinegramEmrtdConnector-Swift.h"
-  requires objc
 }

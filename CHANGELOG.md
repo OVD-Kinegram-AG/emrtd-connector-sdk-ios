@@ -1,5 +1,8 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.13.5
+* Improved: Updated the bundled OpenSSL version
+
 ## 2.13.2
 * Fix: Timeouts no longer produce a generic `SessionInvalidated` error. The SDK now reports the actual server close reason (e.g. `MAX_SESSION_TIME_EXCEEDED`) or `connectionTimeout`
 * Improved: All NFC dialog error messages are now routable through the `nfcStatusLocalization` callback
