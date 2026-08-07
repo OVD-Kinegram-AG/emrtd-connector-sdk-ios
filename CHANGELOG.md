@@ -1,5 +1,11 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.15.0
+* New: Read only selected data groups, e.g. `DataGroupSet.minimal` for the MRZ alone or `DataGroupSet.minimalKYC` for MRZ and face image
+* Improved: Files are read from the chip in larger blocks
+* Improved: More reliable reading of documents that reject large data chunks
+* Fix: A chip error reported inside an encrypted response is no longer surfaced as a success status
+
 ## 2.13.5
 * Improved: Updated the bundled OpenSSL version
 
