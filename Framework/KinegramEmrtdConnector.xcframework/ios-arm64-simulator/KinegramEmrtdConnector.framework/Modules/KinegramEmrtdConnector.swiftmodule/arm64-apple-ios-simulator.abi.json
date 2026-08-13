@@ -34382,7 +34382,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(serverURL:validationId:clientId:httpHeaders:enableDiagnostics:receiveResult:)",
+            "printedName": "init(serverURL:validationId:clientId:httpHeaders:baggage:enableDiagnostics:receiveResult:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -34431,6 +34431,27 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
@@ -34445,8 +34466,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:22KinegramEmrtdConnector0bC0C9serverURL12validationId06clientG011httpHeaders17enableDiagnostics13receiveResultAC10Foundation0E0V_S2SSDyS2SGS2btcfc",
-            "mangledName": "$s22KinegramEmrtdConnector0bC0C9serverURL12validationId06clientG011httpHeaders17enableDiagnostics13receiveResultAC10Foundation0E0V_S2SSDyS2SGS2btcfc",
+            "usr": "s:22KinegramEmrtdConnector0bC0C9serverURL12validationId06clientG011httpHeaders7baggage17enableDiagnostics13receiveResultAC10Foundation0E0V_S2SSDyS2SGANS2btcfc",
+            "mangledName": "$s22KinegramEmrtdConnector0bC0C9serverURL12validationId06clientG011httpHeaders7baggage17enableDiagnostics13receiveResultAC10Foundation0E0V_S2SSDyS2SGANS2btcfc",
             "moduleName": "KinegramEmrtdConnector",
             "declAttributes": [
               "AccessControl",
@@ -44927,6 +44948,13 @@
         "moduleName": "KinegramEmrtdConnector"
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KinegramEmrtdConnector"
+      },
+      {
         "kind": "TypeDecl",
         "name": "ErrorLocalizer",
         "printedName": "ErrorLocalizer",
@@ -48117,49 +48145,49 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 8643,
+      "offset": 8678,
       "length": 3,
       "value": "256"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 22064,
+      "offset": 22574,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 28368,
+      "offset": 28878,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 28396,
+      "offset": 28906,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 31020,
+      "offset": 31530,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "BooleanLiteral",
-      "offset": 48175,
+      "offset": 48685,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtd\/IO\/EmrtdChipCommunicationSession.swift",
       "kind": "IntegerLiteral",
-      "offset": 50703,
+      "offset": 51213,
       "length": 1,
       "value": "0"
     },
@@ -48236,56 +48264,63 @@
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 999,
+      "offset": 1165,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "Dictionary",
-      "offset": 1612,
+      "offset": 1945,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
+      "kind": "Dictionary",
+      "offset": 1978,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 1643,
+      "offset": 2009,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 1672,
+      "offset": 2038,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 2561,
+      "offset": 3797,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 3594,
+      "offset": 4830,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 11181,
+      "offset": 12759,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/EmrtdConnector.swift",
       "kind": "BooleanLiteral",
-      "offset": 12510,
+      "offset": 14088,
       "length": 5,
       "value": "false"
     },
@@ -48493,6 +48528,20 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/Utils\/BaggageHeader.swift",
+      "kind": "IntegerLiteral",
+      "offset": 473,
+      "length": 3,
+      "value": "128"
+    },
+    {
+      "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/Utils\/BaggageHeader.swift",
+      "kind": "IntegerLiteral",
+      "offset": 586,
+      "length": 4,
+      "value": "8192"
+    },
+    {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdConnector\/Utils\/RetryHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 200,
@@ -48630,14 +48679,14 @@
       "kind": "StringLiteral",
       "offset": 258,
       "length": 8,
-      "value": "\"2.15.0\""
+      "value": "\"2.16.0\""
     },
     {
       "filePath": "\/Users\/ci-macos-01\/builds\/YpvfRXgy\/0\/kta\/emrtd-sdk-ios\/Sources\/KinegramEmrtdInfo.swift",
       "kind": "StringLiteral",
       "offset": 370,
       "length": 16,
-      "value": "\"20260807100750\""
+      "value": "\"20260813160340\""
     }
   ]
 }

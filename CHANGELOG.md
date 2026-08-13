@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.16.0
+* New: `baggage` parameter on `EmrtdConnector` puts your own fields into every log line that the DocVal Service writes for the session. Needs DocVal Service 1.18.0 or newer, with the keys allowed through `BAGGAGE_ALLOWED_KEYS`
+* Fix: Improved compatibility with certain eMRTD chips
+
 ## 2.15.0
 * New: Read only selected data groups, e.g. `DataGroupSet.minimal` for the MRZ alone or `DataGroupSet.minimalKYC` for MRZ and face image
 * Improved: Files are read from the chip in larger blocks

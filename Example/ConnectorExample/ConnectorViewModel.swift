@@ -58,15 +58,22 @@ class ConnectorViewModel: ObservableObject {
                  "Authorization": "Bearer your-token"
              ]
 
-             2. Fire-and-forget mode (don't receive result back):
+             2. Own fields in the log lines of the DocVal Service
+             (the DocVal Service must allow each key through BAGGAGE_ALLOWED_KEYS):
+             let myBaggage = [
+                 "example_id": "1a2b3c4d5e6f"
+             ]
+
+             3. Fire-and-forget mode (don't receive result back):
              let receiveResult = false
-             
+
              Example with all options:
              connector = EmrtdConnector(
                  serverURL: url,
                  validationId: validationId,
                  clientId: clientId,
                  httpHeaders: myHttpHeaders,
+                 baggage: myBaggage,
                  enableDiagnostics: false,
                  receiveResult: false
              )

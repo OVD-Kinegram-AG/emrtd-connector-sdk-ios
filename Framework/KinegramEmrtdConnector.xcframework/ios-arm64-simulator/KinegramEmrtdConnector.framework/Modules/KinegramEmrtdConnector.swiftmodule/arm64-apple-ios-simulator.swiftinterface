@@ -1037,7 +1037,7 @@ public class EmrtdConnector {
   public var isConnected: Swift.Bool {
     get
   }
-  public init(serverURL: Foundation.URL, validationId: Swift.String, clientId: Swift.String, httpHeaders: [Swift.String : Swift.String] = [:], enableDiagnostics: Swift.Bool = false, receiveResult: Swift.Bool = true)
+  public init(serverURL: Foundation.URL, validationId: Swift.String, clientId: Swift.String, httpHeaders: [Swift.String : Swift.String] = [:], baggage: [Swift.String : Swift.String] = [:], enableDiagnostics: Swift.Bool = false, receiveResult: Swift.Bool = true)
   public func validate(with accessKey: any KinegramEmrtdConnector.AccessKey, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.ValidationResult
   public func validate(with accessKey: any KinegramEmrtdConnector.AccessKey, filesToRead: KinegramEmrtdConnector.DataGroupSet, usePACEPolling: Swift.Bool = false) async throws -> KinegramEmrtdConnector.ValidationResult
   public func validate(with accessKey: any KinegramEmrtdConnector.AccessKey, documentType: KinegramEmrtdConnector.DocumentKind, issuingCountry: Swift.String) async throws -> KinegramEmrtdConnector.ValidationResult
