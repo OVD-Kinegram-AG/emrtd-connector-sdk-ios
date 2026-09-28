@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "KinegramEmrtdConnector"
-  spec.version       = "2.16.0"
+  spec.version       = "2.17.0"
   spec.summary       = "Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection."
   spec.description   = <<-DESC
     Enable the Document Validation Server (DocVal Server) to read and verify an eMRTD via a WebSocket v2 connection.
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.homepage      = "https://docs.kinegram.digital/mobile-chip-sdk/online/emrtd-connector/ios/"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
   spec.author        = { "Alexander Manzer" => "alexander.manzer@kurzdigital.com" }
-  spec.platform      = :ios, "13.0"
+  spec.platform      = :ios, "15.0"
   spec.source        = { :git => "https://github.com/OVD-Kinegram-AG/emrtd-connector-sdk-ios.git", :tag => "#{spec.version}" }
   spec.swift_version = "5.7"
 

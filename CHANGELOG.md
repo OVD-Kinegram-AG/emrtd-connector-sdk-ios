@@ -1,5 +1,9 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.17.0
+* Improved: Updated the bundled OpenSSL to the latest long-term support release
+* Changed: The minimum supported iOS version is now 15.0
+
 ## 2.16.0
 * New: `baggage` parameter on `EmrtdConnector` puts your own fields into every log line that the DocVal Service writes for the session. Needs DocVal Service 1.18.0 or newer, with the keys allowed through `BAGGAGE_ALLOWED_KEYS`
 * Fix: Improved compatibility with certain eMRTD chips
