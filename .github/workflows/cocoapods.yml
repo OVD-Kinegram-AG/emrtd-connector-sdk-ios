@@ -14,4 +14,13 @@ jobs:
       - name: Check-out repo
         uses: actions/checkout@v4
       - name: Push KinegramEmrtdConnector to Cocoapods
-        run: pod spec lint KinegramEmrtdConnector.podspec && pod trunk push KinegramEmrtdConnector.podspec
+        run: |
+          pod spec lint KinegramEmrtdConnector.podspec
+          if ! pod trunk push KinegramEmrtdConnector.podspec; then
+            # Trunk sometimes times out while committing to the Specs repo
+            # although the version was published. Check before failing.
+            version=$(sed -n 's/.*spec.version *= *"\(.*\)"/\1/p' KinegramEmrtdConnector.podspec)
+            curl -sf https://trunk.cocoapods.org/api/v1/pods/KinegramEmrtdConnector \
+              | grep -q "\"name\":\"$version\"" || exit 1
+            echo "Version $version is on Trunk, treating the push as successful."
+          fi

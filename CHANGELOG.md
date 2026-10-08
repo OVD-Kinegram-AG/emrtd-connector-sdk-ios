@@ -1,5 +1,10 @@
 # Kinegram eMRTD Connector SDK iOS - Changelog
 
+## 2.18.0
+* New: `ValidationResult.revocation` gives the revocation status of the Document Signer Certificate, checked against the Certificate Revocation Lists (CRLs) of the DocVal Service. Needs DocVal Service 1.19.1 or newer
+* Fix: `passiveAuthResult` now reports `FAILED` when the DocVal Service fails Passive Authentication because the Document Signer Certificate is revoked
+* Fix: Results in which the DocVal Service could not run all Passive Authentication checks, e.g. without a trusted Country Certificate, no longer fail with an error
+
 ## 2.17.0
 * Improved: Updated the bundled OpenSSL to the latest long-term support release
 * Changed: The minimum supported iOS version is now 15.0

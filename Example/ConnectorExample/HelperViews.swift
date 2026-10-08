@@ -52,6 +52,7 @@ struct ResultView: View {
                     StatusIndicator(label: "CA", status: result.chipAuthResult)
                     StatusIndicator(label: "PA", status: result.passiveAuthResult)
                     StatusIndicator(label: "AA", status: result.activeAuthResult)
+                    StatusIndicator(label: "CRL", status: revocationStatus)
                 }
                 .padding(.vertical, 4)
 
@@ -72,6 +73,20 @@ struct ResultView: View {
                 .fill(Color.gray.opacity(0.1))
         )
         .padding(.horizontal)
+    }
+
+    // Revocation status of the Document Signer Certificate
+    private var revocationStatus: String? {
+        switch result.revocation?.certStatus {
+        case .unrevoked:
+            return "valid"
+        case .revoked:
+            return "failed"
+        case .undetermined:
+            return "undetermined"
+        case nil:
+            return nil
+        }
     }
 }
 
